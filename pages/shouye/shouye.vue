@@ -95,7 +95,10 @@ export default {
 	},
 	data() {
 		return {
-			swipers: [{ src: 'https://ccx.changhuoban.com/public/upload/xcx/banner1.png' }, { src: 'https://ccx.changhuoban.com/public/upload/xcx/banner0.jpg' }],
+			swipers: [
+				{ src: 'https://ccx.changhuoban.com/public/upload/xcx/banner1.png' }, 
+				{ src: 'https://ccx.changhuoban.com/public/upload/xcx/banner0.jpg' },
+			],
 			indexnavs: [
 				{ src: '/static/1.png', text: 'EPOS', url: 'EPOS/EPOS' },
 				{ src: '/static/2.png', text: '商户注册', url: 'shanghuzhuce/shanghuzhuce' },

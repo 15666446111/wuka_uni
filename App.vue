@@ -22,7 +22,8 @@ export default {
 @import url('/common/zcm-main.css');
 /* 公共样式 */
 @import url('/common/common.css');
-
+/* 全局图标样式*/
+@import "/common/iconfont.css";
 uni-checkbox .uni-checkbox-input {
 	border-radius: 50% !important;
 	color: #ffffff !important;

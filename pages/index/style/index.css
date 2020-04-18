@@ -1,0 +1,27 @@
+page { background-color: #fff; }
+
+.logo-view { width: 100%; height: 350upx; align-items: center; display: flex; justify-content: center;}
+
+.logo { width: 280upx; height: 280upx; }
+
+.user-name{width: 100%; flex-direction:column; align-items: center; justify-content: flex-end; display: flex;}
+
+.user-name-view { width: 80%; height: 120upx; line-height: 120upx; align-items: center; display: flex; justify-content: flex-start; border-bottom: 1px solid #eee;}
+
+.iconmobile, .iconlock{font-size: 50upx; color:#f64547}
+
+.user-inpu { color: #666; margin-left: 20upx; font-size: 27upx;}
+
+.checkbox { width: 80%; height: 140upx; align-items: center; display: flex; justify-content: flex-start; margin-left: 10%; color:#999}
+
+.loginButton { width: 80%; background: linear-gradient(to right, #f64547, #fe695a); color: #fff; border-radius: 10upx; }
+
+.d-flex{width: 100%; flex-direction:column; align-items: center; justify-content: flex-end; display: flex; }
+
+.d-box{width: 80%; flex-direction:row; align-items: flex-start; justify-content: flex-start; display: flex; }
+
+.forget{ color: #999; font-size: 27upx; height: 120upx; width: 50%; align-items: center; justify-content: flex-start; display: flex;}
+
+.register{justify-content: flex-end;}
+
+.annotation { color: #999; width: 80%; font-size: 30upx; height: 80upx; line-height: 80upx; display: flex; align-items: center; justify-content: center; margin-left: 10%;}

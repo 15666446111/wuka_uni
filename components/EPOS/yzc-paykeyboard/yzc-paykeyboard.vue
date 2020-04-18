@@ -33,7 +33,7 @@
 			</block>
 			<view class="keyboard-item hide"></view>
 			<view class="keyboard-item" @tap="key(0)"><text>0</text></view>
-			<view class="keyboard-item delte" @tap="del()"><image class="img" src="../../static/del.png" mode="aspectFill" :lazy-load="true"></image></view>
+			<view class="keyboard-item delte" @tap="del()"><image class="img" src="" mode="aspectFill" :lazy-load="true"></image></view>
 		</view>
 		
 	</view>

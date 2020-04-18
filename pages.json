@@ -170,7 +170,6 @@
 				"navigationBarTextStyle": "black"
 			}
 		}
-
 		, {
 			"path": "pages/shouye/shanghuguanli/feilvcanshu/feilvcanshu",
 			"style": {
@@ -319,8 +318,10 @@
 			"path": "pages/shouye/EPOS/tianjiayinhangka/tianjiayinhangka",
 			"style": {}
 		}, {
-			"path": "pages/index/login",
-			"style": {}
+			"path": "pages/index/register",
+			"style": {
+				"navigationBar": "none"
+			}
 		}, {
 			"path": "pages/shouye/shanghuguanli/huodongxiangqing/huodongxiangqing",
 			"style": {}
