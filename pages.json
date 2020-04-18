@@ -1,0 +1,385 @@
+{
+	"pages": [{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarTextStyle": "black"
+			}
+		},
+		{
+			"path": "pages/shouye/shouye",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/tuandui/tuandui",
+			"style": {
+				"navigationBarTitleText": "团队",
+				"navigationBarTextStyle": "black"
+
+			}
+		}, {
+			"path": "pages/shouyi/shouyi",
+			"style": {
+				"navigationBarTitleText": "收益",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/wode/wode",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/tuandui/jiaoyixiangqing/jiaoyixiangqing",
+			"style": {
+				"navigationBarTitleText": "交易详情",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/tuandui/jinrijiaoyi/jinrijiaoyi",
+			"style": {
+				"navigationBarTitleText": "今日交易",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/tuandui/jihuozongshu/jihuozongshu",
+			"style": {
+				"navigationBarTitleText": "激活总数",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/tuandui/huobanzongshu/huobanzongshu",
+			"style": {
+				"navigationBarTitleText": "伙伴总数",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/tuandui/shouyizongshu/shouyizongshu",
+			"style": {
+				"navigationBarTitleText": "收益总数",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/tuandui/shanghuzongshu/shanghuzongshu",
+			"style": {
+				"navigationBarTitleText": "商户总数",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/tuandui/taijunjiaoyi/taijunjiaoyi",
+			"style": {
+				"navigationBarTitleText": "台均交易",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/shouye/huobanguanli/huobanguanli",
+			"style": {
+				"navigationBarTitleText": "伙伴管理",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/shouye/shanghudengji/shanghudengji",
+			"style": {
+				"navigationBarTitleText": "商户登记",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/shouye/shanghuguanli/shanghuguanli",
+			"style": {
+				"navigationBarTitleText": "商户管理",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/shouye/huobanguanli/fenruencanshu/fenruencanshu",
+			"style": {
+				"navigationBarTitleText": "分润参数",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/shouye/huobanguanli/huobanxiangqing/huobanxiangqing",
+			"style": {
+				"navigationBarTitleText": "伙伴详情",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/shouye/huobanguanli/jiaoyixiangqing/jiaoyixiangqing",
+			"style": {
+				"navigationBarTitleText": "交易详情",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/shouye/huobanguanli/jiaoyixiangqing/huobanzongshu/huobanzongshu",
+			"style": {
+				"navigationBarTitleText": "伙伴总数",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/shouye/huobanguanli/jiaoyixiangqing/jinrijiaoyi/jinrijiaoyi",
+			"style": {
+				"navigationBarTitleText": "今日交易",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/shouye/huobanguanli/jiaoyixiangqing/jihuozongshu/jihuozongshu",
+			"style": {
+				"navigationBarTitleText": "激活总数",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/shouye/huobanguanli/jiaoyixiangqing/shouyizongshu/shouyizongshu",
+			"style": {
+				"navigationBarTitleText": "收益总数",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/shouye/huobanguanli/jiaoyixiangqing/shanghuzongshu/shanghuzongshu",
+			"style": {
+				"navigationBarTitleText": "商户总数",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/shouye/huobanguanli/jiaoyixiangqing/taijunjiaoyi/taijunjiaoyi",
+			"style": {
+				"navigationBarTitleText": "台均交易",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/shouye/shanghudengji/shanghuxinxi/shanghuxinxi",
+			"style": {
+				"navigationBarTitleText": "商户信息",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/shouye/shanghudengji/yinhangka/yinhangka",
+			"style": {
+				"navigationBarTitleText": "银行卡",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/shouye/shanghudengji/yingyezhizhao/yingyezhizhao",
+			"style": {
+				"navigationBarTitleText": "营业执照",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/shouye/shanghudengji/querenxinxi/querenxinxi",
+			"style": {
+				"navigationBarTitleText": "确认信息",
+				"navigationBarTextStyle": "black"
+			}
+		}
+
+		, {
+			"path": "pages/shouye/shanghuguanli/feilvcanshu/feilvcanshu",
+			"style": {
+				"navigationBarTitleText": "费率参数",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/shouye/shanghuguanli/jiaoymingxi/jiaoymingxi",
+			"style": {
+				"navigationBarTitleText": "交易明细",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/shouye/shanghuguanli/shanghuxinxi/shanghuxinxi",
+			"style": {
+				"navigationBarTitleText": "商户信息",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/shouye/shangcheng/shangcheng",
+			"style": {}
+		}, {
+			"path": "pages/shouye/shangcheng/shangpingxinxi/shangpingxinxi",
+			"style": {}
+		}, {
+			"path": "pages/shouye/shangcheng/querendingdan/querendingdan",
+			"style": {}
+		}, {
+			"path": "pages/shouye/shangcheng/zhifufangshi/zhifufangshi",
+			"style": {}
+		}, {
+			"path": "pages/shouye/shangcheng/dizhi/dizhi",
+			"style": {}
+		}, {
+			"path": "pages/shouye/shangcheng/xinzeng/xinzeng",
+			"style": {}
+		}, {
+			"path": "pages/shouye/shangcheng/zhifu/zhifu",
+			"style": {}
+		}, {
+			"path": "pages/shouye/chanpinshiyong/chanpinshiyong",
+			"style": {}
+		}, {
+			"path": "pages/shouye/shanghuzhuce/shanghuzhuce",
+			"style": {}
+		}, {
+			"path": "pages/shouye/tuanduituozhan/tuanduituozhan",
+			"style": {}
+		}, {
+			"path": "pages/shouye/zaixiankefu/zaixiankefu",
+			"style": {}
+		}, {
+			"path": "pages/wode/shimingrenzheng/shimingrenzheng",
+			"style": {}
+		}, {
+			"path": "pages/wode/shimingrenzheng/shimingxinxi/shimingxinxi",
+			"style": {}
+		}, {
+			"path": "pages/wode/xiaoxitongzhi/xiaoxitongzhi",
+			"style": {}
+		}, {
+			"path": "pages/wode/wodedingdan/wodedingdan",
+			"style": {}
+		}, {
+			"path": "pages/wode/jijuguanli/jijuguanli",
+			"style": {}
+		}, {
+			"path": "pages/wode/jijuguanli/jijuhuabo/jijuhuabo",
+			"style": {}
+		}, {
+			"path": "pages/wode/jijuguanli/huabojilu/huabojilu",
+			"style": {}
+		}, {
+			"path": "pages/wode/jijuguanli/zhongduandingjia/zhongduandingjia",
+			"style": {}
+		}, {
+			"path": "pages/wode/tixianjilu/tixianjilu",
+			"style": {}
+		}, {
+			"path": "pages/wode/lijitixian/lijitixian",
+			"style": {}
+		}, {
+			"path": "pages/wode/lijitixian/tijiaoyinhangka/tijiaoyinhangka",
+			"style": {}
+		}, {
+			"path": "pages/wode/lijitixian/tijiaoyinhka/tijiaoyinhka",
+			"style": {}
+		}, {
+			"path": "pages/wode/lijitixian/xuanzeyinhang/xuanzeyinhang",
+			"style": {}
+		}, {
+			"path": "pages/wode/shezhi/shezhi",
+			"style": {}
+		}, {
+			"path": "pages/wode/shezhi/xiugaidenglumima/xiugaidenglumima",
+			"style": {}
+		}, {
+			"path": "pages/wode/shezhi/xiugaijiesuanxinxi/xiugaijiesuanxinxi",
+			"style": {}
+		}, {
+			"path": "pages/wode/jijuguanli/jijuchakan/jijuchakan",
+			"style": {}
+		}, {
+			"path": "pages/shouye/shanghudengji/zhongduanxuanze/zhongduanxuanze",
+			"style": {}
+		}, {
+			"path": "pages/wode/jijuguanli/qujianhuabo/qujianhuabo",
+			"style": {}
+		}, {
+			"path": "pages/wode/jijuguanli/xuanzehuabo/xuanzehuabo",
+			"style": {}
+		}, {
+			"path": "pages/wode/jijuguanli/huobanxuanze/huaobanxuanze",
+			"style": {}
+		}, {
+			"path": "pages/wode/jijuguanli/zhengcexuanze/zhengcexuanze",
+			"style": {}
+		}, {
+			"path": "pages/shouye/EPOS/EPOS",
+			"style": {
+				"navigationBarTitleText": "EPOS",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/shouye/EPOS/jiesuanka/jiesuanka",
+			"style": {}
+		}, {
+			"path": "pages/shouye/EPOS/zhifuka/zhifuka",
+			"style": {}
+		}, {
+			"path": "pages/shouye/EPOS/jiaoyijilv/jiaoyijilv",
+			"style": {}
+		}, {
+			"path": "pages/shouye/EPOS/tixianjilu/tixianjilu",
+			"style": {}
+		}, {
+			"path": "pages/shouye/EPOS/zhifumima/zhifumima",
+			"style": {}
+		}, {
+			"path": "pages/shouye/EPOS/feilvxinxi/feilvxinxi",
+			"style": {}
+		}, {
+			"path": "pages/shouye/EPOS/xiugaijiesuanka/xiugaijiesuanka",
+			"style": {}
+		}, {
+			"path": "pages/shouye/EPOS/tianjiayinhangka/tianjiayinhangka",
+			"style": {}
+		}, {
+			"path": "pages/index/login",
+			"style": {}
+		}, {
+			"path": "pages/shouye/shanghuguanli/huodongxiangqing/huodongxiangqing",
+			"style": {}
+		}, {
+			"path": "pages/wode/wodezhengc/wodezhengc",
+			"style": {}
+		}, {
+			"path": "pages/wode/wodezhengc/zhengceyemian/zhengceyemian",
+			"style": {}
+		}, {
+			"path": "pages/shouye/kaceping/kaceping",
+			"style": {}
+		}, {
+			"path": "pages/shouye/chepingyangshi/chepingyangshi",
+			"style": {}
+		}
+
+	],
+
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "畅伙伴",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#F8F8F8"
+	},
+
+	"tabBar": {
+		"color": "#333333",
+		"selectedColor": "#F0AD4E",
+		"backgroundColor": "#f5f5f5",
+		"list": [{
+				"pagePath": "pages/shouye/shouye",
+				"iconPath": "static/index.png",
+				"selectedIconPath": "static/index_checked.png",
+				"text": "首页"
+
+			},
+			{
+				"pagePath": "pages/tuandui/tuandui",
+				"iconPath": "static/team.png",
+				"selectedIconPath": "static/team_checked.png",
+				"text": "团队"
+
+			},
+			{
+				"pagePath": "pages/shouyi/shouyi",
+				"iconPath": "static/profit.png",
+				"selectedIconPath": "static/profit_checked.png",
+				"text": "收益"
+
+			},
+			{
+				"pagePath": "pages/wode/wode",
+				"iconPath": "static/user.png",
+				"selectedIconPath": "static/user_checked.png",
+				"text": "我的"
+
+			}
+
+		]
+	}
+}

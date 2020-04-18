@@ -1,0 +1,264 @@
+<template>
+	<view>
+		<view class="xian"></view>
+		<view class="addressBar">
+			<navigator url="../dizhi/dizhi">
+				<view class="addressBar-name">畅伙伴 150****8888</view>
+				<image class="addressBar-image" src="/static/jiantou.png"></image>
+				<view class="d-flex">
+					<view class="label">公司</view>
+					<view class="site">山东省济南市某某区某某路2204号</view>
+				</view>
+			</navigator>
+			<view class="caution"><text class="">为减少接触，您可以在收货详细地址后增加如小区北门、保安亭、等方便提货的地址</text></view>
+		</view>
+		<view class="hr"></view>
+		<view>
+			<view class="xian"></view>
+			<view class="header">
+				<image class="header-img" src="/static/2.png" style="height: 60upx; width: 60upx;"></image>
+				<view class="header-text">H9订单(3台)</view>
+			</view>
+			<view class="xixian"></view>
+			<view>
+				<view class="information">
+					<image class="information-img" src="https://ccx.changhuoban.com/public/upload/xcx/sct.png" mode="widthFix" />
+					<view class="information-view">
+						<view class="information-text">MP70普通版（3台）</view>
+						<view class="information-figure">¥594.00 × 1</view>
+						<view class="d-flex j-sb a-center" style="margin-left:80%; margin-top: -25%;">
+							<uni-number-box :min="1" :value="num" @change="num = $event"></uni-number-box>
+						</view>
+					</view>
+				</view>
+				<view class="mall-xian"></view>
+				<view class="total"><view class="total-text">合计：¥594.00</view></view>
+				<view class="xixian"></view>
+			</view>
+		</view>
+		<view class="pos">
+			<view class="post">实付款：</view>
+			<view class="pos-text">¥594.00</view>
+			<view class="pos-view1">
+				<navigator url="../zhifufangshi/zhifufangshi" open-type="navigate"><view class="pos-Text">提交订单</view></navigator>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script>
+import uniNumberBox from '@/components/uni-ui/uni-number-box/uni-number-box.vue';
+export default {
+	components: {
+		uniNumberBox
+	},
+	data() {
+		return {};
+	},
+
+	methods: {}
+};
+</script>
+
+<style>
+.xixian {
+	width: 96%;
+	height: 1upx;
+	margin-left: 2%;
+	background-color: #f1f1f1;
+}
+.xian {
+	width: 100%;
+	height: 25upx;
+	background-color: #f1f1f1;
+}
+.header {
+	display: flex;
+	margin-left: 20upx;
+	width: 80%;
+}
+.header-text {
+	height: 80upx;
+	line-height: 80upx;
+	font-size: 28upx;
+	font-weight: 600;
+	margin-left: 6upx;
+}
+.header-img {
+	margin-top: 1.5%;
+}
+page {
+	background-color: #fff;
+}
+.addressBar {
+	margin-top: 20upx;
+}
+.addressBar-name {
+	margin-left: 50upx;
+	margin-top: 20upx;
+	font-size: 33upx;
+	font-weight: 600;
+}
+.addressBar-image {
+	width: 40upx;
+	height: 40upx;
+	position: absolute;
+	right: 40upx;
+}
+.d-flex {
+	margin-left: 40upx;
+	font-size: 30upx;
+	margin-top: 5upx;
+}
+.caution {
+	color: #ff0000;
+	width: 90%;
+	margin-left: 5%;
+}
+
+.label {
+	border: 1px solid #007bff;
+	height: 38upx;
+	line-height: 38upx;
+	color: #007bff;
+	width: 80upx;
+	text-align: center;
+}
+.site {
+	height: 40upx;
+	line-height: 40upx;
+	margin-left: 10upx;
+}
+/* 分割线 */
+.hr {
+	width: 100%;
+	height: 1px;
+	display: block;
+	position: relative;
+	margin-top: 3%;
+}
+.hr:after,
+.hr:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 5px;
+	bottom: 0;
+	left: 0;
+}
+
+.hr:after {
+	-webkit-transition: opacity 0.3s ease, animation 0.3s ease;
+	transition: opacity 0.3s ease, animation 0.3s ease;
+	background: -webkit-linear-gradient(left, #62efab 5%, #f2ea7d 15%, #f2ea7d 25%, #ff8797 35%, #ff8797 45%, #e1a4f4 55%, #e1a4f4 65%, #82fff4 75%, #82fff4 85%, #62efab 95%);
+	background: linear-gradient(to right, #62efab 5%, #f2ea7d 15%, #f2ea7d 25%, #ff8797 35%, #ff8797 45%, #e1a4f4 55%, #e1a4f4 65%, #82fff4 75%, #82fff4 85%, #62efab 95%);
+	background-size: 200%;
+	background-position: 0%;
+	-webkit-animation: bar 15s linear infinite;
+	animation: bar 15s linear infinite;
+}
+/* 内容 */
+.information {
+	width: 100%;
+	display: flex;
+	height: 240rpx;
+}
+
+.information-img {
+	width: 30%;
+	margin-left: 30rpx;
+	margin-top: 17rpx;
+}
+
+.information-view {
+	margin-left: 40rpx;
+	margin-top: 50rpx;
+}
+
+.information-text {
+	font-size: 28rpx;
+}
+
+.information-figure {
+	margin-top: 60rpx;
+	font-size: 30upx;
+	color: red;
+}
+
+/*增加框*/
+.amount {
+	display: flex;
+	margin-left: 210rpx;
+	background-color: #c5c3c3;
+	width: 140rpx;
+	height: 54rpx;
+}
+
+.minus-input {
+	width: 60rpx;
+	text-align: center;
+	background-color: #fff;
+	margin-top: 2rpx;
+	height: 50rpx;
+}
+
+.amount-add {
+	width: 40rpx;
+	text-align: center;
+	margin-top: 5rpx;
+}
+
+/*合计*/
+.total {
+	width: 100%;
+	height: 80rpx;
+	position: relative;
+}
+
+.total-text {
+	position: absolute;
+	right: 40rpx;
+	top: 15rpx;
+	font-size: 28rpx;
+	color: red;
+}
+.mall-xian {
+	width: 98%;
+	height: 1px;
+	margin-left: 1%;
+	border-bottom: 1px dashed #c5c3c3;
+	margin-top: 20upx;
+}
+.pos {
+	width: 100%;
+	height: 80rpx;
+	position: fixed;
+	bottom: 0;
+	background-color: #f1f1f1;
+	display: flex;
+}
+
+.pos-text {
+	color: red;
+	font-size: 28rpx;
+	margin-top: 20rpx;
+	width: 30%;
+}
+.post {
+	margin-left: 20rpx;
+	margin-top: 18rpx;
+	font-size: 28rpx;
+	width: 20%;
+}
+.pos-Text {
+	margin-top: 20rpx;
+}
+.pos-view1 {
+	width: 25%;
+	font-size: 28rpx;
+	color: #fff;
+	background-color: red;
+	text-align: center;
+	margin-left: 290rpx;
+}
+</style>
