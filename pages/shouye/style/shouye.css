@@ -1,0 +1,105 @@
+/* 四个模块 */
+.modules-view {
+	width: 92%;
+	margin-left: 4%;
+	display: flex;
+	overflow: hidden;
+	margin-top: 3%;
+}
+.module {
+	width: 49%;
+	background-color: #fff;
+	display: flex;
+	margin-left: 1%;
+	border-radius: 5px;
+	position: relative;
+	height: 150upx;
+}
+.module-image {
+	width: 120upx;
+	height: 120upx;
+	margin-top: 20upx;
+	margin-left: 65%;
+}
+.module-text {
+	position: absolute;
+	left: 5%;
+	top: 20%;
+}
+.module-text2 {
+	font-size: 18upx;
+	color: #666;
+}
+
+/* 数据显示 */
+.datas {
+	background-color: #ffffff;
+	width: 92%;
+	margin-left: 4%;
+	border-radius: 5px;
+}
+.data {
+	display: flex;
+	width: 100%;
+}
+.deal {
+	text-align: center;
+	width: 50%;
+	height: 150upx;
+	line-height: 150upx;
+}
+.wire {
+	width: 1upx;
+	height: 90upx;
+	background-color: #d9d9d9;
+	margin-top: 3%;
+}
+.number {
+	margin-top: 6%;
+	font-size: 33upx;
+	font-weight: 600;
+	color: #ff0000;
+}
+.number_orign{
+	margin-top: 6%;
+	font-size: 33upx;
+	font-weight: 600;
+	color: #f98021!important;
+}
+.vertical {
+	width: 96%;
+	margin-left: 2%;
+	height: 1upx;
+	background-color: #d9d9d9;
+}
+/* 首页分类  */
+.row {
+	width: 92%;
+	margin-left: 4%;
+	background-color: #ffffff;
+	border-radius: 5px;
+}
+/* 公告 */
+.notice {
+	width: 92%;
+	height: 55rpx;
+	border-radius: 5px;
+	box-shadow: #d3d3d3 0 0 4px 0;
+	margin: 20rpx 4%;
+	display: flex;
+	background-color: #fff;
+}
+.notice-img {
+	width: 6%;
+	height: 6%;
+	margin-left: 4%;
+	margin-top: 0.8%;
+}
+
+.notice-text {
+	display: inline-block;
+	font-size: 28upx;
+	color: #666;
+	margin-left: 3%;
+	width: 87%;
+}

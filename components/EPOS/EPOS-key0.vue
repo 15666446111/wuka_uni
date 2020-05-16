@@ -12,6 +12,7 @@
 		</view>
 
 		<view class="way">
+			
 			<view class="way-view">
 				<view class="way-flex" @click="showBottom()">
 					<view class="way-name"><text>支付方式</text></view>
@@ -22,6 +23,7 @@
 			</view>
 
 			<view class="xian"></view>
+			
 			<view class="checkbox">
 				<checkbox class="radio" checked="true"></checkbox>
 				<text style="font-size: 28upx;">立即提现</text>
@@ -97,11 +99,11 @@
 		height: 100%;
 	}
 	.way-src {
-		width: 50upx;
-		height: 50upx;
+		width: 30upx;
+		height: 30upx;
 		position: absolute;
 		right: 20upx;
-		top: 35upx;
+		top: 45upx;
 	}
 	.way-name {
 		height: 120upx;

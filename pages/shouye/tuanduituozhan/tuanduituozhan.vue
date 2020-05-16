@@ -16,43 +16,17 @@
 <script>
 export default {
 	data() {
-		return {};
+		return {
+			
+		};
 	},
-	methods: {}
+	
+	methods: {
+		
+	}
 };
 </script>
 
 <style>
-.container2 {
-	width: 100%;
-	height: 100%;
-	margin-top: 50rpx;
-	overflow: hidden;
-}
-
-.img {
-	width: 90%;
-	height: 100%;
-	margin: 25rpx;
-}
-
-.sw {
-	width: 100%;
-	height: 1000rpx;
-}
-
-.back {
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	min-height: 1300rpx;
-}
-
-button {
-	width: 80%;
-	background-color: #f0ad4e;
-	color: white;
-	margin: 0 auto;
-	margin-top: 200rpx;
-}
+@import '../style/team_ext.css';
 </style>

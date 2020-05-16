@@ -1,0 +1,37 @@
+/**  在线客服页面 **/
+/* 隐藏滚动条 这个不能放在组件里*/
+/* ::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+	color: transparent;
+} */
+
+/* 选项卡 */
+.tab {
+	padding: 0;
+}
+.tab-title {
+	white-space: nowrap;
+	text-align: center;
+	background: #ffffff;
+}
+.tab-title view {
+	width: auto;
+	padding: 0 20px;
+	margin: 0 30px;
+	line-height: 42px;
+	display: inline-block;
+	text-align: center;
+	border-bottom: 2px solid #ffffff;
+	font-size: 30upx;
+}
+.tab-title view:first-child {
+	margin-left: 0;
+}
+.tab-title view:last-child {
+	margin-right: 0;
+}
+.tab-current {
+	border-bottom: 4upx solid #f98021 !important;
+	color: #f98021;
+}

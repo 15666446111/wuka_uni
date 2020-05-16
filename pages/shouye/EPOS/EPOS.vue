@@ -46,7 +46,10 @@ export default {
 			showKeyboard: false
 		};
 	},
+	
+	
 	onLoad() {},
+	
 	methods: {
 		close() {
 			this.show = false;

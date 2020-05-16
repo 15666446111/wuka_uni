@@ -2,8 +2,7 @@
 	"pages": [{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "",
-				"navigationBarTextStyle": "black"
+				"app-plus":{"titleNView": false}
 			}
 		},
 		{
@@ -320,7 +319,7 @@
 		}, {
 			"path": "pages/index/register",
 			"style": {
-				"navigationBar": "none"
+				"app-plus":{"titleNView": false}
 			}
 		}, {
 			"path": "pages/shouye/shanghuguanli/huodongxiangqing/huodongxiangqing",

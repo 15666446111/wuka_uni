@@ -1,6 +1,5 @@
 <template>
 	<view>
-		
 		<view class="logo-view">
 			<image class="logo" src="/static/index/logo.png"></image>
 		</view>
@@ -25,23 +24,40 @@
 		<view class="d-flex">
 			<view class="d-box">
 				<view class="forget">忘记密码？</view>
-				<view class="forget register"><navigator url="./register">用户注册</navigator></view>
+				<view class="forget register">
+					<navigator url="/pages/index/register">
+						用户注册
+					</navigator>
+				</view>
 			</view>
 		</view>
 		
 		<view class="annotation">
 			<text>注册即代表同意</text>
-			<text style="color:#ff9800;">《畅伙伴服务协议》</text>
+			<text style="color:#ff9800;" @click="apply">《畅伙伴服务协议》</text>
+			<uni-popup ref="popup" type="bottom">
+				<scroll-view style="background-color: white; height: 1000upx;" scroll-y="true" show-scrollbar="false">
+					{{ applyText }}
+				</scroll-view>
+			</uni-popup>
 		</view>
 	</view>
+	
+	
 </template>
 
 <script>
+import uniPopup from '@/components/uni-popup/uni-popup.vue'
+
 export default {
+	
+	components: {uniPopup},
+	
 	data() {
 		return {
 			account: '',
 			password: '',
+			applyText: '<div>345</div>',
 			//验证规则
 			rules: {
 				account: [
@@ -60,6 +76,9 @@ export default {
 		};
 	},
 	methods: {
+		apply(){
+			this.$refs.popup.open()
+		},
 		
 		//表单验证
 		validate(key) {
@@ -89,28 +108,23 @@ export default {
 			};
 			
 			uni.request({
-				url: 'http://www.chb.com/api/V1/login',
+				url: 'http://wuka.test/api/V1/login',
 				method: 'POST',
 				data: {
 					account: this.account,
 					password: this.password
 				},
 				success: res => {
-					// var jsarr=JSON.parse(res.data);
-					console.log(res.data.success != undefined);
-					if (res.data.success) {
-						uni.switchTab({
-							url: '/pages/shouye/shouye'
-						});
-						uni.showToast({
-							title: '登录成功',
-							icon: 'none'
-						});
+					if (res.data.success.token) {
+						try {
+							uni.setStorageSync('token', res.data.success.token);
+							uni.switchTab({ url: '/pages/shouye/shouye' });
+							uni.showToast({ title: '登录成功', icon: 'none' });
+						} catch (e) {
+							uni.showToast({ title: '网络错误,请重试', icon: 'none' });
+						}
 					} else {
-						uni.showToast({
-							title: res.data.error.message,
-							icon: 'none'
-						});
+						uni.showToast({ title: res.data.error.message, icon: 'none' });
 					}
 				},
 				fail: () => {},

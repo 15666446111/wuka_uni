@@ -100,7 +100,7 @@ export default {
 	height: 100%;
 	width: 94%;
 	margin-left: 3%;
-	border-radius: 10px;
+	border-radius: 5px;
 	box-shadow: #ddd 3px 3px 8px 3px;
 	margin-top: 2%;
 }
@@ -117,11 +117,11 @@ export default {
 	height: 50upx;
 }
 .gy-list-src {
-	top: 30upx;
+	top: 40upx;
 	position: absolute;
-	right: 40upx;
-	width: 40upx;
-	height: 40upx;
+	right: 20upx;
+	width: 25upx;
+	height: 25upx;
 }
 .gy-list-text {
 	margin-top: 30upx;
@@ -135,7 +135,7 @@ export default {
 	width: 94%;
 	position: relative;
 	margin-left: 3%;
-	border-radius: 10px;
+	border-radius: 5px;
 	box-shadow: #ddd 3px 3px 8px 3px;
 	margin-top: 2%;
 }
@@ -172,7 +172,7 @@ export default {
 	background-color: #fff;
 	margin-top: 2%;
 	margin-left: 3%;
-	border-radius: 10px;
+	border-radius: 5px;
 	box-shadow: #ddd 3px 3px 8px 3px;
 }
 .gy-wallet {
