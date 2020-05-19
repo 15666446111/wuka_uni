@@ -9,15 +9,6 @@
 			</view>
 
 			<view class="performance d-flex" style="margin-top: 2%;">
-				<!-- 代理栏 -->
-				<view class=" agency">
-					<view v-for="(item, index) in agency" :key="index" @tap="changeCate(index)">
-						<view class="agency-view">
-							<view class="agency-text" :class="activeIndex === index ? 'agency-text2' : ''">{{ item.name }}</view>
-						</view>
-						<view class="agency-xian"></view>
-					</view>
-				</view>
 				
 				<view class="vertical"></view>
 				<!-- 数据 -->
@@ -49,7 +40,6 @@ export default {
 		return {
 			activeInde: 0,
 			activeIndex: 0,
-			agency: [{ name: '我 的' }, { name: '畅 伙 伴' }, { name: '畅 伙 伴' }, { name: '畅 伙 伴' }],
 			select: [{ name: '按日查询' }, { name: '按月查询' }],
 			data: [
 				{
@@ -165,12 +155,13 @@ export default {
 }
 /* 数据 */
 .datas {
-	width: 74%;
+	width: 98%;
+	margin-left: 1%;
 	background-color: #fff;
 }
 .times {
 	width: 100%;
-	height: 105upx;
+	height: 80upx;
 	display: flex;
 	background-color: #f2f2f2;
 }
@@ -202,11 +193,11 @@ export default {
 }
 
 .image {
-	width: 50upx;
-	height: 50upx;
+	width: 30upx;
+	height: 30upx;
 	position: absolute;
 	right: 20upx;
-	top: 25upx;
+	top: 35upx;
 }
 .deal {
 	margin-left: 3%;

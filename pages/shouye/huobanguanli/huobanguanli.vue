@@ -13,16 +13,16 @@
 			<view class="content">
 				
 				<view v-for="(item,index) in team" :key="item.id">
-				<navigator url="/pages/shouye/huobanguanli/huobanxiangqing/huobanxiangqing">
+				<navigator :url="'/pages/shouye/huobanguanli/huobanxiangqing/huobanxiangqing?user='+item.id">
 				<view class="detail">
-						<image class="detail-image" src="../../../static/huoban/tb.png"  />
+						<image :src="item.headimg" class="detail-image"/>
 						<view class="partner">
 							<view class="detail-name">{{ item.nickname}}</view>
 						</view>
 						<view class="money">
 							<view class="money-text">注册时间：{{ item.created_at}}</view>
 						</view>
-						<image class="money-image" src="../../../static/jiantou.png"></image>
+						<image src="/static/jiantou.png" class="money-image"></image>
 				</view>
 				</navigator>
 				</view>

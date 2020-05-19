@@ -5,14 +5,14 @@
 			<view class="titlebar">
 				<view class="rise">
 					<view class="rise-head">
-						<image class="head" src="../../../../static/huoban/tb.png" />
-						<view class="name">畅伙伴</view>
+						<image :src=UserInfo.headimg class="head" />
+						<view class="name">{{ UserInfo.nickname }}</view>
 						<view class="shiming">
 							<image class="shiming-image" src="../../../../static/xz1.png" />
 							<view class="shiming-text">已实名</view>
 						</view>
 						<view class="id">
-							<view class="zhanghao">账号15812345678</view>
+							<view class="zhanghao">账号:{{ UserInfo.account }}</view>
 						</view>
 					</view>
 				</view>
@@ -23,22 +23,17 @@
 		<view class="backgroundColor">
 			<view class="data">
 				<view class="phone">手机号</view>
-				<view class="mark">15812345678</view>
+				<view class="mark">{{ UserInfo.account }}</view>
 			</view>
 			<view class="dara-xian"></view>
 			<view class="data">
 				<view class="phone">注册时间</view>
-				<view class="mark">2019年12月6日</view>
+				<view class="mark">{{ UserInfo.created_at }}</view>
 			</view>
 			<view class="dara-xian"></view>
 			<view class="data">
 				<view class="phone">状态</view>
-				<view class="mark">正常</view>
-			</view>
-			<view class="dara-xian"></view>
-			<view class="data">
-				<view class="phone">級別</view>
-				<view class="mark">C1</view>
+				<view class="mark">{{ UserInfo.active }}</view>
 			</view>
 			<view class="dara-xian"></view>
 			<view class="data">
@@ -84,11 +79,36 @@
 </template>
 
 <script>
+import net from '../../../../common/net.js';
+	
 export default {
 	data() {
-		return {};
+		return {
+			UserInfo: {},
+		};
 	},
-	methods: {}
+	
+	onLoad: function (options){
+		// 获取伙伴信息
+		this.getUserInfo(options.user);
+	},
+	
+	methods: {
+	  	getUserInfo(user){
+	    	net({
+	        	url:"/V1/userInfo",
+	            method:'POST',
+				data:{
+					team_user: user,
+				},
+	            success: (res) => {
+					this.UserInfo = res.data.success.data;
+	            },
+				fail: () => { console.log("22") },
+				complete: () => { console.log("33") }
+	      	})
+		},
+	}
 };
 </script>
 

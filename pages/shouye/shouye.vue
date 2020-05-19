@@ -126,11 +126,7 @@ export default {
 				{ src: '/static/5.png', text: '商城购买', url: '/pages/shouye/shangcheng/shangcheng' },
 				{ src: '/static/4.png', text: '团队拓展', url: '/pages/shouye/tuanduituozhan/tuanduituozhan' },
 				{ src: '/static/44.png', text: '伙伴管理', url: '/pages/shouye/huobanguanli/huobanguanli' },
-				{ src: '/static/8.png', text: '在线客服', url: '/pages/shouye/zaixiankefu/zaixiankefu' },
-				{ src: '/static/wd/jj.png', text: '机具管理' ,url:"/pages/shouye/shangcheng/shangcheng"},
-				{ src: '/static/4.png', text: '账单规划' ,url:"/pages/shouye/tuanduituozhan/tuanduituozhan"},
-				{ src: '/static/44.png', text: '产品使用' ,url:"/pages/shouye/huobanguanli/huobanguanli"},
-				{ src: '/static/8.png', text: '收益明细' ,url:"/pages/shouye/zaixiankefu/zaixiankefu"}
+				{ src: '/static/8.png', text: '在线客服', url: '/pages/shouye/zaixiankefu/zaixiankefu' }
 			]
 		};
 	},

@@ -1,0 +1,90 @@
+.head-img {
+	width: 100%;
+}
+
+.head-view {
+	margin-top: 15rpx;
+	margin-left: 5%;
+	width: 90%;
+}
+
+.head-text {
+	font-size: 40rpx;
+}
+
+.head-money {
+	font-size: 30rpx;
+	color: red;
+	margin-top: 15rpx;
+}
+/* 文字介绍 */
+.xian {
+	width: 100%;
+	height: 1px;
+	background-color: #c5c3c3;
+	margin-top: 10rpx;
+}
+.xian-text {
+	width: 90%;
+	height: 45rpx;
+	margin-top: 18rpx;
+	margin-left: 5%;
+	color: #333;
+	font-size: 28rpx;
+}
+
+.introduces {
+	width: 90%;
+	margin-left: 4%;
+	margin-top: 10rpx;
+	height: 1200rpx;
+}
+.introduce-view {
+	margin-top: 20rpx;
+	font-size: 27rpx;
+	color: #666;
+}
+.introduce-name {
+	font-size: 30rpx;
+	font-weight: 600;
+	height: 50rpx;
+	margin-top: 20rpx;
+}
+.introduce-name1 {
+	font-size: 35rpx;
+	font-weight: 600;
+	height: 50rpx;
+	margin-top: 20rpx;
+}
+	/* 底层 */
+	.select-view{
+		height: 180upx;
+	}
+.type {
+	font-size: 28upx;
+	font-weight: 600;
+	margin-left: 3%;
+	height: 80upx;
+	line-height: 80upx;
+	width: 40%;
+}
+.MP70{
+	width: 30%;
+	height: 60upx;
+	line-height: 60upx;
+	border: 1px solid #f98021;
+	font-size: 25upx;
+	text-align: center;
+	background-color: rgba(255,130,71, 0.7); 
+	margin-left: 10%;
+	color: #fff;
+	margin-top: 2%;
+}
+.mall-xian1 {
+	width: 94%;
+	height: 1px;
+	margin-top: 3%;
+	margin-left: 3%;
+/* 	background-color: #c5c3c3; */
+	border-bottom: 1px dashed #c7c7c7;
+}

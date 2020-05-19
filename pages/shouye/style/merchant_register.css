@@ -1,0 +1,24 @@
+/* 隐藏滚动条 这个不能放在组件里*/
+/* ::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+	color: transparent;
+} */
+
+/* 选项卡 */
+.body{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+/*  */
+.container2 {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.img {
+	width: 100%;
+	height: 100%;
+}

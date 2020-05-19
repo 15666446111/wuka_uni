@@ -1,0 +1,57 @@
+.body {
+	overflow: hidden;
+}
+
+.top {
+	display: flex;
+	font-size: 28rpx;
+	overflow: hidden;
+}
+
+.bview {
+	margin-left: 80rpx;
+	margin-top: 20rpx;
+	margin-bottom: 10rpx;
+}
+
+.bviews {
+	width: 100%;
+	height: 150upx;
+	background-color: white;
+	margin-top: 20upx;
+}
+
+.bview1 {
+	position: relative;
+	display: flex;
+	height: 200upx;
+	line-height: 200upx;
+}
+
+.title {
+	position: absolute;
+	left: 20upx;
+	top: 10upx;
+	font-size: 26upx;
+}
+
+.time {
+	position: absolute;
+	right: 10rpx;
+	top: 10rpx;
+	font-size: 26rpx;
+}
+
+.text {
+	width: 100%;
+	position: absolute;
+	top: 50rpx;
+	left: 20rpx;
+	font-size: 24rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: rgb(136, 136, 136);
+	height: 80upx;
+	line-height: 80upx;
+}
