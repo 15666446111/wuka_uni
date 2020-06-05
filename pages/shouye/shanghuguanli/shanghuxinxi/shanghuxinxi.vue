@@ -6,14 +6,9 @@
 				<view class="rise">
 					<view class="rise-head">
 						<image class="head" src="/static/huoban/tb.png" />
-						<view class="name">畅伙伴</view>
-						<view class="shiming">
-							<image class="shiming-image" src="/static/xz1.png" />
-							<view class="shiming-text">已实名</view>
-						</view>
+						<view class="name">{{ merchantInfo.merchant_name }}</view>
 						<view class="id">
-							<view class="ID">ID:80000001</view>
-							<view class="zhanghao">账号15812345678</view>
+							<view class="ID">SN:{{ merchantInfo.merchant_sn ? merchant_sn : "" }}</view>
 						</view>
 					</view>
 				</view>
@@ -23,7 +18,7 @@
 		<view class="backgroundColor">
 			<view class="data">
 				<view class="phone">手机号</view>
-				<view class="mark">15812345678</view>
+				<view class="mark">{{ merchantInfo.merchant_phone }}</view>
 			</view>
 			<view class="dara-xian"></view>
 			<view class="data">
@@ -33,7 +28,7 @@
 			<view class="dara-xian"></view>
 			<view class="data">
 				<view class="phone">激活状态</view>
-				<view class="mark">已激活</view>
+				<view class="mark">{{ merchantInfo.active_status == '1' ? '已激活' : '未激活' }}</view>
 			</view>
 			<view class="dara-xian"></view>
 			<navigator url="../huodongxiangqing/huodongxiangqing">
@@ -61,6 +56,8 @@
 </template>
 
 <script>
+import net from '../../../../common/net.js';
+	
 export default {
 	data() {
 		return {
@@ -70,10 +67,31 @@ export default {
 	},
 	
 	onLoad(options) {
-		this.mid = options.id;
+		this.mid = options.id ? options.id : '1';
+		// 获取商户详细信息
+		this.getMerchangInfo(this.mid);
 	},
 	
-	methods: {}
+	methods: {
+		// 获取商户列表
+		getMerchangInfo(mid){
+			net({
+				url: '/V1/getMerchantInfo',
+				method: 'GET',
+				data:{
+					id:mid
+				},
+				success: (res) => {
+					if(res.data.success){
+						this.merchantInfo = res.data.success.data;
+					}
+					console.log(res)
+				}
+			})
+		}
+		
+		
+	}
 };
 </script>
 

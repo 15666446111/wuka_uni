@@ -339,6 +339,9 @@
 		}, {
 			"path": "pages/shouye/chepingyangshi/chepingyangshi",
 			"style": {}
+		}, {
+			"path": "pages/Article/ArtilcleDetail",
+			"style": {}
 		}
 
 	],

@@ -53,6 +53,7 @@ export default {
 	        	url:"/V1/my_team",
 	            method:'get',
 	            success: (res) => {
+					console.log(res)
 					this.team = res.data.success.data.list;
 	            } 
 	      	})

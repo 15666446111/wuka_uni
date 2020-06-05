@@ -107,6 +107,7 @@ export default {
 					if (res.data.success.data.group_id == 1) {
 						this.getUserPoster();
 					} else {
+						this.getUserPoster();
 						this.getAgentPoster();
 					}
 	            }
@@ -119,6 +120,7 @@ export default {
 	        	url:"/V1/team_share",
 	            method:'get',
 	            success: (res) => {
+					console.log(res);
 					this.agentPoster = res.data.success.data.link;
 	            }
 	      	})

@@ -8,7 +8,7 @@
 			</view>
 		</view>
 		
-<!-- 选择框2 -->
+		<!-- 选择框2 -->
 		<view class="dis-fix" style="height: 80rpx;" scroll-with-animation="true">	
 			<view
 				class="dis-div"
