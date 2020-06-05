@@ -7,14 +7,9 @@
 				<view class="rise">
 					<view class="rise-head">
 						<image class="head" :src="UserInfo.headimg" mode="widthFix" />
-						<view class="name">{{ UserInfo.nickname}}
-							<view class="shiming">
-								<image class="shiming-img" src="/static/xz.png" />
-								<view class="shiming-text">已实名</view>
-							</view>
-						</view>
+						<view class="name">{{ UserInfo.nickname}}</view>
 					</view>
-					<view class="ID">ID:80000001</view>
+					<!-- <view class="ID">ID:80000001</view> -->
 				</view>
 			</view>
 
@@ -38,12 +33,12 @@
 				<view class="eings d-flex">
 					<view class="eings-view">
 						<view style="color: #666;">分润钱包(元)</view>
-						<view style="color: #EE9900;">0.00</view>
+						<view style="color: #EE9900;">{{UserInfo.cash_blance}}</view>
 					</view>
 					<view class="shuxian"></view>
 					<view class="eings-view">
 						<view style="color: #666;">返现钱包(元)</view>
-						<view style="color: #EE9900;">0.00</view>
+						<view style="color: #EE9900;">{{UserInfo.return_blance}}</view>
 					</view>
 				</view>
 			</view>
@@ -71,21 +66,15 @@
 					<view class="across"></view>
 				</navigator>
 				
-				<navigator class="url" url="wodezhengc/wodezhengc">
+				<view class="across"></view>
+				
+				<navigator class="url" :url="'wodezhengc/wodezhengc?uid=' + UserInfo.id">
 					<view class="div">
 						<image class="div-img" src="/static/wd/cp.png" />
 						<view class="div-text">我的政策</view>
 						<image class="arrows" src="/static/jiantou.png" />
 					</view>
 					<view class="across"></view>
-				</navigator>
-
-				<navigator class="url" url="jifenshangcheng/jifenshangcheng">
-					<view class="div">
-						<image class="div-img" src="/static/wd/sc.png" />
-						<view class="div-text">积分商城</view>
-						<image class="arrows" src="/static/jiantou.png" />
-					</view>
 				</navigator>
 
 				<view class="across"></view>
@@ -116,14 +105,6 @@
 					<view class="across"></view>
 				</navigator>
 				
-				<navigator class="url" url="/pages/wode/shimingrenzheng/shimingrenzheng">
-					<view class="div">
-						<image class="div-img" src="/static/wd/rz.png" />
-						<view class="div-text">实名认证</view>
-						<image class="arrows" src="/static/jiantou.png" />
-					</view>
-				</navigator>
-				
 			</view>
 			<!-- 第三 -->
 			<view class="Bar1"></view>
@@ -141,6 +122,8 @@ export default {
 				'headimg' : null,
 				'nickname': null,
 				'blance': '0.00',
+				'cash_blance': '0.00',
+				'return_blance': '0.00',
 			}
 		}
 	},
@@ -148,17 +131,16 @@ export default {
 	// 初始化数据
 	onLoad(){
 		this.getUserInfo();
-		console.log(this.UserInfo)
 	},
 	
-	
 	methods: {
-		// 获取轮播图
+		// 获取个人信息
 	  	getUserInfo(){
 	    	net({
 	        	url:"/V1/mine",
 	            method:'get',
 	            success: (res) => {
+					console.log(res);
 					this.UserInfo = res.data.success.data;
 	            }
 	      	})

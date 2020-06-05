@@ -6,9 +6,9 @@
 }
 
 .img {
-	width: 90%;
-	height: 100%;
-	margin: 25rpx;
+	/* width: 90%; */
+	height: 90%;
+	margin: 50rpx auto;
 }
 
 .sw {
@@ -28,5 +28,5 @@ button {
 	background-color: #f0ad4e;
 	color: white;
 	margin: 0 auto;
-	margin-top: 200rpx;
+	margin-top: 50rpx;
 }

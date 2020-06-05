@@ -24,22 +24,7 @@
 		<view class="d-flex">
 			<view class="d-box">
 				<view class="forget">忘记密码？</view>
-				<view class="forget register">
-					<navigator url="/pages/index/register">
-						用户注册
-					</navigator>
-				</view>
 			</view>
-		</view>
-		
-		<view class="annotation">
-			<text>注册即代表同意</text>
-			<text style="color:#ff9800;" @click="apply">《畅伙伴服务协议》</text>
-			<uni-popup ref="popup" type="bottom">
-				<scroll-view style="background-color: white; height: 1000upx;" scroll-y="true" show-scrollbar="false">
-					{{ applyText }}
-				</scroll-view>
-			</uni-popup>
 		</view>
 	</view>
 	
@@ -108,23 +93,23 @@ export default {
 			};
 			
 			uni.request({
-				url: 'http://wuka.test/api/V1/login',
+				url: 'http://zy.jiufukameng.com/api/V1/login',
 				method: 'POST',
 				data: {
 					account: this.account,
 					password: this.password
 				},
 				success: res => {
-					if (res.data.success.token) {
-						try {
+					try {
+						if (res.data.success && res.data.success.token) {
 							uni.setStorageSync('token', res.data.success.token);
 							uni.switchTab({ url: '/pages/shouye/shouye' });
 							uni.showToast({ title: '登录成功', icon: 'none' });
-						} catch (e) {
-							uni.showToast({ title: '网络错误,请重试', icon: 'none' });
+						} else {
+							uni.showToast({ title: res.data.error.message, icon: 'none' });
 						}
-					} else {
-						uni.showToast({ title: res.data.error.message, icon: 'none' });
+					} catch (e) {
+						uni.showToast({ title: '网络错误,请重试', icon: 'none' });
 					}
 				},
 				fail: () => {},

@@ -19,17 +19,14 @@
 			{{ productInfo.content }}
 		</view>
 		<!-- 底部 -->
-<!-- 		<buttom-btn></buttom-btn> -->
-		<view style="height: 100upx;"></view>
+		<!-- <view style="height: 100upx;"></view> -->
 		
 		<view class="d-flex a-stretch bg-white position-fixed left-0 right-0 bottom-0" style="height: 100upx; z-index: 100;">
 			<view class="d-flex flex-column a-center j-center line-h-md " style="flex: 1.5; color: red;" hover-class="bg-light-secondary">
 				价格:￥{{ productInfo.price }}
 			</view>
-			<!--
-			-->
-			<view class="d-flex flex-column a-center j-center line-h-md main-bg-color text-white"
-			style="flex: 1; background-color: red;" @click="show">立即购买</view>
+			<!-- -->
+			<view class="d-flex flex-column a-center j-center line-h-md main-bg-color text-white" style="flex: 1; background-color: red;" @click="show">立即购买</view>
 			<!--</navigator>-->
 		</view>
 		<!-- 底部弹出框 -->
@@ -45,20 +42,15 @@
 			<view class="select">
 				<view class="type">名称</view>
 				<view class="MP70">{{ productInfo.title }}</view>
-				<view class="select-view">
-				<view class="type">类型</view>
-				<view class="MP70">{{ productInfo.type }}</view>
-				</view>
-				<view class="d-flex j-sb a-center p-2 border-top border-light-secondary"></view>
+				<view class="select-view"></view>
 				<view class="d-flex j-sb a-center">
 					<text>购买数量</text>
 					<uni-number-box :min="1" :value="num" @change="num=$event"></uni-number-box>
 				</view>
+				
 				<navigator url="../querendingdan/querendingdan">
 					<view 
-						class="main-bg-color text-white font-md d-flex a-center j-center"  
-						hover-class="main-bg-hover-color"
-						style="height: 100rpx; margin-left: -30rpx; margin-right: -30rpx; margin-top: 11%;">
+						class="main-bg-color text-white font-md d-flex a-center j-center" hover-class="main-bg-hover-color">
 						立即购买
 					</view>
 				</navigator>
@@ -70,12 +62,13 @@
 <script>
 import commonPopup from '@/components/common/common-popup.vue';
 import radioGroup from '@/components/common/radio-group.vue';
+import uniNumberBox from '@/components/uni-ui/uni-number-box/uni-number-box.vue';
 
 import net from '../../../../common/net.js';
 
 export default {
 	
-	components: { commonPopup, radioGroup },
+	components: { commonPopup, radioGroup, uniNumberBox },
 	
 	data() {
 		return {

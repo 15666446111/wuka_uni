@@ -1,5 +1,4 @@
 .bank-card {
-  background-color: #fff;
   box-shadow: #d9d9d9 0 0 4px 0;
   margin-top: 20rpx;
 }
@@ -9,6 +8,7 @@
   width: 100%;
   position: relative;
   height: 80rpx;
+  background-color: #fff;
 }
 
 .bank-name {

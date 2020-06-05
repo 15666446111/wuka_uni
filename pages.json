@@ -269,6 +269,9 @@
 			"path": "pages/wode/shezhi/xiugaijiesuanxinxi/xiugaijiesuanxinxi",
 			"style": {}
 		}, {
+			"path": "pages/wode/shezhi/xiugaijiesuanxinxi/settle_card_edit",
+			"style": {}
+		}, {
 			"path": "pages/wode/jijuguanli/jijuchakan/jijuchakan",
 			"style": {}
 		}, {

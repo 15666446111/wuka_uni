@@ -3,131 +3,76 @@
 		<view class="sousuo">
 			<view class="sousuo-view">
 				<image class="input-image" src="/static/left_fdj.png" mode="aspectFit"></image>
-				<input class="input" placeholder="请正确输入伙伴手机号" />
+				<input class="input" placeholder="请输入机器终端号" />
 			</view>
 		</view>
-		<view class="view">
-			<view class="checkbox-view">
-				<text class="checkbox-text">SN:123456789987654</text>
-				<checkbox class="checkbox" color="#f98021"></checkbox>
+		<radio-group @change="getTermNum">
+			<view class="view">
+				<label class="term-info" v-for="(item, index) in termList" :key="index">
+					<view class="checkbox-view">
+						<text class="checkbox-text">终端号：{{ item.merchant_terminal }}</text>
+						<radio class="checkbox" color="#f98021" v-model="item.merchant_terminal" />
+					</view>
+					<view class="xian"></view>
+				</label>
 			</view>
-			<view class="xian"></view>
-			<view class="checkbox-view">
-				<text class="checkbox-text">SN:123456789987654</text>
-				<checkbox class="checkbox" color="#f98021"></checkbox>
-			</view>
-			<view class="xian"></view>
-			<view class="checkbox-view">
-				<text class="checkbox-text">SN:123456789987654</text>
-				<checkbox class="checkbox" color="#f98021"></checkbox>
-			</view>
-			<view class="xian"></view>
-			<view class="checkbox-view">
-				<text class="checkbox-text">SN:123456789987654</text>
-				<checkbox class="checkbox" color="#f98021" ></checkbox>
-			</view>
-			<view class="xian"></view>
-			<view class="checkbox-view">
-				<text class="checkbox-text">SN:123456789987654</text>
-				<checkbox class="checkbox" color="#f98021"></checkbox>
-			</view>
-			<view class="xian"></view>
-			<view class="checkbox-view">
-				<text class="checkbox-text">SN:123456789987654</text>
-				<checkbox class="checkbox" color="#f98021"></checkbox>
-			</view>
-			<view class="xian"></view>
-			<view class="checkbox-view">
-				<text class="checkbox-text">SN:123456789987654</text>
-				<checkbox class="checkbox" color="#f98021"></checkbox>
-			</view>
-			<view class="xian"></view>
-			<view class="checkbox-view">
-				<text class="checkbox-text">SN:123456789987654</text>
-				<checkbox class="checkbox" color="#f98021"></checkbox>
-			</view>
-		</view>
+		</radio-group>
+		
+		<button class="term-define" @click="define">确定</button>
+		
+		<view class="public-empty-tips" v-if="termList == ''">没有需要登记的终端信息~</view>
 	</view>
 </template>
 
 <script>
+import net from '../../../../common/net.js';
+
 export default {
 	data() {
-		return {};
+		return {
+			// 机器列表
+			termList: [],
+			// 终端号
+			terminal: '',
+		};
 	},
-	methods: {}
+	
+	onLoad() {
+		uni.showLoading();
+		
+		// 获取终端信息
+		this.getTermList();
+	},
+	
+	methods: {
+		// 获取终端信息
+		getTermList(){
+			net({
+	        	url:"/V1/getNoBindMerchant",
+	            method:'get',
+	            success: (res) => {
+					uni.hideLoading();
+					this.termList = res.data.success.data;
+	            }
+	      	})
+		},
+		
+		// 获取radio选中的值
+		getTermNum(e){
+			this.terminal = e.detail.value;
+		},
+		
+		define(){
+			uni.redirectTo({
+				url: "../shanghudengji?terminal=" + this.terminal
+			})
+		}
+		
+		
+	}
 };
 </script>
 
 <style>
-uni-checkbox .uni-checkbox-input {
-	border-radius: 50% !important;
-	color: #ffffff !important;
-	transform: scale(0.8, 0.8);
-}
-
-uni-checkbox .uni-checkbox-input.uni-checkbox-input-checked {
-	color: #fff;
-	border-color: #f0ad4e;
-	background: #f0ad4e;
-}
-uni-checkbox .uni-checkbox-input.uni-checkbox-input-checked:after {
-	font-size: 18px;
-}
-/* 搜索框 */
-.sousuo {
-	width: 90%;
-	margin-left: 5%;
-	background-color: #fff;
-	border-radius: 15upx 15upx 15upx 15upx;
-	box-shadow: #d9d9d9 0 0 4px 0;
-	margin-top: 2%;
-}
-.sousuo-view {
-	width: 100%;
-	display: flex;
-	margin-left: 3%;
-}
-.input-image {
-	width: 60upx;
-	height: 60upx;
-	margin-top: 10upx;
-}
-.input {
-	border: 0;
-	width: 88%;
-	height: 80upx;
-}
-
-/* 内容 */
-.view {
-	width: 92%;
-	height: 100%;
-	margin-left: 4%;
-	background-color: #ffffff;
-	margin-top: 2%;
-}
-
-.checkbox-view {
-	width: 100%;
-	height: 100upx;
-	line-height: 100upx;
-	border-radius: 15upx 15upx 15upx 15upx;
-	position: relative;
-}
-.checkbox-text {
-	margin-left: 5%;
-	font-size: 31upx;
-	color: #333;
-}
-.checkbox {
-	position: absolute;
-	right: 5%;
-}
-.xian {
-	width: 96%;
-	margin-left: 2%;
-	height: 1upx;
-	background-color: #f1f1f1;
-}
+@import url("../../style/term_opt.css");
 </style>

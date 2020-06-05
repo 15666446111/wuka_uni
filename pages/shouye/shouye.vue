@@ -20,7 +20,7 @@
 
 		<!-- 数据显示 -->
 		<view class="datas">
-			<view class="data ">
+			<view class="data">
 				<view class="deal">
 					<view class="number">{{ info.MonthTrade}}</view>
 					<view class="text">月交易额</view>
@@ -45,45 +45,6 @@
 			</view>
 		</view>
 		
-		<!-- 四个模块 -->
-		<view class="modules-view">
-			<view class="module">
-				<navigator url="../index/index">
-					<view class="module-text">
-						<view class="module-text1">赋鸿财商</view>
-						<view class="module-text2">百万财商俱乐部</view>
-					</view>
-				</navigator>
-				<image class="module-image" src="../../static/7.png"></image>
-			</view>
-
-			<view class="module">
-				<navigator url="../index/login">
-					<view class="module-text">
-						<view class="module-text1">卡测评</view>
-						<view class="module-text2">给信用卡做次体检</view>
-					</view>
-				</navigator>
-				<image class="module-image" src="../../static/10.png"></image>
-			</view>
-		</view>
-		<view class="modules-view">
-			<view class="module">
-				<view class="module-text">
-					<view class="module-text1">信用卡申请</view>
-					<view class="module-text2">高额佣金 在线秒批</view>
-				</view>
-				<image class="module-image" src="../../static/11.png"></image>
-			</view>
-			<view class="module">
-				<view class="module-text">
-					<view class="module-text1">积分兑换</view>
-					<view class="module-text2">积分变现 高额收益</view>
-				</view>
-				<image class="module-image" src="../../static/12.png"></image>
-			</view>
-		</view>
-		<view style="height: 150upx;"></view>
 	</view>
 </template>
 
@@ -149,6 +110,7 @@ export default {
 	        	url:"/V1/plug",
 	            method:'get',
 	            success: (res) => {
+					console.log(res.data.success.data);
 					this.swipers = res.data.success.data;
 	            } 
 	      	})

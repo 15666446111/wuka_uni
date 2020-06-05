@@ -1,7 +1,9 @@
 <template>
 	<view class="body">
 		<view class="container2">
-			<image :src=src class="img"></image>
+			<swiper class="sw">
+				<swiper-item><image mode="aspectFit" :src=images class="img"></image></swiper-item>
+			</swiper>
 		</view>
 		<button>长按图片保存</button>
 	</view>
@@ -13,7 +15,7 @@ import net from '../../../common/net.js';
 export default {
 	data() {
 		return {
-			src : null
+			images: ''
 		};
 	},
 	
@@ -28,14 +30,16 @@ export default {
 	        	url:"/V1/merchant_share",
 	            method:'get',
 	            success: (res) => {
-					this.src = res.data.success.data.link;
-	            } 
+					console.log(res);
+					this.images = res.data.success.data.link;
+	            }
 	      	})
 		}
 	},
 };
 </script>
 
+
 <style>
-@import '../style/merchant_register.css';
+@import '../style/team_ext.css';
 </style>

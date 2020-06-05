@@ -13,7 +13,7 @@
 		<view class="body">
 			<view class="select-view tab">
 				<view class="select-text" @tap="toggleTab('selector')">{{ resultInfo.result }}</view>
-				<w-picker mode="selector" defaultVal="分润钱包" @confirm="onConfirm" ref="selector" themeColor="#f00" :selectList="selectList"></w-picker>
+				<w-picker mode="selector" @confirm="onConfirm" ref="selector" themeColor="#f00" :selectList="selectList"></w-picker>
 				<image class="select-image" src="/static/EPOS/jiantou.png" />
 			</view>
 			<view class="bview">
@@ -62,26 +62,44 @@ export default {
 				{
 					label: '返现钱包',
 					value: 2
-				},
-				{
-					label: '其他钱包',
-					value: 3
 				}
 			],
 			resultInfo: {
-				result: '请选择提现钱包'
-			}
+				result: '请选择提现钱包',
+				value: ''
+			},
+			// 用户信息
+			UserInfo: [],
+			// 可提现金额
+			balance: '',
+			// 应到账金额
+			reachBalance: ''
 		};
 	},
-	computed: {},
-	mounted() {},
+	
+	onLoad() {
+		// 获取用户个人信息
+	},
+	
 	methods: {
 		toggleTab(str) {
 			this.$refs[str].show();
 		},
 		onConfirm(val) {
-			console.log(val);
 			this.resultInfo = { ...val };
+			console.log(this.resultInfo);
+		},
+		
+		// 获取用户个人信息
+		getUserInfo(){
+			net({
+	        	url:"/V1/mine",
+	            method:'get',
+	            success: (res) => {
+					console.log(res);
+					this.UserInfo = res.data.success.data;
+	            }
+	      	})
 		}
 	}
 };

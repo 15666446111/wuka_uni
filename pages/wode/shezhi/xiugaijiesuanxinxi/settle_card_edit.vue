@@ -6,40 +6,39 @@
 			<view class="select">
 				<view class="select-view">
 					<view class="select-name">姓名</view>
-					<input class="select-text" placeholder="请输入您的姓名" v-model="name" >
+					<input class="select-text" placeholder="请输入您的姓名" v-model="BankInfo.name" >
 				</view>
 				<view class="hengxian"></view>
 			</view>
 			
 			<view class="select-view">
 				<view class="select-name">身份证号</view>
-				<input class="select-text" placeholder="请输入您的身份证号" v-model="number" value="" />
+				<input class="select-text" placeholder="请输入您的身份证号" v-model="BankInfo.number" value="123" />
 			</view>
 			<view class="hengxian"></view>
 			
 			<view class="select">
 				<view class="select-view">
 					<view class="select-name">银行</view>
-					<input class="select-text" placeholder="请输入银行名称" v-model="bank_name"/>
+					<input class="select-text" placeholder="请输入银行名称" v-model="BankInfo.bank_name"/>
 				</view>
 				<view class="hengxian"></view>
 				
 				<view class="select-view">
 					<view class="select-name">银行卡号</view>
-					<input class="select-text" placeholder="请输入银行卡号" v-model="bank" value="" />
+					<input class="select-text" placeholder="请输入银行卡号" v-model="BankInfo.bank" value="" />
 				</view>
 				<view class="hengxian"></view>
 				
 				<view class="select-view">
 					<view class="select-name">开户行</view>
-					<input class="select-text" placeholder="请输入开户行" v-model="open_bank"/>
+					<input class="select-text" placeholder="请输入开户行" v-model="BankInfo.open_bank"/>
 				</view>
-				<view class="hengxian"></view>
 				
 				<view class="select-view">
 					<checkbox-group @change="defaultType">
 						<label>
-							<checkbox class="se-defulat" value="1" color="#FF8C00" />设为默认
+							<checkbox class="se-defulat" value="1" color="#FF8C00" :checked="this.BankInfo.is_default == 1 ? true : false" />设为默认
 						</label>
 					</checkbox-group>
 				</view>
@@ -55,18 +54,50 @@ import net from '../../../../common/net.js';
 export default {
 	data() {
 		return {
-			name: '',
-			number: '',
-			bank_name: '',
-			bank: '',
-			open_bank: '',
+			id: '',
+			
+			BankInfo: []
 		};
 	},
 	
-	onLoad() {
+	onLoad(option) {
+		this.id = option.card_id;
 		
+		// loading提示框
+		uni.showLoading();
+		
+		// 获取银行卡信息
+		this.getBankInfo();
 	},
+	
 	methods: {
+		// 获取银行卡信息
+		getBankInfo(){
+			net({
+	        	url: "/V1/getBankFirst",
+	            method: 'GET',
+				data: {
+					id: this.id,
+				},
+	            success: (res) => {
+					uni.hideLoading();
+					if (res.data.success) {
+						this.BankInfo = res.data.success.data[0];
+						console.log(this.BankInfo);
+					} else {
+						uni.showToast({
+							title: res.data.error.message,
+							icon: 'none'
+						});
+					}
+	            }
+	      	})
+		},
+		
+		defaultType(e){
+			this.BankInfo.is_default = (e.detail.value == 1 ? e.detail.value : 0);
+		},
+		
 		submit(){
 			if (this.name == '') {
 				uni.showToast({
@@ -109,14 +140,16 @@ export default {
 			}
 			
 			net({
-	        	url: "/V1/createBank",
-	            method: 'POST',
+	        	url: "/V1/upBank",
+	            method: 'GET',
 				data: {
-					name: this.name,
-					number: this.number,
-					bank_name: this.bank_name,
-					bank: this.bank,
-					open_bank: this.open_bank,
+					id: this.id,
+					name: this.BankInfo.name,
+					number: this.BankInfo.number,
+					bank_name: this.BankInfo.bank_name,
+					bank: this.BankInfo.bank,
+					open_bank: this.BankInfo.open_bank,
+					is_default: this.BankInfo.is_default,
 				},
 	            success: (res) => {
 					console.log(res);

@@ -1,0 +1,52 @@
+page {
+  background-color: #f7f7f7;
+}
+
+/*输入栏*/
+.indexs {
+  width: 90%;
+  background-color: #fff;
+  margin-left: 5%;
+  margin-top: 20rpx;
+  border-radius: 10rpx 10rpx 10rpx 10rpx;
+}
+
+.select-view {
+  display: flex;
+  height: 80rpx;
+}
+
+.select-name {
+  margin-left: 40rpx;
+  margin-top: 4%;
+  font-size: 25rpx;
+  width: 26%;
+}
+
+.select-text {
+  margin-left: 20rpx;
+  margin-top: 3%;
+  font-size: 25rpx;
+  color: #666;
+}
+
+.hengxian {
+  width: 94%;
+  height: 1px;
+  background-color: #dbdada;
+  margin-left: 3%;
+}
+
+button{
+	width: 70%;
+	margin-top: 20%;
+	background-color: #ff8c00;
+	color: #fff;
+	font-weight: 600;
+	letter-spacing: 25rpx
+}
+
+.se-defulat {
+	margin-left: 20rpx;
+	margin-top: 10rpx;
+}

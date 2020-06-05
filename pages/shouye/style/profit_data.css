@@ -1,0 +1,148 @@
+
+button {
+	width: 70%;
+	margin-left: 15%;
+	margin-top: 100rpx;
+	background-color: #f0ad4e;
+	color: #ffffff;
+	font-weight: 800;
+	border-radius: 7px 7px 7px 7px;
+}
+.fr_top {
+	width: 100%;
+	height: 80rpx;
+	background-color: #fff;
+	overflow: hidden;
+	display: flex;
+	/* 	border-radius: 10px 10px 10px 10px; */
+	box-shadow: #ddd 3px 3px 8px 3px;
+	margin-top: 2%;
+}
+.view_p {
+	font-size: 0.7rem;
+	color: #666;
+	width: 60%;
+	margin-top: 2%;
+	margin-left: 2%;
+}
+
+.fr_iamge {
+	width: 1.4rem;
+	height: 1.4rem;
+	display: flex;
+	margin-top: 1.2%;
+	margin-left: 8%;
+}
+/* 调整信息 */
+.body {
+	width: 100%;
+	background-color: white;
+	margin-top: 2%;
+	box-shadow: #ddd 3px 3px 8px 3px;
+}
+
+.view_h1 {
+	text-align: center;
+	height: 2rem;
+	overflow: hidden;
+}
+.text {
+	font-size: 0.9rem;
+	margin-top: 2%;
+}
+.rule {
+	width: 90%;
+	height: 1px;
+	background-color: #dbdada;
+	margin-left: 5%;
+}
+
+/* 信用卡 */
+.rule-view {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	height: 100rpx;
+}
+.rule-view1 {
+	width: 100%;
+	height: 2.1rem;
+	overflow: hidden;
+}
+.rule_p {
+	display: flex;
+	margin-top: 2%;
+	height: 76rpx;
+	line-height: 76rpx;
+}
+.rule_p1 {
+	display: flex;
+	margin-top: 2%;
+	height: 80rpx;
+}
+.view_p2 {
+	width: 40%;
+	/* text-align: center; */
+	font-size: 0.8rem;
+	margin-left: 6%;
+	margin-top: 1.5%;
+}
+.rule_input {
+	width: 12%;
+	background-color: #f1f1f1;
+	border: 0;
+	height: 1.3rem;
+	font-size: 23rpx;
+	text-align: center;
+	margin-top: 1.5%;
+}
+.rule_input1 {
+	width: 8%;
+	height: 1.3rem;
+	background-color: #f1f1f1;
+	text-align: center;
+	border: 0;
+	text-align: center;
+	margin-left: 10%;
+	font-size: 23rpx;
+	margin-top: 1.5%;
+}
+.view_s {
+	color: #f98021;
+	font-size: 0.6rem;
+	margin-left: 6%;
+	margin-top: 2%;
+}
+.view_p3 {
+	text-align: center;
+	width: 20%;
+}
+/**/
+.body2 {
+	width: 100%;
+	background-color: white;
+	margin-top: 2%;
+	box-shadow: #ddd 3px 3px 8px 3px;
+}
+.rule_input2 {
+	width: 17%;
+	background-color: #f1f1f1;
+	border: 0;
+	height: 1.3rem;
+	text-align: center;
+	margin-left: 30%;
+	color: #999;
+	font-size: 28rpx;
+	margin-top: 1.5%;
+}
+#button-1 {
+	width: 80%;
+	background-color: #f98021;
+	color: #fff;
+	height: 2rem;
+	margin-left: 10%;
+	border: 0;
+	border-radius: 0.3rem;
+	margin-top: 2rem;
+	font-size: 0.9rem;
+}

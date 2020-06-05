@@ -1,0 +1,130 @@
+/*  注释*/
+.fr_top {
+	width: 100%;
+	height: 2rem;
+	background-color: #fff;
+	overflow: hidden;
+	display: flex;
+	box-shadow: #ddd 3px 3px 8px 3px;
+	margin-top: 2%;
+}
+.view_p {
+	font-size: 0.7rem;
+	color: #666;
+	width: 70%;
+	margin-top: 2%;
+	margin-left: 2%;
+}
+
+.fr_image {
+	width: 1.4rem;
+	height: 1.4rem;
+	display: flex;
+	margin-top: 1.2%;
+	margin-left: 8%;
+}
+
+/* 内容 */
+.selects {
+	width: 90%;
+	margin-left: 5%;
+	background-color: #fff;
+	margin-top: 2%;
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: #ddd 3px 3px 8px 3px;
+}
+
+.select-view {
+	display: flex;
+	height: 100upx;
+	position: relative;
+}
+.select-view2 {
+	display: flex;
+	height: 100upx;
+	position: relative;
+}
+.select-view1 {
+	display: flex;
+	height: 2.1rem;
+	position: relative;
+}
+
+.select-image {
+	width: 45rpx;
+	height: 45rpx;
+	position: absolute;
+	right: 1rem;
+	top:27upx;
+}
+
+.select-name {
+	font-size: 28upx;
+	margin-left: 1rem;
+	margin-top: 4%;
+}
+.select-name1 {
+	font-size: 28upx;
+	margin-left: 30upx;
+	margin-top: 4%;
+	width: 100%;
+}
+
+.select-text {
+	color: #666;
+	font-size: 28upx;
+	border: 0;
+	margin-left: 30upx;
+	margin-top: 4.5%;
+}
+.select-text1 {
+	color: #666;
+	font-size: 28upx;
+	border: 0;
+	margin-left: 30upx;
+	margin-top: 4%;
+}
+
+.select-text2 {
+	color: #666;
+	font-size:28upx;
+	border: 0;
+	position: absolute;
+	margin-top: 28upx;
+	left: 186upx;
+	width: 100%;
+}
+.item {
+	width: 70%;
+	margin-left: 35upx;
+	position: relative;
+}
+
+.hengxian {
+	width: 94%;
+	height: 1px;
+	background-color: #dbdada;
+	margin-left: 3%;
+}
+/*  */
+
+.button1 {
+	width: 70%;
+	height: 2.5rem;
+	margin-left: 15%;
+	margin-top: 2rem;
+	background-color: #f98021;
+	color: #ffffff;
+	font-weight: 800;
+	border-radius: 7px 7px 7px 7px;
+}
+.button2 {
+	width: 70%;
+	background-color: #f8aa00;
+	height: 2.5rem;
+	margin-left: 15%;
+	margin-top: 2rem;
+	color: #ffffff;
+	font-weight: 800;
+	border-radius: 7px 7px 7px 7px;
+}

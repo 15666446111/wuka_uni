@@ -34,3 +34,10 @@ image {
 .input-border-color {
 	border-color: #FD6801;
 }
+.public-empty-tips {
+	height: 64rpx;
+	line-height: 64rpx;
+	text-align: center;
+	font-size: 28rpx;
+	color: #999;
+}

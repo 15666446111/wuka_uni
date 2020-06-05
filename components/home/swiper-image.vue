@@ -16,7 +16,7 @@
 	
 	export default{
 		props:{
-			resdata:Array
+			resdata: Array
 		}
 	}
 	

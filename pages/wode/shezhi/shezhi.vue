@@ -7,22 +7,15 @@
 			</view>
 		</navigator>
 		<view class="add-xian"></view>
-		<navigator url="xiugaijiesuanxinxi/xiugaijiesuanxinxi" open-type="navigate">
+		<navigator url="../lijitixian/tijiaoyinhangka/tijiaoyinhangka" open-type="navigate">
 			<view class="bank">
-				<view class="bank-name">修改结算信息</view>
+				<view class="bank-name">结算信息管理</view>
 				<image class="bank-img" src="../../../static/jiantou.png" mode="widthFix" />
 			</view>
 		</navigator>
 		<view class="add-xian"></view>
-	
-		<navigator url="" open-type="navigate">
-			<view class="bank wxbox">
-				<image class="wx" src="../../../static/wx.png" mode="widthFix" />
-				<view class="bank-text">解除微信</view>
-				<image class="bank-img" src="/images/jiantou.png" mode="widthFix" />
-			</view>
-		</navigator>
-	
+		
+		<button class="psy" @click="submit">退出登录</button>
 	</view>
 </template>
 
