@@ -100,6 +100,7 @@ export default {
 					password: this.password
 				},
 				success: res => {
+					console.log(res)
 					try {
 						if (res.data.success && res.data.success.token) {
 							uni.setStorageSync('token', res.data.success.token);

@@ -3,7 +3,6 @@
 		<!-- 轮播图 -->
 		<swiper-image :resdata="swipers"></swiper-image>
 		
-		
 		<!-- 公告 -->
 		<view class="notice" v-if="notice_show">
 			<image class="notice-img" src="../../static/laba.png" mode="widthFix"></image>
@@ -13,7 +12,6 @@
 				</view>
 			</navigator>
 		</view>
-
 
 		<!-- 首页分类 -->
 		<home-nav :resdata="indexnavs"></home-nav>

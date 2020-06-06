@@ -33,7 +33,7 @@
 			<view class="dara-xian"></view>
 			<view class="data">
 				<view class="phone">状态</view>
-				<view class="mark">{{ UserInfo.active }}</view>
+				<view class="mark">{{ UserInfo.active == '1' ? '正常' : '冻结' }}</view>
 			</view>
 			<view class="dara-xian"></view>
 			<view class="data">

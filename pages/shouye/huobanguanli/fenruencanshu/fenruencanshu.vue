@@ -70,6 +70,7 @@ export default {
 					pid: this.pid
 				},
 	            success: (res) => {
+					console.log(res)
 					this.tradePrice = res.data.success.data.trade_price;
 					this.activePrice = res.data.success.data.active_price;
 					
