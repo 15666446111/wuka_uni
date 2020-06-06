@@ -84,25 +84,26 @@
 }
 
 .head {
-	width: 14%;
-	border-radius: 60rpx 60rpx 60rpx 60rpx;
-	margin-top: 5%;
+	width: 120rpx;
+	height: 120rpx;
+	border-radius: 100rpx;
 	margin-left: 5%;
+	margin-top: 20rpx;
 }
 .name {
 	font-size: 34rpx;
 	color: #fff;
 	width: 60%;
 	height: 50rpx;
-	margin-left: 15rpx;
-	margin-top: 5%;
+	margin-left: 25rpx;
+	margin-top: 2%;
 }
 /*ID框*/
 .ID {
 	font-size: 30rpx;
 	color: #fff;
-	margin-left: 21%;
-	margin-top: 0.5%;
+	margin-left: 24%;
+	margin-top: 1%;
 }
 
 /*实名框*/

@@ -44,13 +44,6 @@
 					<view class="mark">查看</view>
 				</view>
 			</navigator>
-			<view class="dara-xian"></view>
-			<navigator url="../feilvcanshu/feilvcanshu">
-				<view class="data">
-					<view class="phone">修改商户费率</view>
-					<view class="mark">查看</view>
-				</view>
-			</navigator>
 		</view>
 	</view>
 </template>

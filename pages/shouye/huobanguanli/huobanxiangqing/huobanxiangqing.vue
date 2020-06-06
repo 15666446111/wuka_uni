@@ -35,11 +35,6 @@
 				<view class="phone">状态</view>
 				<view class="mark">{{ UserInfo.active == '1' ? '正常' : '冻结' }}</view>
 			</view>
-			<view class="dara-xian"></view>
-			<view class="data">
-				<view class="phone">财商会员</view>
-				<view class="mark">普通会员</view>
-			</view>
 		</view>
 		<navigator url="../jiaoyixiangqing/jiaoyixiangqing">
 			<view class="backgroundColor">

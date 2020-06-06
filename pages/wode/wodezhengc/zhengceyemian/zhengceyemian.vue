@@ -28,13 +28,11 @@
 			<view class="rule-view">
 				<view class="rule_p">
 					<view class="view_p2">激活返现</view>
-					<input class="rule_input2" v-model="activePrice.return_money" disabled="true" />
+					<input class="rule_input2" v-model="activePrice.money" disabled="true" />
 				</view>
 			</view>
 			<view class="rule"></view>
 		</view>
-
-		<navigator url="jiaoyixiangqing/jiaoyixiangqing"><button class="button">确 认 修 改</button></navigator>
 	</view>
 </template>
 
@@ -54,7 +52,6 @@ export default {
 	onLoad(options) {
 		this.pid = options.pid;
 		this.uid = options.uid;
-		
 		// 获取用户政策信息
 		this.getPolicyInfo();
 	},

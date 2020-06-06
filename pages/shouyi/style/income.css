@@ -1,0 +1,181 @@
+/*头部数据显示*/
+.titlebars {
+	width: 100%;
+	height: 280rpx;
+	background-color: #ff8c00;
+	position: relative;
+	
+}
+.earnings {
+	width: 90%;
+	height: 270rpx;
+	background-color: #fff;
+	position: absolute;
+	top: 40rpx;
+	left: 5%;
+	border-radius: 7px 7px 7px 7px;
+	box-shadow: #666 0rpx 2rpx 8rpx 0rpx;
+}
+.earning {
+	text-align: center;
+	margin-top: 3%;
+}
+.earning-text {
+	font-size: 25upx;
+	font-weight: 600;
+	color: #666;
+}
+.earning-figure {
+	font-size: 37rpx;
+	color: #ff8c00;
+	font-weight: 600;
+	margin-top: 1%;
+}
+.across {
+	width: 96%;
+	height: 2rpx;
+	background-color: #c5c3c3;
+	margin-top: 3%;
+	margin-left: 2%;
+}
+.across1 {
+	width: 96%;
+	height: 2rpx;
+	background-color: #c5c3c3;
+	margin-top: 1%;
+	margin-left: 2%;
+}
+.button {
+	width: 100%;
+	display: flex;
+	font-size: 30rpx;
+	margin-top: 2%;
+	text-align: center;
+}
+.button-view {
+	width: 50%;
+}
+.button-vertical {
+	width: 1px;
+	height: 100rpx;
+	background-color: #c5c3c3;
+}
+.button-text {
+	font-size: 23rpx;
+	color: #666;
+}
+
+.button-figure {
+	color: #ff8c00;
+	font-size: 32rpx;
+}
+/* 选择框 */
+.dis-fix {
+	width: 90%;
+	height: 150upx;
+	background-color: #fff;
+	margin-left: 5%;
+	margin-top: 6%;
+	display: flex;
+	justify-content: center;
+	border-radius: 10upx 10upx 10upx 10upx;
+}
+.dis-div {
+	width: 25%;
+	text-align: center;
+	display: flex;
+}
+.dis-text {
+	width: 100%;
+}
+.shuxian1 {
+	width: 1upx;
+	height: 60upx;
+	background-color: #c5c3c3;
+	margin-top: 10upx;
+}
+
+/*内容栏*/
+.content {
+	width: 92%;
+	height: 100%;
+	border-radius: 7px 7px 7px 7px;
+	box-shadow: #666 0rpx 2rpx 8rpx 0rpx;
+	margin-left: 4%;
+	overflow: hidden;
+	background-color: #fff;
+	margin-top: 2%;
+}
+
+.times {
+	width: 100%;
+	display: flex;
+	font-size: 30rpx;
+	color: #666;
+	margin-top: 30rpx;
+}
+
+.time {
+	margin-left: 2%;
+	font-size: 30upx;
+}
+
+.income {
+	position: absolute;
+	right: 70rpx;
+	font-size: 30upx;
+}
+
+.detail {
+	display: flex;
+	width: 100%;
+	position: relative;
+}
+
+.detail-img {
+	width:100upx;
+	height: 100upx;
+	position: absolute;
+	top: 40upx;
+	left: 20upx;
+}
+
+.detail-name {
+	margin-top: 3%;
+	font-size: 28upx;
+	font-weight: 500;
+	margin-left: 18%;
+}
+
+.detail-text {
+	font-size: 28upx;
+	font-weight: 600;
+	color: #ff8c00;
+	position: absolute;
+	top: 44rpx;
+	right: 55rpx;
+}
+
+.SN {
+	font-size: 12px;
+	color: #666;
+	margin-left: 18%;
+	margin-top: -1%;
+}
+
+.money {
+	display: flex;
+}
+
+.money-text {
+	font-size: 12px;
+	color: #666;
+	margin-left: 18%;
+}
+
+.money-time {
+	font-size: 12px;
+	color: #666;
+	position: absolute;
+	right: 11%;
+}

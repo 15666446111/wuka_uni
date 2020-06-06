@@ -11,7 +11,7 @@
 				:class="tabIndex === index ? 'main-text-color' : ''"
 				:id="'tab' + index"
 			>
-				<text class="font-md">{{ item.name }}</text>
+				<text class="font-md">{{ item.brand_name }}</text>
 			</view>
 		</scroll-view>
 

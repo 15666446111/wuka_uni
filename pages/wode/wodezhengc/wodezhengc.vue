@@ -24,8 +24,6 @@ export default {
 	
 	onLoad(options) {
 		this.uid = options.uid;
-		console.log(options);
-		
 		uni.showLoading();
 		this.getPolicyList();
 	},
