@@ -1,15 +1,23 @@
 <template>
-	<view>
+	<view v-if="pagesShow">
 		<view class="xian"></view>
 		<view class="addressBar">
-			<navigator url="../dizhi/dizhi">
-				<view class="addressBar-name">畅伙伴 150****8888</view>
+			<navigator url="../dizhi/dizhi?pages=place_order" v-if="address == ''">
+				<view class="addressBar-name">选择收货地址</view>
 				<image class="addressBar-image" src="/static/jiantou.png"></image>
 				<view class="d-flex">
-					<view class="label">公司</view>
-					<view class="site">山东省济南市某某区某某路2204号</view>
+					<view class="site"></view>
 				</view>
 			</navigator>
+			<navigator url="../dizhi/dizhi?pages=place_order" v-else>
+				<view class="addressBar-name">{{address.name}} {{address.tel}}</view>
+				<image class="addressBar-image" src="/static/jiantou.png"></image>
+				<view class="d-flex">
+					<view class="label">地址</view>
+					<view class="site">{{address.province}}{{address.city}}{{address.area}}{{address.detail}}</view>
+				</view>
+			</navigator>
+			
 			<view class="caution"><text class="">为减少接触，您可以在收货详细地址后增加如小区北门、保安亭、等方便提货的地址</text></view>
 		</view>
 		<view class="hr"></view>
@@ -51,6 +59,9 @@ export default {
 			num: 1,
 			// 总金额
 			moneyTotal: '',
+			address: [],
+			// 全局显示
+			pagesShow: false,
 		};
 	},
 	
@@ -60,6 +71,8 @@ export default {
 		}
 		// 获取产品信息
 		this.getProductInfo(options.product);
+		// 获取默认收货地址
+		this.getDeAddress();
 	},
 
 	methods: {
@@ -77,9 +90,30 @@ export default {
 	      	})
 		},
 		
+		// 获取默认收货地址
+		getDeAddress(){
+			net({
+	        	url: "/V1/getDefaultAddress",
+	            method: 'get',
+	            success: (res) => {
+					this.pagesShow = true;
+					if (res.data.success) {
+						this.address = res.data.success.data;
+					}
+	            }
+	      	})
+		},
+		
 		// 生成订单
 		addOrderCreate(){
 			var address = '测试固定收货地址';
+			if (this.address == '') {
+				uni.showToast({
+					title: '请选择收货地址',
+					icon: 'none'
+				});
+				return false;
+			}
 			net({
 	        	url:"/V1/addOrderCreate",
 	            method: 'POST',

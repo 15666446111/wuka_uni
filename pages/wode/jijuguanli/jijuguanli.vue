@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="class">
-			<navigator url="jijuchakan/jijuchakan" class="class-view">
+			<navigator url="jijuchakan/jijuchakan?type=count" class="class-view">
 				<view class="class-text">机具总数(台):</view>
 				<view class="class-figure">{{merchantData.count.all}}</view>
 				<view class="chakan">查 看 ></view>
@@ -30,7 +30,7 @@
 			</view>
 		</view>
 		<view class="class">
-			<navigator url="jijuchakan/jijuchakan" class="class-view">
+			<navigator url="jijuchakan/jijuchakan?type=user" class="class-view">
 				<view class="class-text">我的机具(台):</view>
 				<view class="class-figure">{{merchantData.user.all}}</view>
 				<view class="chakan">查 看 ></view>
@@ -60,7 +60,7 @@
 		</view>
 		
 		<view class="class">
-			<navigator url="jijuchakan/jijuchakan" class="class-view">
+			<navigator url="jijuchakan/jijuchakan?type=friend" class="class-view">
 				<view class="class-text">伙伴机具(台):</view>
 				<view class="class-figure">{{merchantData.friend.all}}</view>
 				<view class="chakan">查 看 ></view>

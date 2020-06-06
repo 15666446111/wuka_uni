@@ -38,7 +38,7 @@
 			</view>
 			</navigator>
 			<view class="dara-xian"></view>
-			<navigator url="../jiaoymingxi/jiaoymingxi">
+			<navigator :url="'../jiaoymingxi/jiaoymingxi?term_no=' + merchantInfo.merchant_terminal">
 				<view class="data">
 					<view class="phone">交易明细</view>
 					<view class="mark">查看</view>

@@ -7,10 +7,12 @@
 			</view>
 			
 			<view class="">
-				<view class="issue" v-for="(item,index) in dataList" :key="item.id">
-					<text class="issue-text">{{ item.title }}</text>
-					<image class="issue-img" src="/static/jiantou.png" />
-				</view>
+				<navigator :url="'/pages/Article/ArtilcleDetail?aid=' + item.id" v-for="(item,index) in dataList" :key="item.id">
+					<view class="issue">
+							<text class="issue-text">{{ item.title }}</text>
+							<image class="issue-img" src="/static/jiantou.png" />
+					</view>
+				</navigator>
 			</view>
 		</view>
 		

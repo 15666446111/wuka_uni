@@ -8,13 +8,15 @@
 			</view>
 		</navigator>
 
-		<view class="site" v-for="(item, index) in addressList" :key="index">
-			<view class="site-view">
-				<view class="site-name">{{ item.name }}</view>
-				<view class="site-phone">{{item.tel}}</view>
+		<view class="site" v-for="(item, index) in addressList" :key="index" v-if="index !== show">
+			<view @click="optAddress(item)">
+				<view class="site-view">
+					<view class="site-name">{{ item.name }}</view>
+					<view class="site-phone">{{item.tel}}</view>
+				</view>
+				<view class="site-text"><view class="site-name">{{item.province}}{{item.city}}{{item.area}}{{item.detail}}</view></view>
+				<view class="site-xian"></view>
 			</view>
-			<view class="site-text"><view class="site-name">{{item.province}}{{item.city}}{{item.area}}{{item.detail}}</view></view>
-			<view class="site-xian"></view>
 			<!-- 默认框 -->
 			<view class="group">
 				<view class="ckeck">
@@ -22,7 +24,7 @@
 				</view>
 				<!-- 编辑删除 -->
 				<view class="site-for">
-					<view class="for" @click="addressDel(item.id)">
+					<view class="for" @click="addressDel(item.id, index)">
 						<image class="for-img" src="../../../../static/shanchu.png" mode="widthFix"></image>
 						<view class="for-text">删除</view>
 					</view>
@@ -44,12 +46,13 @@ export default {
 	data() {
 		return {
 			addressList: {},
-			// is_default: '',
+			show: '',
+			getIntoPage: '',
 		};
 	},
 	
-	onLoad() {
-		
+	onLoad(options) {
+		this.getIntoPage = options.pages != '' ? options.pages : '';
 	},
 	
 	onShow() {
@@ -74,6 +77,60 @@ export default {
 					}
 				}
 			})
+		},
+		
+		// 收货地址删除
+		addressDel(aid, key){
+			uni.showModal({
+				content: '确定要删除当前地址信息吗？',
+				success: (res) => {
+					if (res.confirm) {
+						// 显示加载动画
+						uni.showLoading();
+						
+						net({
+							url: '/V1/deAddress',
+							method: 'GET',
+							data: { 'id': aid },
+							success: (res) => {
+								// 隐藏加载动画
+								uni.hideLoading();
+								if (res.data.success) {
+									uni.showToast({
+										title: '删除成功',
+										icon: 'none'
+									})
+									this.show = key;
+								} else {
+									uni.showToast({
+										title: res.data.error.message,
+										icon: 'none'
+									})
+								}
+							}
+						})
+					}
+				}
+			})
+		},
+		
+		// 选择银行卡跳转
+		optAddress(item){
+			if (this.getIntoPage) {
+				var pages = getCurrentPages();
+				var prevPage = pages[pages.length - 2]; //上一个页面
+				
+				var data = {
+					id : item.id,
+					name : item.name,
+					tel : item.tel,
+					province : item.province,
+					area : item.area,
+					detail : item.detail
+				};
+				prevPage.$vm.address = data;
+				uni.navigateBack();
+			}
 		}
 	}
 };

@@ -1,6 +1,6 @@
 <template>
 	<view class="background">
-		<view v-for="(item, index) in cardList" :key="index" class="bank-list">
+		<view v-for="(item, index) in cardList" :key="index" v-if="show !== index" class="bank-list">
 			<view class="top" @click="optCard(item)">
 				<!-- <image src="" class="img"></image> -->
 				<view class="fview">
@@ -15,7 +15,7 @@
 					<view class="bank-edit" @click="cardEdit(item.id)">
 						<uni-icons type="compose" size="20" class="edit-icon" color="#EE4000"></uni-icons> 修改
 					</view>
-					<view class="bank-edit" @click="cardDel(item.id, this)">
+					<view class="bank-edit" @click="cardDel(item.id, index)">
 						<uni-icons type="trash" size="20" class="edit-icon" color="#EE4000"></uni-icons> 删除
 					</view>
 				</view>
@@ -38,7 +38,8 @@
 			return {
 				// 银行卡列表
 				cardList: [],
-				getIntoPage: ''
+				getIntoPage: '',
+				show: '',
 			};
 		},
 		
@@ -87,7 +88,7 @@
 			},
 			
 			// 删除卡信息
-			cardDel(bankId, that){
+			cardDel(bankId, listKey){
 				uni.showModal({
 					title: '提示',
 					content: '确定要删除当前结算卡信息吗？',
@@ -107,6 +108,7 @@
 									
 									if (res.data.success) {
 										uni.showToast({ title: '删除成功', icon: 'none' });
+										this.show = listKey;
 									} else {
 										uni.showToast({ title: res.data.error.message, icon: 'none' });
 									}

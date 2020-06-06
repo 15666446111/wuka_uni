@@ -194,6 +194,9 @@
 				"navigationBarTextStyle": "black"
 			}
 		}, {
+			"path": "pages/Article/ArtilcleDetail",
+			"style": {}
+		}, {
 			"path": "pages/shouye/shangcheng/shangcheng",
 			"style": {}
 		}, {
