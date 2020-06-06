@@ -61,6 +61,8 @@
 </template>
 
 <script>
+import net from '../../../../common/net.js';
+
 export default {
 	data() {
 		return {
@@ -71,9 +73,23 @@ export default {
 	
 	onLoad(options) {
 		this.mid = options.id;
+		this.getMerchantInfo();
 	},
 	
-	methods: {}
+	methods: {
+		getMerchantInfo(){
+			net({
+				url: '/V1/getMerchantInfo',
+				method: 'GET',
+				data : {
+					'id' : this.mid
+				},
+				success: (res) => {
+					this.merchantInfo = res.data.success.data;
+				}
+			})
+		}
+	}
 };
 </script>
 

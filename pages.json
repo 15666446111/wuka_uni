@@ -206,6 +206,9 @@
 			"path": "pages/shouye/shangcheng/xinzeng/xinzeng",
 			"style": {}
 		}, {
+			"path": "pages/shouye/shangcheng/xinzeng/address_edit",
+			"style": {}
+		}, {
 			"path": "pages/shouye/shangcheng/zhifu/zhifu",
 			"style": {}
 		}, {

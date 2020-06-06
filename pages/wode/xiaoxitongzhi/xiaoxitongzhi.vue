@@ -86,6 +86,7 @@ export default {
 	
 	onLoad() {
 		this.getMessage(this.arr[this.index]);
+		// this.getMessage('Register');
 	},
 	
 	methods: {

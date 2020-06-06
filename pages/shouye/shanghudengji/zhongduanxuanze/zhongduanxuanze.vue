@@ -63,9 +63,14 @@ export default {
 		},
 		
 		define(){
-			uni.redirectTo({
-				url: "../shanghudengji?terminal=" + this.terminal
-			})
+			var pages = getCurrentPages();
+			var prevPage = pages[pages.length - 2]; //上一个页面
+			
+			prevPage.$vm.terminal = this.terminal;
+			uni.navigateBack();
+			// uni.redirectTo({
+			// 	url: "../shanghudengji?terminal=" + this.terminal
+			// })
 		}
 		
 		

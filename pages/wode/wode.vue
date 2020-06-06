@@ -6,7 +6,7 @@
 			<view class="titlebar">
 				<view class="rise">
 					<view class="rise-head">
-						<image class="head" :src="UserInfo.headimg" mode="widthFix" />
+						<image class="head" :src="UserInfo.headimg" />
 						<view class="name">{{ UserInfo.nickname}}</view>
 					</view>
 					<!-- <view class="ID">ID:80000001</view> -->
@@ -25,7 +25,7 @@
 				</view>
 				
 				<view class="earning blance_text">
-					<text style="">{{ UserInfo.blance}}</text>
+					<text style="">{{ UserInfo.blance / 100 }}</text>
 				</view>
 				
 				<view class="across"></view>
@@ -33,12 +33,12 @@
 				<view class="eings d-flex">
 					<view class="eings-view">
 						<view style="color: #666;">分润钱包(元)</view>
-						<view style="color: #EE9900;">{{UserInfo.cash_blance}}</view>
+						<view style="color: #EE9900;">{{UserInfo.cash_blance / 100}}</view>
 					</view>
 					<view class="shuxian"></view>
 					<view class="eings-view">
 						<view style="color: #666;">返现钱包(元)</view>
-						<view style="color: #EE9900;">{{UserInfo.return_blance}}</view>
+						<view style="color: #EE9900;">{{UserInfo.return_blance / 100}}</view>
 					</view>
 				</view>
 			</view>
