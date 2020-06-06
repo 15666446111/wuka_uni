@@ -1,50 +1,61 @@
 <template>
-		<view class="teams">
-			<!-- 直营业绩 -->
-			<view class="team">
-				<view class="the">直营业绩</view>
-				<view class="across"></view>
-				<view class="view" >
-					<view class="jiaoyi">
-						<view class="jiaoyi-text">POS</view>
-						<view class="jiuaoyi-shuzi">40</view>
-					</view>
-					<view class="hengxian"></view>
-					<view class="jiaoyi">
-						<view class="jiaoyi-text">EPOS</view>
-						<view class="jiuaoyi-shuzi">40</view>
-					</view>
-				</view>
-			</view>
-			<view class="team">
-				<view class="the">代理业绩</view>
-				<view class="across"></view>
-				<view class="view" >
-					<view class="jiaoyi">
-						<view class="jiaoyi-text">POS</view>
-						<view class="jiuaoyi-shuzi">40</view>
-					</view>
-					<view class="hengxian"></view>
-					<view class="jiaoyi">
-						<view class="jiaoyi-text">EPOS</view>
-						<view class="jiuaoyi-shuzi">40</view>
-					</view>
+	<view class="teams">
+		<!-- 直营业绩 -->
+		<view class="team">
+			<view class="the">直营业绩</view>
+			<view class="across"></view>
+			<view class="view" >
+				<view class="jiaoyi">
+					<view class="jiaoyi-text">POS</view>
+					<view class="jiuaoyi-shuzi">{{ data.me | 0}}</view>
 				</view>
 			</view>
 		</view>
+		
+		<view class="team">
+			<view class="the">代理业绩</view>
+			<view class="across"></view>
+			<view class="view" >
+				<view class="jiaoyi">
+					<view class="jiaoyi-text">POS</view>
+					<view class="jiuaoyi-shuzi">{{ data.agent | 0}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				
-			}
-		},
-		methods: {
-			
+import net from '../../../common/net.js';
+export default {
+	data() {
+		return {
+			data: [],
+		}
+	},
+	
+	onLoad(options){
+		uni.showLoading();
+		
+		// 获取某个代理的今天商户数据分析
+		this.getAgentMerchant(options.uid);
+	},
+	
+	methods: {
+		getAgentMerchant(uid){
+	    	net({
+	        	url:"/V1/getAgentMerchant",
+	            method:'get',
+				data:{uid: uid},
+	            success: (res) => {
+					console.log(res)
+					uni.hideLoading();
+					this.data = res.data.success.data;
+	            }
+	      	})
 		}
 	}
+}
 </script>
 
 <style>
@@ -57,7 +68,7 @@
     background-color: #fff;
     margin-top: 2%;
     margin-left: 5%;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 5rpx5px;
     box-shadow: #ddd 3px 3px 8px 3px;
     overflow: hidden;
   }

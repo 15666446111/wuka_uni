@@ -131,6 +131,7 @@ export default {
 		
 	// 初始化数据
 	onLoad(){
+		uni.showLoading();
 		this.getUserInfo();
 	},
 
@@ -141,6 +142,7 @@ export default {
 	        	url:"/V1/mine",
 	            method:'get',
 	            success: (res) => {
+					uni.hideLoading();
 					console.log(res);
 					this.UserInfo = res.data.success.data;
 	            }

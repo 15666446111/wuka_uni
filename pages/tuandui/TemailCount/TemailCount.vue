@@ -33,18 +33,18 @@
 				data: [],
 			}
 		},
-		
+
 		onLoad(options){
 			uni.showLoading();
 			
 			// 获取某个代理的今天商户数据分析
-			this.getAgentActive(options.uid);
+			this.getAgentTemail(options.uid);
 		},
-		
+
 		methods: {
-			getAgentActive(uid){
+			getAgentTemail(uid){
 		    	net({
-		        	url:"/V1/getAgentActive",
+		        	url:"/V1/getAgentTemail",
 		            method:'get',
 					data:{uid: uid},
 		            success: (res) => {
@@ -69,7 +69,7 @@
     background-color: #fff;
     margin-top: 2%;
     margin-left: 5%;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 5px;
     box-shadow: #ddd 3px 3px 8px 3px;
     overflow: hidden;
   }

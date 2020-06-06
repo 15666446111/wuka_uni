@@ -187,6 +187,12 @@
 				"navigationBarTitleText": "商户信息",
 				"navigationBarTextStyle": "black"
 			}
+		},  {
+			"path": "pages/tuandui/TemailCount/TemailCount",
+			"style": {
+				"navigationBarTitleText": "机具总数",
+				"navigationBarTextStyle": "black"
+			}
 		}, {
 			"path": "pages/shouye/shangcheng/shangcheng",
 			"style": {}

@@ -14,8 +14,8 @@
 				<view class="rule-view">
 					<view class="rule_p">
 						<view class="view_p2">{{item.name}}</view>
-						<input class="rule_input" v-model="item.rate * 0.01" />%
-						<view class="view_s">{{item.min * 0.01}}% ~ {{item.max * 0.01}}%</view>
+						<input class="rule_input" v-model="item.rate / 100"/>%
+						<view class="view_s">{{item.min / 100}}% ~ {{item.max / 100}}%</view>
 					</view>
 				</view>
 				<view class="rule"></view>
@@ -62,6 +62,7 @@ export default {
 	methods: {
 		// 获取用户政策信息
 		getPolicyInfo(){
+			console.log(this.uid)
 			net({
 	        	url:"/V1/getPolicyInfo",
 	            method:'POST',

@@ -115,15 +115,19 @@ export default {
 			if (this.tabIndex == index) { return; }
 			this.tabIndex = index;
 			if(index == 0){
+				uni.showLoading();
 				this.getIncome('all');
 			}
 			if(index == 1){
+				uni.showLoading();
 				this.getIncome('cash');
 			}
 			if(index == 2){
+				uni.showLoading();
 				this.getIncome('return');
 			}
 			if(index == 3){
+				uni.showLoading();
 				this.getIncome('other');
 			}
 		},

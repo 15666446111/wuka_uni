@@ -11,83 +11,167 @@
 			<view class="performance d-flex" style="margin-top: 2%;">
 				
 				<view class="vertical"></view>
+				
+				
+
 				<!-- 数据 -->
 				<view class="datas">
 					<view class="times">
 						<view class="shu"></view>
-						<view class="time">2019-12-15</view>
+						<view class="time">{{ datalist.date }}</view>
 					</view>
-					<view class="data" v-for="(item, index) in data" :key="index">
-						<navigator :url="item.Url">
-							<view class="data-s">
-								<view class="deal">{{ item.name }}</view>
-								<view class="money">{{ item.Name }}</view>
-								<image class="image" :src="item.src" mode="aspectFit" />
-							</view>
-						</navigator>
+					
+					<view class="data">
+						
+						<view class="data-s">
+							<view class="deal">今日交易</view>
+							<view class="money">{{ datalist.trade }}</view>
+							<image class="image" src="/static/jiantou.png" mode="aspectFit" />
+						</view>
+						
 						<view class="hengxian"></view>
-		
 					</view>
+
+					<view class="data">
+						
+						<view class="data-s">
+							<view class="deal">激活总数</view>
+							<view class="money">{{ datalist.activeCount }}</view>
+							<image class="image" src="/static/jiantou.png" mode="aspectFit" />
+						</view>
+						
+						<view class="hengxian"></view>
+					</view>		
+
+					<view class="data">
+						
+						<view class="data-s">
+							<view class="deal">机具总数</view>
+							<view class="money">{{ datalist.merchants }}</view>
+							<image class="image" src="/static/jiantou.png" mode="aspectFit" />
+						</view>
+						
+						<view class="hengxian"></view>
+					</view>					
+
+					<view class="data">
+						
+						<view class="data-s">
+							<view class="deal">收益总数</view>
+							<view class="money">{{ datalist.income }}</view>
+							<image class="image" src="/static/jiantou.png" mode="aspectFit" />
+						</view>
+						
+						<view class="hengxian"></view>
+					</view>	
+
+					<view class="data">
+						
+						<view class="data-s">
+							<view class="deal">伙伴总数</view>
+							<view class="money">{{ datalist.friends }}</view>
+							<image class="image" src="/static/jiantou.png" mode="aspectFit" />
+						</view>
+						
+						<view class="hengxian"></view>
+					</view>	
+
+					<view class="data">
+						
+						<view class="data-s">
+							<view class="deal">商户总数</view>
+							<view class="money">{{ datalist.merchants }}</view>
+							<image class="image" src="/static/jiantou.png" mode="aspectFit" />
+						</view>
+						
+						<view class="hengxian"></view>
+					</view>
+
+					<view class="data">
+						<view class="data-s">
+							<view class="deal">台均交易量</view>
+							<view class="money">{{ datalist.Avg }}</view>
+							<image class="image" src="/static/jiantou.png" mode="aspectFit" />
+						</view>
+						<view class="hengxian"></view>
+					</view>
+
+
 				</view>
+				
+				
+			
 			</view>
 		</view>
 	</view>
 </template>
 
 <script>
+	
+import net from '../../../../common/net.js';
+
 export default {
 	data() {
 		return {
 			activeInde: 0,
 			activeIndex: 0,
+			uid: 0,
 			select: [{ name: '按日查询' }, { name: '按月查询' }],
-			data: [
-				{
-					Name: '1000.00',
-					name: '今日交易',
-					src: '/static/jiantou.png',
-					Url: '../jinrijiaoyi/jinrijiaoyi'
-				},
-				{
-					name: '激活总数',
-					Name: '80',
-					src: '/static/jiantou.png',
-					Url: '../jihuozongshu/jihuozongshu'
-				},
-				{
-					name: '收益总数',
-					Name: '200.00',
-					src: '/static/jiantou.png',
-					Url: '../shouyizongshu/shouyizongshu'
-				},
-				{
-					name: '伙伴总数',
-					Name: '20',
-					src: '/static/jiantou.png',
-					Url: '../huobanzongshu/huobanzongshu'
-				},
-				{
-					name: '商户总数',
-					Name: '100',
-					src: '/static/jiantou.png',
-					Url: '../shanghuzongshu/shanghuzongshu'
-				},
-
-				{
-					name: '台均交易量',
-					Name: '30000.00',
-					src: '/static/jiantou.png',
-					Url: '../taijunjiaoyi/taijunjiaoyi'
-				}
-			]
+			
+			datalist:[],
 		};
 	},
+
+	onLoad: function (options){
+		this.uid = options.uid;
+		if(!this.uid){
+			alert('参数错误');
+		}
+		
+		this.getTeamDetail(this.uid, 'day');
+	},
+	
+	
 	methods: {
 		changeCate(index) {
 			this.activeIndex = index;
 		},
 		changecate(index) {
-			this.activeInde = index;
+			// 按月查询 按日查询
+			if( this.activeInde !== index){
+				if(index == 0){
+					this.getTeamDetail(this.uid, 'day');
+				}
+				if(index == 1){
+					this.getTeamDetail(this.uid, 'month');
+				}
+				this.activeInde = index;
+			}
+		},
+		
+		/**
+		 * 获取详情
+		 */
+		getTeamDetail(uid, type){
+	    	net({
+	        	url:"/V1/getTradeDetail",
+	            method:'post',
+				data:{
+					data_type: type,
+					uid: uid
+				},
+	            success: (res) => {
+					uni.hideLoading();
+					console.log(res)
+					if(res.data.success){
+						this.datalist = res.data.success.data;
+					}
+					
+					if(res.data.error){
+						
+					}
+	            }
+	      	})
 		}
 	}
 };

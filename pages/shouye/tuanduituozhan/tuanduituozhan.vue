@@ -17,7 +17,7 @@
 				</view>
 			</scroll-view>
 			
-			<swiper class="tab-swiper-full" :current="swiperCurrentIndex" :style="{ height: tabHeight + 'px' }">
+			<swiper class="tab-swiper-full" :current="swiperCurrentIndex" :style="{ height: tabHeight * 2.2 + 'px' }">
 				<swiper-item key="0">
 					
 					<view class="body">

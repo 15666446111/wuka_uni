@@ -7,12 +7,7 @@
 				<view class="view" >
 					<view class="jiaoyi">
 						<view class="jiaoyi-text">直推</view>
-						<view class="jiuaoyi-shuzi">40</view>
-					</view>
-					<view class="hengxian"></view>
-					<view class="jiaoyi">
-						<view class="jiaoyi-text">团队</view>
-						<view class="jiuaoyi-shuzi">40</view>
+						<view class="jiuaoyi-shuzi">{{ data.me }}</view>
 					</view>
 				</view>
 			</view>
@@ -22,12 +17,7 @@
 				<view class="view" >
 					<view class="jiaoyi">
 						<view class="jiaoyi-text">直推</view>
-						<view class="jiuaoyi-shuzi">40</view>
-					</view>
-					<view class="hengxian"></view>
-					<view class="jiaoyi">
-						<view class="jiaoyi-text">团队</view>
-						<view class="jiuaoyi-shuzi">40</view>
+						<view class="jiuaoyi-shuzi">{{ data.agent }}</view>
 					</view>
 				</view>
 			</view>
@@ -35,14 +25,35 @@
 </template>
 
 <script>
+	import net from '../../../common/net.js';
+	
 	export default {
 		data() {
 			return {
-				
+				data: [],
 			}
 		},
-		methods: {
+		
+		onLoad(options){
+			uni.showLoading();
 			
+			// 获取某个代理的今天商户数据分析
+			this.getAgentTeam(options.uid);
+		},
+	
+		methods: {
+			getAgentTeam(uid){
+		    	net({
+		        	url:"/V1/getAgentTeam",
+		            method:'get',
+					data:{uid: uid},
+		            success: (res) => {
+						console.log(res)
+						uni.hideLoading();
+						this.data = res.data.success.data;
+		            }
+		      	})
+			}
 		}
 	}
 </script>
@@ -58,7 +69,7 @@
     background-color: #fff;
     margin-top: 2%;
     margin-left: 5%;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 5px;
     box-shadow: #ddd 3px 3px 8px 3px;
     overflow: hidden;
   }

@@ -7,7 +7,7 @@
 				<view class="bay">
 					<view class="bay-view">
 						<text class="the-text">今天汇总</text>
-						<text class="the-text-1">19</text>
+						<text class="the-text-1">{{ TeamInfo.day.date }}</text>
 						<text class="the-text-2">日</text>
 					</view>
 					<view class="d-flex" style="height:100upx;">
@@ -50,7 +50,7 @@
 				<view class="month">
 					<view class="bay-view">
 						<text class="the-text">本月汇总</text>
-						<text class="the-text-1">12</text>
+						<text class="the-text-1">{{ TeamInfo.month.date }}</text>
 						<text class="the-text-2">月</text>
 					</view>
 					<view class="d-flex" style="height:100upx;">
@@ -93,8 +93,8 @@
 				<view class="year">
 					<view class="bay-view">
 						<text class="the-text">累计汇总</text>
-						<text class="the-text-1">2020</text>
-						<text class="the-text-2">年</text>
+						<text class="the-text-1">{{ TeamInfo.all.date }}</text>
+						<text class="the-text-2"></text>
 					</view>
 					<view class="d-flex" style="height:100upx;">
 						<view class="data-div1">
@@ -175,6 +175,7 @@ export default {
 	
 	// 页面加载的时候初始化数据
 	onLoad(){
+		uni.showLoading();
 		// 获取展示数据 团队信息
 		this.getTeamInfo();
 	},
@@ -187,6 +188,7 @@ export default {
 	        	url:"/V1/team_data",
 	            method:'get',
 	            success: (res) => {
+					uni.hideLoading();
 					this.TeamInfo = res.data.success.data;
 	            }
 	      	})

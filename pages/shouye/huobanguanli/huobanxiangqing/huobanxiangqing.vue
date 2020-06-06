@@ -36,7 +36,7 @@
 				<view class="mark">{{ UserInfo.active == '1' ? '正常' : '冻结' }}</view>
 			</view>
 		</view>
-		<navigator url="../jiaoyixiangqing/jiaoyixiangqing">
+		<navigator :url="'../jiaoyixiangqing/jiaoyixiangqing?uid='+UserInfo.id">
 			<view class="backgroundColor">
 				<view class="data">
 					<view class="phone">数据明细</view>

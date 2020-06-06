@@ -11,227 +11,214 @@
 			<view class="performance d-flex" style="margin-top: 2%;">
 				<!-- 代理栏 -->
 				<view class=" agency">
-					<view v-for="(item, index) in agency" :key="index" @tap="changeCate(index)">
+					
+					<view v-for="(item, index) in agency" :key="item.id" @tap="changeCate(item.id)">
 						<view class="agency-view">
-							<view class="agency-text" :class="activeIndex === index ? 'agency-text2' : ''">{{ item.name }}</view>
+							<view class="agency-text" :class="activeIndex === item.id ? 'agency-text2' : ''">{{ item.nickname }}</view>
 						</view>
 						<view class="agency-xian"></view>
 					</view>
+					
 				</view>
 				
 				<view class="vertical"></view>
+				
 				<!-- 数据 -->
 				<view class="datas">
 					<view class="times">
 						<view class="shu"></view>
-						<view class="time">2019-12-15</view>
+						<view class="time">{{ datalist.date }}</view>
 					</view>
-					<view class="data" v-for="(item, index) in data" :key="index">
-						<navigator :url="item.Url">
+					
+					<view class="data">
+						<navigator url="../jinrijiaoyi/jinrijiaoyi">
 							<view class="data-s">
-								<view class="deal">{{ item.name }}</view>
-								<view class="money">{{ item.Name }}</view>
-								<image class="image" :src="item.src" mode="aspectFit" />
+								<view class="deal">今日交易</view>
+								<view class="money">{{ datalist.trade }}</view>
+								<image class="image" src="/static/jiantou.png" mode="aspectFit" />
 							</view>
 						</navigator>
 						<view class="hengxian"></view>
-		
 					</view>
+
+					<view class="data">
+						<navigator :url="'../jihuozongshu/jihuozongshu?uid='+activeIndex">
+							<view class="data-s">
+								<view class="deal">激活总数</view>
+								<view class="money">{{ datalist.activeCount }}</view>
+								<image class="image" src="/static/jiantou.png" mode="aspectFit" />
+							</view>
+						</navigator>
+						<view class="hengxian"></view>
+					</view>		
+
+					<view class="data">
+						<navigator :url="'../TemailCount/TemailCount?uid='+activeIndex">
+							<view class="data-s">
+								<view class="deal">机具总数</view>
+								<view class="money">{{ datalist.merchants }}</view>
+								<image class="image" src="/static/jiantou.png" mode="aspectFit" />
+							</view>
+						</navigator>
+						<view class="hengxian"></view>
+					</view>					
+
+					<view class="data">
+						<navigator url="../shouyizongshu/shouyizongshu">
+							<view class="data-s">
+								<view class="deal">收益总数</view>
+								<view class="money">{{ datalist.income }}</view>
+								<image class="image" src="/static/jiantou.png" mode="aspectFit" />
+							</view>
+						</navigator>
+						<view class="hengxian"></view>
+					</view>	
+
+					<view class="data">
+						<navigator :url="'../huobanzongshu/huobanzongshu?uid='+activeIndex">
+							<view class="data-s">
+								<view class="deal">伙伴总数</view>
+								<view class="money">{{ datalist.friends }}</view>
+								<image class="image" src="/static/jiantou.png" mode="aspectFit" />
+							</view>
+						</navigator>
+						<view class="hengxian"></view>
+					</view>	
+
+					<view class="data">
+						<navigator :url="'../shanghuzongshu/shanghuzongshu?uid='+activeIndex">
+							<view class="data-s">
+								<view class="deal">商户总数</view>
+								<view class="money">{{ datalist.merchants }}</view>
+								<image class="image" src="/static/jiantou.png" mode="aspectFit" />
+							</view>
+						</navigator>
+						<view class="hengxian"></view>
+					</view>
+
+					<view class="data">
+						<navigator url="../taijunjiaoyi/taijunjiaoyi">
+							<view class="data-s">
+								<view class="deal">台均交易量</view>
+								<view class="money">{{ datalist.Avg }}</view>
+								<image class="image" src="/static/jiantou.png" mode="aspectFit" />
+							</view>
+						</navigator>
+						<view class="hengxian"></view>
+					</view>
+
+
 				</view>
+				
+				
 			</view>
 		</view>
 	</view>
 </template>
 
 <script>
+	
+import net from '../../../common/net.js';
+
 export default {
 	data() {
 		return {
 			activeInde: 0,
-			activeIndex: 0,
-			agency: [{ name: '我 的' }, { name: '畅 伙 伴' }, { name: '畅 伙 伴' }, { name: '畅 伙 伴' }],
+			activeIndex: 1,
+			agency: [],
 			select: [{ name: '按日查询' }, { name: '按月查询' }],
-			data: [
-				{
-					Name: '1000.00',
-					name: '今日交易',
-					src: '/static/jiantou.png',
-					Url: '../jinrijiaoyi/jinrijiaoyi'
-				},
-				{
-					name: '激活总数',
-					Name: '80',
-					src: '/static/jiantou.png',
-					Url: '../jihuozongshu/jihuozongshu'
-				},
-				{
-					name: '机具总数',
-					Name: '80',
-					src: '/static/jiantou.png',
-					Url: '../jihuozongshu/jihuozongshu'
-				},
-				{
-					name: '收益总数',
-					Name: '200.00',
-					src: '/static/jiantou.png',
-					Url: '../shouyizongshu/shouyizongshu'
-				},
-				{
-					name: '伙伴总数',
-					Name: '20',
-					src: '/static/jiantou.png',
-					Url: '../huobanzongshu/huobanzongshu'
-				},
-				{
-					name: '商户总数',
-					Name: '100',
-					src: '/static/jiantou.png',
-					Url: '../shanghuzongshu/shanghuzongshu'
-				},
-
-				{
-					name: '台均交易量',
-					Name: '30000.00',
-					src: '/static/jiantou.png',
-					Url: '../taijunjiaoyi/taijunjiaoyi'
-				}
-			]
+			datalist: [],
 		};
 	},
+	
+	// 页面加载的时候初始化数据
+	onLoad(){
+		uni.showLoading();
+		// 获取当前登陆用户id
+		this.getUserInfo();
+		// 获取展示数据 团队信息
+		this.getTeamList();
+		
+		this.getTeamDetail();
+	},
+	
 	methods: {
 		changeCate(index) {
-			this.activeIndex = index;
+			if(this.activeIndex != index){
+				let type = this.activeInde == 0 ? 'day' : 'month';
+				this.getTeamDetail(type, index);
+				this.activeIndex = index;
+			}
+			
 		},
 		changecate(index) {
-			this.activeInde = index;
+			// 按月查询 按日查询
+			if( this.activeInde !== index){
+				if(index == 0){
+					this.getTeamDetail('day', this.activeIndex);
+				}
+				if(index == 1){
+					this.getTeamDetail('month', this.activeIndex);
+				}
+				this.activeInde = index;
+			}
+			
+		},
+		
+		getUserInfo(){
+	    	net({
+	        	url:"/V1/mine",
+	            method:'get',
+	            success: (res) => {
+					uni.hideLoading();
+					this.activeIndex = res.data.success.data.id;
+	            }
+	      	})
+		},
+		
+		/**
+		 *  @version 获取直接下级列表
+		 */
+		getTeamList(){
+	    	net({
+	        	url:"/V1/my_team",
+	            method:'get',
+	            success: (res) => {
+					uni.hideLoading();
+					this.agency = res.data.success.data.list;
+	            }
+	      	})
+		},
+		
+		/**
+		 * @version 获取详细数据
+		 */
+		getTeamDetail(type, uid){
+	    	net({
+	        	url:"/V1/getTradeDetail",
+	            method:'post',
+				data:{
+					data_type: type,
+					uid: uid
+				},
+	            success: (res) => {
+					uni.hideLoading();
+					console.log(res)
+					if(res.data.success){
+						this.datalist = res.data.success.data;
+					}
+					
+					if(res.data.error){
+						
+					}
+	            }
+	      	})
 		}
+		
 	}
 };
 </script>
 
 <style>
-/* 顶部选择 */
-.select {
-	width: 100%;
-	height: 100upx;
-	display: flex;
-	background-color: #fff;
-}
-.select-view {
-	width: 50%;
-	justify-content: center;
-}
-.select-text {
-	width: 50%;
-	height: 100upx;
-	line-height: 100upx;
-	text-align: center;
-	font-size: 30upx;
-}
-.select-text2 {
-	width: 50%;
-	height: 100upx;
-	line-height: 100upx;
-	color: #f98021;
-	border-bottom: 3upx solid #f98021;
-	text-align: center;
-	font-size: 30upx;
-}
-/* 详情栏 */
-
-/* 代理 */
-.agency {
-	width: 25.5%;
-	background-color: #fff;
-}
-.agency-view {
-	text-align: center;
-	width: 100%;
-}
-.agency-text {
-	height: 100upx;
-	line-height: 100upx;
-	font-size: 30upx;
-}
-.agency-text2 {
-	height: 100upx;
-	line-height: 100upx;
-	background-color: #f98021;
-	color: #ffffff;
-	font-size: 30upx;
-}
-.agency-xian {
-	width: 100%;
-	height: 1upx;
-	background-color: #f2f2f2;
-}
-.vertical {
-	width: 0.5%;
-	height: 100%;
-}
-/* 数据 */
-.datas {
-	width: 74%;
-	background-color: #fff;
-}
-.times {
-	width: 100%;
-	height: 105upx;
-	display: flex;
-	background-color: #f2f2f2;
-}
-
-.time {
-	font-size: 0.9rem;
-	margin-top: 0.2rem;
-	margin-left: 0.4rem;
-}
-.shu {
-  width: 1%;
-  height: 30rpx;
-  background-color: #FF8C00;
-  margin: 18rpx 20rpx;
-}
-
-
-.data {
-	width: 100%;
-}
-
-
-.data-s {
-	height: 100upx;
-	display: flex;
-	width: 100%;
-	position: relative;
-	font-size: 28upx;
-}
-
-.image {
-	width: 50upx;
-	height: 50upx;
-	position: absolute;
-	right: 20upx;
-	top: 25upx;
-}
-.deal {
-	margin-left: 3%;
-	height: 100upx;
-	line-height: 100upx;
-	font-size: 30upx;
-}
-.money {
-	position: absolute;
-	right: 2rem;
-	color: #f98021;
-	height: 100upx;
-	line-height: 100upx;
-	font-size: 30upx;
-}
-
-.hengxian {
-	width: 100%;
-	height: 1px;
-	background-color: #e6e6e6;
-}
+@import '../style/trade_detail.css';
 </style>
