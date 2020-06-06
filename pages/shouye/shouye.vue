@@ -6,7 +6,7 @@
 		<!-- 公告 -->
 		<view class="notice" v-if="notice_show">
 			<image class="notice-img" src="../../static/laba.png" mode="widthFix"></image>
-			<navigator :url=" './nav?index='" style="width: 90%;">
+			<navigator :url=" '../Article/ArtilcleDetail?aid=' + notice.id" style="width: 90%;">
 				<view class="notice-text">
 					{{ notice.title}}
 				</view>
@@ -121,6 +121,7 @@ export default {
 	            method:'get',
 	            success: (res) => {
 					if(res.data.success.data){
+						console.log(res);
 						this.notice = res.data.success.data;
 						this.notice_show = true;
 					}

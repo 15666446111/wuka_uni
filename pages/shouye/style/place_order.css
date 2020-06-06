@@ -119,6 +119,10 @@ page {
 	height: 40upx;
 	line-height: 40upx;
 	margin-left: 10upx;
+	width: 76%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 /* 分割线 */
 .hr {

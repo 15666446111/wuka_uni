@@ -17,40 +17,18 @@
 				<view class="views" id="v4">已激活</view>
 			</view>
 			<view id="view3">
-				<view class="view_sn">
-					<view class="p1">SN:123456789123456789</view>
-					<view class="p2">已绑定/已激活</view>
+				<view class="view_sn" v-for="(item, index) in merchantList" :key="index">
+					<view class="p1">SN:{{item.merchant_sn}}</view>
+					<view class="p2">{{item.bind_status == 0 ? '未绑定' : '已绑定'}}/{{item.active_status == 0 ? '未激活' : '已激活'}}</view>
 					<view class="p3">
 						活动：
-						<view class="p3_1">H9</view>
-						-298返460
+						<view class="p3_1"></view>
+						{{item.title}}
 					</view>
-					<view class="p4">绑定时间：2019/12/6 15：12</view>
+					<view class="p4">绑定时间：{{item.bind_time}}</view>
 					<view class="divLine"></view>
-				</view>
-				<view class="xian"></view>
-				<view class="view_sn">
-					<view class="p1">SN:123456789123456789</view>
-					<view class="p2">已绑定/已激活</view>
-					<view class="p3">
-						活动：
-						<view class="p3_1">H9</view>
-						-298返460
-					</view>
-					<view class="p4">绑定时间：2019/12/6 15：12</view>
-					<view class="divLine"></view>
-				</view>
-				<view class="xian"></view>
-				<view class="view_sn">
-					<view class="p1">SN:123456789123456789</view>
-					<view class="p2">已绑定/已激活</view>
-					<view class="p3">
-						活动：
-						<view class="p3_1">H9</view>
-						-298返460
-					</view>
-					<view class="p4">绑定时间：2019/12/6 15：12</view>
-					<view class="divLine"></view>
+					
+					<view class="xian"></view>
 				</view>
 			</view>
 		</view>
@@ -58,137 +36,41 @@
 </template>
 
 <script>
+import net from '../../../../common/net.js';
 export default {
 	data() {
-		return {};
+		return {
+			merchantList: {},
+		};
 	},
-	methods: {}
+	
+	onLoad(options) {
+		this.getMerchantList(options.type);
+	},
+	
+	methods: {
+		getMerchantList(type) {
+			net({
+				url: '/V1/getTail',
+				method: 'GET',
+				data: { 'type': type },
+				success: (res) => {
+					if (res.data.success) {
+						this.merchantList = res.data.success.data;
+					} else {
+						uni.showToast({
+							title: res.data.error.message,
+							icon: 'none'
+						})
+					}
+					console.log(res);
+				}
+			})
+		}
+	}
 };
 </script>
 
 <style>
-.xian {
-	width: 100%;
-	height: 1upx;
-	background-color: #f1f1f1;
-}
-#body {
-	width: 100%;
-	overflow: hidden;
-	padding: 20px;
-	height: 1000rpx;
-}
-#view {
-	width: 100%;
-	height: 50px;
-	background-color: rgb(252, 252, 252);
-	overflow: hidden;
-}
-
-#view_view {
-	width: 90%;
-	height: 36px;
-	background: rgb(238, 238, 238);
-	overflow: hidden;
-	margin-top: 8px;
-	border-radius: 5px;
-	margin-left: 20px;
-}
-
-.v_input {
-	background-color: rgb(238, 238, 238);
-	width: 70%;
-	margin: 0 auto;
-	margin-top: 8px;
-	display: inline-block;
-}
-
-.place {
-	color: rgb(192, 192, 192);
-}
-
-#view image {
-	width: 20px;
-	height: 20px;
-	display: inline-block;
-	margin-left: 16px;
-	margin-bottom: 2px;
-}
-
-.views {
-	width: 20%;
-	height: 50upx;
-	line-height: 50upx;
-	/* background-color:rgb(243, 169, 9);*/
-	background-color: rgb(253, 253, 253);
-	text-align: center;
-	margin-top: 10px;
-	color: rgb(168, 168, 168);
-	display: inline-block;
-	font-size: 12px;
-	padding: 3px;
-	margin-top: -10px;
-	border-right: 1px solid #c4c4c4;
-	box-shadow: 5rpx 5rpx 5rpx 5rpx rgb(204, 204, 204);
-}
-
-.view_sn {
-	width: 90%;
-	background-color: rgb(255, 255, 255);
-	overflow: hidden;
-	padding: 6px;
-	margin-left: -10px;
-	border-radius: 3px;
-}
-
-.divLine {
-	background: #ffffff;
-	width: 100%;
-	height: 1rpx;
-}
-
-.view3 {
-	width: 90%;
-	height: 1000px;
-	background-color: rgb(7, 0, 0);
-}
-
-.p1 {
-	display: inline-block;
-	font-size: 30upx;
-}
-
-.p2 {
-	display: inline-block;
-	font-size: 28upx;
-	color: #ff8c00;
-	font-weight: bold;
-	float: right;
-	overflow: hidden;
-}
-
-.p3 {
-	display: inline-block;
-	font-size: 12px;
-	color: #666;
-}
-
-.p3_1 {
-	display: inline-block;
-	font-size: 12px;
-	color: #ff8c00;
-}
-
-.p4 {
-	display: inline-block;
-	font-size: 12px;
-	float: right;
-	margin-top: 3px;
-	color: #666;
-}
-
-#v1 {
-	background-color: #ff8c00;
-	color: white;
-}
+	@import url("../../style/merchant_list.css");
 </style>
