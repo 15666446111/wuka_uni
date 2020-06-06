@@ -1,0 +1,93 @@
+
+.bview4 view {
+	font-size: 25upx;
+	color: #666;
+	margin-left: 30upx;
+	height: 60upx;
+	line-height: 60upx;
+}
+.body {
+	background-color: #fff;
+	width: 92%;
+	margin-left: 4%;
+	border-radius: 20upx;
+	margin-top: 20upx;
+	height: 550upx;
+}
+.qbtxje {
+	width: 75%;
+	height: 100upx;
+	line-height: 100upx;
+}
+.bview {
+	width: 90%;
+	height: 100upx;
+	line-height: 100upx;
+	font-size: 30upx;
+	margin-left: 30upx;
+}
+.background {
+	min-height: 100%;
+	overflow: hidden;
+	height: 1000rpx;
+}
+.top {
+	width: 92%;
+	height: 155rpx;
+	border-radius: 8rpx;
+	background-color: white;
+	margin: 0 auto;
+	margin-top: 20rpx;
+	position: relative;
+	overflow:hidden ;
+}
+.img {
+	width: 80rpx;
+	height: 80rpx;
+	position: absolute;
+	top: 36rpx;
+	left: 30rpx;
+}
+.fview {
+	margin-left: 32rpx;
+	margin-top: 25rpx;
+}
+.cxk {
+	width: 55rpx;
+	height: 55rpx;
+	position: absolute;
+	right: 30rpx;
+	top: 50rpx;
+}
+.button {
+	margin-top: 30rpx;
+	width: 70%;
+	font-size: 28rpx;
+	color: white;
+	background-color: rgb(252, 132, 19);
+}
+.select-image {
+	width: 40upx;
+	height: 40upx;
+	margin-top: 10upx;
+	position: absolute;
+	right: 40upx;
+	top: 20upx;
+}
+.select-view {
+	display: flex;
+	height: 100upx;
+	position: relative;
+}
+.hengxian {
+	width: 100%;
+	height: 1upx;
+	background-color: #f1f1f1;
+}
+.select-text {
+	height: 100upx;
+	width: 100%;
+	line-height: 100upx;
+	margin-left: 30upx;
+	font-size: 28upx;
+}

@@ -100,7 +100,7 @@ export default {
 	computed: {
 		navWidth() {
 			const perView = parseInt(this.navPerView);
-			return isNaN(perView) ? 'auto' : 100 / 4 + '%';
+			return isNaN(perView) ? 'auto' : 100 / 2 + '%';
 		},
 		transform() {
 			return `transform: translate3d(${-100 * this.value}%, 0, 0);`;

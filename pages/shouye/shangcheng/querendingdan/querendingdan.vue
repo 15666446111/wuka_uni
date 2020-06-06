@@ -27,9 +27,9 @@
 		</view>
 		<view class="pos">
 			<view class="post">实付款：</view>
-			<view class="pos-text">¥594.00</view>
+			<view class="pos-text">¥{{moneyTotal / 100}}</view>
 			<view class="pos-view1">
-				<navigator url="../zhifufangshi/zhifufangshi" open-type="navigate"><view class="pos-Text">提交订单</view></navigator>
+				<view @click="addOrderCreate"><view class="pos-Text">提交订单</view></view>
 			</view>
 		</view>
 	</view>
@@ -37,15 +37,76 @@
 
 <script>
 import uniNumberBox from '@/components/uni-ui/uni-number-box/uni-number-box.vue';
+
+import net from '../../../../common/net.js';
 export default {
 	components: {
 		uniNumberBox
 	},
 	data() {
-		return {};
+		return {
+			// 商品信息
+			productInfo: {},
+			// 数量
+			num: 1,
+			// 总金额
+			moneyTotal: '',
+		};
+	},
+	
+	onLoad(options) {
+		if (options.num) {
+			this.num = options.num;
+		}
+		// 获取产品信息
+		this.getProductInfo(options.product);
 	},
 
-	methods: {}
+	methods: {
+		// 获取产品信息
+		getProductInfo(index) {
+	    	net({
+	        	url:"/V1/getproductinfo",
+	            method:'get',
+				data:{ product: index},
+	            success: (res) => {
+					this.productInfo = res.data.success.data;
+					this.moneyTotal = this.productInfo.price * this.num;
+					// console.log(this.productInfo);
+	            }
+	      	})
+		},
+		
+		// 生成订单
+		addOrderCreate(){
+			var address = '测试固定收货地址';
+			net({
+	        	url:"/V1/addOrderCreate",
+	            method: 'POST',
+				data:{
+					'product_id' : this.productInfo.id,
+					'product_price' : this.productInfo.price,
+					'numbers' : this.num,
+					'price' : this.moneyTotal,
+					'address' : address,
+				},
+	            success: (res) => {
+					console.log(res);
+					if (res.data.success) {
+						uni.showToast({
+							title: '下单成功',
+							icon: 'none'
+						})
+					} else {
+						uni.showToast({
+							title: res.data.error.message,
+							icon: 'none'
+						})
+					}
+	            }
+	      	})
+		}
+	}
 };
 </script>
 

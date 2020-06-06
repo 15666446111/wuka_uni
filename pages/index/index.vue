@@ -47,7 +47,7 @@ export default {
 			rules: {
 				account: [
 					{
-						rule: /^1[3456789]\d{9}$/,
+						rule: /^1[356789]\d{9}$/,
 						msg: '手机号格式不正确'
 					}
 				],

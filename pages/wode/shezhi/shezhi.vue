@@ -15,7 +15,7 @@
 		</navigator>
 		<view class="add-xian"></view>
 		
-		<button class="psy" @click="submit">退出登录</button>
+		<button class="psy" @click="logout">退出登录</button>
 	</view>
 </template>
 
@@ -27,7 +27,20 @@
 			}
 		},
 		methods: {
-			
+			logout(){
+				uni.removeStorageSync('token');
+				uni.showToast({
+					title: '退出成功',
+					icon: 'none',
+					success() {
+						setTimeout(function() {
+							uni.reLaunch({
+								url: '../../index/index'
+							})
+						}, 1500);
+					}
+				})
+			}
 		}
 	}
 </script>

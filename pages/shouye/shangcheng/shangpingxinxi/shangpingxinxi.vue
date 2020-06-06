@@ -8,7 +8,7 @@
 		<!-- 价格 -->
 		<view class="head-view">
 			<view class="head-text">{{productInfo.title}}</view>
-			<view class="head-money">¥{{ productInfo.price }}</view>
+			<view class="head-money">¥{{ productInfo.price / 100 }}</view>
 		</view>
 		
 		<!-- 详情 -->
@@ -23,7 +23,7 @@
 		
 		<view class="d-flex a-stretch bg-white position-fixed left-0 right-0 bottom-0" style="height: 100upx; z-index: 100;">
 			<view class="d-flex flex-column a-center j-center line-h-md " style="flex: 1.5; color: red;" hover-class="bg-light-secondary">
-				价格:￥{{ productInfo.price }}
+				价格:￥{{ productInfo.price / 100 }}
 			</view>
 			<!-- -->
 			<view class="d-flex flex-column a-center j-center line-h-md main-bg-color text-white" style="flex: 1; background-color: red;" @click="show">立即购买</view>
@@ -35,7 +35,7 @@
 			<view class="d-flex a-center" style="height: 275rpx;">
 				<image :src=productInfo.image mode="widthFix" style="width: 180rpx; height: 180rpx;" class="border rounded"></image>
 				<view class="pl-2">
-					<Price priceSize="font-lg" unitSize="font">598</Price>
+					<Price priceSize="font-lg" unitSize="font">￥{{ productInfo.price / 100 }}</Price>
 					<text class="d-block">{{ productInfo.title }}</text>
 				</view>
 			</view>
@@ -48,7 +48,7 @@
 					<uni-number-box :min="1" :value="num" @change="num=$event"></uni-number-box>
 				</view>
 				
-				<navigator url="../querendingdan/querendingdan">
+				<navigator :url="'../querendingdan/querendingdan?product='+productInfo.id+'&num='+num">
 					<view 
 						class="main-bg-color text-white font-md d-flex a-center j-center" hover-class="main-bg-hover-color">
 						立即购买

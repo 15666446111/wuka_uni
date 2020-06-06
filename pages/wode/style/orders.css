@@ -1,0 +1,361 @@
+.Tabs-Page {
+	/deep/.s-tab-wrap {
+		.s-tab-panel {
+			padding: 20rpx;
+			font-size: 28rpx;
+		}
+	}
+}
+.order {
+	width: 100%;
+	line-height: 80upx;
+	height: 80upx;
+}
+.order text{
+	margin-left: 40upx;
+	font-size: 30upx;
+	margin-top: 5upx;
+}
+.diceng {
+	width: 100%;
+	height: 60rpx;
+}
+.orderForm {
+	width: 100%;
+	background-color: #fff;
+	display: flex;
+	height: 80rpx;
+}
+
+.form {
+	width: 100%;
+	display: flex;
+}
+.form-text {
+	width: 100%;
+	text-align: center;
+	font-size: 28rpx;
+	margin-top: 10rpx;
+}
+.form-xian {
+	width: 1px;
+	height: 60rpx;
+	margin-top: 3%;
+	background-color: #c5c3c3;
+}
+.orderForm1 {
+	width: 95%;
+	background-color: #fff;
+	display: flex;
+	height: 80rpx;
+	margin-left: 2.5%;
+	border-radius: 7px 7px 7px 7px;
+}
+.form1 {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.form-text1 {
+	width: 100%;
+	text-align: center;
+	font-size: 28rpx;
+	margin-top: 20rpx;
+}
+.form-xian2 {
+	width: 1px;
+	height: 60rpx;
+	background-color: #c5c3c3;
+	margin-top: 10rpx;
+}
+
+.shoppingMall {
+	width: 100%;
+}
+
+.shopping-xian {
+	width: 100%;
+}
+
+/*商城订单*/
+.shopping {
+	height: 55rpx;
+}
+
+.shopping-text {
+	margin-left: 6%;
+	font-size: 33rpx;
+	font-weight: 600;
+	color: #333;
+}
+
+/* 商城订单信息栏 */
+.mall {
+	width: 90%;
+	background-color: #fff;
+	margin-top: 10rpx;
+	margin-left: 5%;
+	border-radius: 7px 7px 7px 7px;
+	height: 380rpx;
+}
+
+.order-number {
+	display: flex;
+	background-color: #fff;
+	width: 100%;
+	position: relative;
+	height: 60rpx;
+	border-radius: 7px 7px 7px 7px;
+}
+
+.number {
+	font-size: 25rpx;
+	margin-left: 30rpx;
+	margin-top: 15rpx;
+}
+
+.pay {
+	font-size: 28rpx;
+	position: absolute;
+	right: 35rpx;
+	top: 10rpx;
+	color: red;
+}
+
+.mall-xian {
+	width: 90%;
+	height: 1px;
+	margin-left: 5%;
+	background-color: #c5c3c3;
+}
+
+.mall-xian1 {
+	width: 90%;
+	height: 1px;
+	margin-left: 5%;
+	/* background-color: #c5c3c3; */
+	border-bottom: 1px dashed #c5c3c3;
+}
+
+/* 内容 */
+.information {
+	width: 100%;
+	display: flex;
+	height: 240rpx;
+}
+
+.information-img {
+	width: 30%;
+	margin-left: 30rpx;
+	margin-top: 17rpx;
+}
+
+.information-view {
+	margin-left: 40rpx;
+	margin-top: 50rpx;
+}
+
+.information-text {
+	font-size: 28rpx;
+}
+
+.information-figure {
+	margin-top: 60rpx;
+	font-size: 25rpx;
+	color: red;
+}
+
+/*合计*/
+.total {
+	width: 100%;
+	height: 60rpx;
+	position: relative;
+}
+
+.total-text {
+	position: absolute;
+	left: 40rpx;
+	top: 10rpx;
+	font-size: 28rpx;
+}
+
+/* 删除订单 */
+.total1 {
+	width: 100%;
+	height: 70rpx;
+	position: relative;
+}
+
+.total-text1 {
+	border: red solid 1px;
+	width: 150rpx;
+	position: absolute;
+	right: 40rpx;
+	top: 15rpx;
+	font-size: 28rpx;
+	color: red;
+	text-align: center;
+	border-radius: 30px 30px 30px 30px;
+}
+
+.applyFor {
+	display: flex;
+}
+
+/* 积分兑换 */
+
+.bank {
+	width: 50%;
+	margin-left: 40rpx;
+	margin-top: 50rpx;
+	font-size: 35rpx;
+}
+
+.appluFor-time {
+	width: 50%;
+	margin-top: 55rpx;
+	font-size: 26rpx;
+	color: #666;
+}
+
+.integrals {
+	display: flex;
+	height: 130rpx;
+}
+
+.integral {
+	width: 30%;
+	margin-top: 15rpx;
+	text-align: center;
+}
+
+.integral-name {
+	font-size: 30rpx;
+	font-weight: 600;
+	color: #444;
+}
+
+.integral-text {
+	font-size: 25rpx;
+	color: #666;
+	margin-top: 5rpx;
+}
+
+.status {
+	height: 60rpx;
+	width: 150rpx;
+	text-align: center;
+	background-color: #888;
+	border-radius: 20rpx 20rpx 20rpx 20rpx;
+	margin-top: 15rpx;
+	margin-left: 70rpx;
+}
+
+.status-text {
+	font-size: 28rpx;
+	margin-top: 8rpx;
+	color: #fff;
+}
+
+.turn {
+	background-color: #fff;
+	height: 60rpx;
+	border-radius: 7px 7px 7px 7px;
+}
+
+.turn-text {
+	margin-left: 40rpx;
+	font-size: 30rpx;
+	color: red;
+	margin-top: 25rpx;
+}
+
+/* 申卡订单 */
+.people {
+	width: 90%;
+	display: flex;
+	margin-left: 5%;
+	height: 80rpx;
+}
+
+.people-name {
+	color: #ff8c00;
+	font-size: 33rpx;
+	font-weight: 600;
+	margin-top: 20rpx;
+	width: 18%;
+}
+
+.people-phone {
+	color: #666;
+	font-size: 25rpx;
+	margin-top: 28rpx;
+}
+
+.banks {
+	display: flex;
+	width: 100%;
+	height: 60rpx;
+}
+
+.banks-bank {
+	width: 30%;
+	text-align: center;
+	font-size: 35rpx;
+}
+
+.banks-text {
+	width: 70%;
+	font-size: 32rpx;
+}
+
+.message {
+	display: flex;
+	width: 100%;
+	margin-left: 5%;
+	height: 30rpx;
+	margin-top: 10rpx;
+}
+
+.message-name {
+	font-size: 25rpx;
+	color: #666;
+}
+
+.message-time {
+	font-size: 25rpx;
+	color: #666;
+}
+
+.inquire-mark {
+	width: 100%;
+	height: 80rpx;
+	margin-top: 20rpx;
+	display: flex;
+	overflow: hidden;
+}
+
+.message-mark {
+	color: #666;
+	font-size: 23rpx;
+	width: 60%;
+	margin-top: 20rpx;
+	position: absolute;
+	left: 5%;
+}
+
+.message-inquire {
+	background-color: #ff8c00;
+	width: 25%;
+	height: 55rpx;
+	border-radius: 30rpx 30rpx 30rpx 30rpx;
+	margin-left: 70%;
+	margin-top: 1%;
+	font-size: 30rpx;
+}
+
+.inquire-text {
+	margin-top: 7rpx;
+	color: #fff;
+	text-align: center;
+}

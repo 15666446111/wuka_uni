@@ -50,7 +50,7 @@
 
 <script>
 import net from '../../../../common/net.js';
-	
+
 export default {
 	data() {
 		return {
@@ -60,6 +60,7 @@ export default {
 	},
 	
 	onLoad(options) {
+
 		this.mid = options.id ? options.id : '1';
 		// 获取商户详细信息
 		this.getMerchangInfo(this.mid);
@@ -82,7 +83,6 @@ export default {
 				}
 			})
 		}
-		
 		
 	}
 };

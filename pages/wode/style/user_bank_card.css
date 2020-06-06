@@ -6,7 +6,7 @@
 
 .top {
 	width: 92%;
-	height: 200rpx;
+	height: 160rpx;
 	border-radius: 8rpx;
 	background-color: white;
 	margin: 0 auto;
@@ -29,14 +29,14 @@
 .ms {
 	position: absolute;
 	font-size: 33rpx;
-	left: 128rpx;
+	left: 20rpx;
 	top: 28rpx;
 	letter-spacing: 10rpx;
 }
 
 .cxk {
 	position: absolute;
-	right: 40rpx;
+	right: 16rpx;
 	top: 28rpx;
 	color: rgb(150, 150, 150);
 	font-size: 27rpx;
@@ -44,28 +44,34 @@
 
 .kahao {
 	position: absolute;
-	top: 78rpx;
-	left: 130rpx;
+	top: 82rpx;
+	left: 20rpx;
 	font-size: 27rpx;
 	color: rgb(150, 150, 150);
 }
 
 .top2 {
 	display: flex;
-	height: 56rpx;
-	line-height: 56rpx;
-	margin-top: 128rpx;
+	height: 64rpx;
+	line-height: 64rpx;
+	position: relative;
 }
 
 .radio {
 	vertical-align: top;
-	margin-left: 50rpx;
-	transform:scale(0.8)
+	margin-left: 20rpx;
+	font-size: 28rpx;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: scale(0.86);
 }
 
 .mbc {
+	width: 100%;
 	font-size: 24rpx;
 	line-height: 56rpx;
+	text-align: right;
 }
 
 .bck {
@@ -80,7 +86,25 @@
 	background-color: rgb(252, 148, 50);
 }
 
-.card-nav {
-	/* height: 120rpx; */
-	margin-top: 20rpx;
+.bank-edit {
+	display: inline-block;
+	height: 64rpx;
+	line-height: 64rpx;
+	font-size: 26rpx;
+	color: #EE4000;
+	margin-right: 40rpx;
+	/* position: absolute;
+	top: 50%;
+	right: 6%; */
+	/* transform: translate(0, -50%); */
+}
+.edit-icon {
+	display: inline-block;
+	vertical-align: top;
+}
+.bank-list {
+	width: 94%;
+	margin: 28rpx 3% 0;
+	border-radius: 12rpx;
+	background-color: #fff;
 }

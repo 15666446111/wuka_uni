@@ -1,0 +1,65 @@
+
+.indexs {
+	width: 90%;
+	background-color: #fff;
+	margin-left: 5%;
+	margin-top: 20rpx;
+	border-radius: 10rpx 10rpx 10rpx 10rpx;
+}
+
+.selects {
+	width: 100%;
+	position: relative;
+	margin-top: 2%;
+}
+
+.select-view {
+	display: flex;
+	height: 110rpx;
+}
+.select-view1 {
+	display: flex;
+	height: 110rpx;
+	position: relative;
+}
+
+.select-name {
+	margin-left: 40rpx;
+	margin-top: 6%;
+	font-size: 25rpx;
+	width: 26%;
+}
+.select-text {
+	margin-left: 20rpx;
+	margin-top: 6%;
+	font-size: 25rpx;
+	color: #666;
+}
+.select-text1 {
+	position: absolute;
+	top: 40upx;
+	left: 240upx;
+	font-size: 25rpx;
+	color: #666;
+}
+
+
+.hengxian {
+	width: 94%;
+	height: 1px;
+	background-color: #dbdada;
+	margin-left: 3%;
+}
+.ckeck {
+	width: 90%;
+	margin-left: 5%;
+	font-size: 28rpx;
+	margin-top: 3%;
+}
+button {
+	width: 80%;
+	margin-top: 50rpx;
+	background-color: #ff8c00;
+	border-radius: 40rpx 40rpx 40rpx 40rpx;
+	color: #fff;
+}

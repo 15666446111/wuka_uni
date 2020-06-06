@@ -29,7 +29,7 @@
 												<image :src=item.image mode="widthFix"></image>
 											</view>
 											<view class="body-text">{{item.title}}</view>
-											<view class="price">¥{{item.price}}</view>
+											<view class="price">¥{{item.price / 100}}</view>
 										</navigator>
 									</view>
 													

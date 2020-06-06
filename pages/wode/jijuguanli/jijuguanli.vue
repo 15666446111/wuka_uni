@@ -3,58 +3,58 @@
 		<view class="class">
 			<navigator url="jijuchakan/jijuchakan" class="class-view">
 				<view class="class-text">机具总数(台):</view>
-				<view class="class-figure">500</view>
+				<view class="class-figure">{{merchantData.count.all}}</view>
 				<view class="chakan">查 看 ></view>
 			</navigator>
 			<view class="hengxian"></view>
 			<view class="class-view2">
 				<view class="view-text">
 					<view class="text">未绑定</view>
-					<view class="figure">45</view>
+					<view class="figure">{{merchantData.count.NoMerchant}}</view>
 				</view>
 				<view class="shuxian"></view>
 				<view class="view-text">
 					<view class="text">已绑定</view>
-					<view class="figure">15</view>
+					<view class="figure">{{merchantData.count.Merchant}}</view>
 				</view>
 				<view class="shuxian"></view>
 				<view class="view-text">
 					<view class="text">已激活</view>
-					<view class="figure">440</view>
+					<view class="figure">{{merchantData.count.Merchant_status}}</view>
 				</view>
 				<view class="shuxian"></view>
 				<view class="view-text">
 					<view class="text">已达标</view>
-					<view class="figure">245</view>
+					<view class="figure">{{merchantData.count.standard_statis}}</view>
 				</view>
 			</view>
 		</view>
 		<view class="class">
 			<navigator url="jijuchakan/jijuchakan" class="class-view">
 				<view class="class-text">我的机具(台):</view>
-				<view class="class-figure">300</view>
+				<view class="class-figure">{{merchantData.user.all}}</view>
 				<view class="chakan">查 看 ></view>
 			</navigator>
 			<view class="hengxian"></view>
 			<view class="class-view2">
 				<view class="view-text">
 					<view class="text">未绑定</view>
-					<view class="figure">45</view>
+					<view class="figure">{{merchantData.user.NoMerchant}}</view>
 				</view>
 				<view class="shuxian"></view>
 				<view class="view-text">
 					<view class="text">已绑定</view>
-					<view class="figure">15</view>
+					<view class="figure">{{merchantData.user.Merchant}}</view>
 				</view>
 				<view class="shuxian"></view>
 				<view class="view-text">
 					<view class="text">已激活</view>
-					<view class="figure">440</view>
+					<view class="figure">{{merchantData.user.Merchant_status}}</view>
 				</view>
 				<view class="shuxian"></view>
 				<view class="view-text">
 					<view class="text">已达标</view>
-					<view class="figure">245</view>
+					<view class="figure">{{merchantData.user.standard_statis}}</view>
 				</view>
 			</view>
 		</view>
@@ -62,29 +62,29 @@
 		<view class="class">
 			<navigator url="jijuchakan/jijuchakan" class="class-view">
 				<view class="class-text">伙伴机具(台):</view>
-				<view class="class-figure">300</view>
+				<view class="class-figure">{{merchantData.friend.all}}</view>
 				<view class="chakan">查 看 ></view>
 			</navigator>
 			<view class="hengxian"></view>
 			<view class="class-view2">
 				<view class="view-text">
 					<view class="text">未绑定</view>
-					<view class="figure">45</view>
+					<view class="figure">{{merchantData.friend.NoMerchant}}</view>
 				</view>
 				<view class="shuxian"></view>
 				<view class="view-text">
 					<view class="text">已绑定</view>
-					<view class="figure">15</view>
+					<view class="figure">{{merchantData.friend.Merchant}}</view>
 				</view>
 				<view class="shuxian"></view>
 				<view class="view-text">
 					<view class="text">已激活</view>
-					<view class="figure">440</view>
+					<view class="figure">{{merchantData.friend.Merchant_status}}</view>
 				</view>
 				<view class="shuxian"></view>
 				<view class="view-text">
 					<view class="text">已达标</view>
-					<view class="figure">245</view>
+					<view class="figure">{{merchantData.friend.standard_statis}}</view>
 				</view>
 			</view>
 		</view>
@@ -110,111 +110,55 @@
 					<view class="figure">调拨记录</view>
 				</navigator>
 			</view>
-			<view class="shuxian1"></view>
+			<!-- <view class="shuxian1"></view>
 			<view class="view-text">
 				<navigator url="zhongduandingjia/zhongduandingjia">
 					<image src="../../../static/zddj.png" class="image"></image>
 					<view class="figure">终端定价</view>
 				</navigator>
-			</view>
+			</view> -->
 		</view>
 	</view>
 </template>
 
 <script>
+import net from '../../../common/net.js';
+
 export default {
 	data() {
-		return {};
+		return {
+			merchantData: []
+		};
 	},
-	methods: {}
+	
+	onLoad() {
+		// 获取机器数据
+		this.getMerchantData();
+	},
+	
+	methods: {
+		// 获取机器数据
+		getMerchantData(){
+			net({
+				url: '/V1/getBindAll',
+				method: 'GET',
+				success: (res) => {
+					if (res.data.success) {
+						this.merchantData = res.data.success.data;
+					} else {
+						uni.showToast({
+							title: res.data.error.message,
+							icon: 'none'
+						})
+					}
+					console.log(res);
+				}
+			})
+		}
+	}
 };
 </script>
 
 <style>
-.class-view3 {
-	width: 90%;
-	display: flex;
-	height: 190rpx;
-	background-color: #fff;
-	border-radius: 20rpx;
-	margin-left: 5%;
-	margin-top: 5%;
-}
-.image {
-	width: 70rpx;
-	height: 80rpx;
-	margin-top: 4%;
-}
-.text {
-	font-size: 28rpx;
-	color: #666666;
-}
-.figure {
-	font-size: 28rpx;
-	margin-top: 2%;
-}
-.shuxian {
-	width: 2rpx;
-	height: 90rpx;
-	background-color: #c8c7cc;
-	margin-top: 20rpx;
-}
-.shuxian1 {
-	width: 2rpx;
-	height: 130rpx;
-	background-color: #c8c7cc;
-	margin-top: 25rpx;
-}
-.class-view2 {
-	width: 100%;
-	display: flex;
-	height: 140rpx;
-}
-.view-text {
-	width: 25%;
-	text-align: center;
-	margin-top: 3%;
-}
-.hengxian {
-	width: 92%;
-	height: 1rpx;
-	background-color: #c8c7cc;
-	margin-left: 4%;
-}
-.chakan {
-	font-size: 30rpx;
-	color: #f19952;
-	width: 20%;
-	margin-left: 40%;
-	margin-top: 3%;
-}
-.class-text {
-	font-size: 28rpx;
-	color: #666;
-	width: 25%;
-	margin-top: 3%;
-}
-.class-figure {
-	font-size: 33rpx;
-	font-weight: 600;
-	color: #f19952;
-	margin-left: 2%;
-	margin-top: 3%;
-}
-.class-view {
-	display: flex;
-	margin-left: 4%;
-	margin-top: 4%;
-	width: 100%;
-	height: 100rpx;
-}
-.class {
-	width: 90%;
-	height: 100%;
-	background-color: #fff;
-	margin-left: 5%;
-	border-radius: 20rpx;
-	margin-top: 2%;
-	overflow: hidden;
-}
+@import url("../style/merchant.css");
 </style>
