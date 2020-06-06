@@ -91,7 +91,7 @@ export default {
 	            method:'get',
 				data: { type: type},
 	            success: (res) => {
-					// console.log(res) 
+					console.log(res) 
 					this.product = res.data.success.data;
 	            }
 	      	})

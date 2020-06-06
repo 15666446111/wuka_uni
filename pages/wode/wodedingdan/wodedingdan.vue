@@ -168,19 +168,27 @@ export default {
 	
 	onLoad() {
 		// 获取订单列表
-		this.getOrderList();
+		this.getOrderList('all');
 	},
 	
 	methods: {
 		change(index) {
-			console.log(index);
+			
+			if(index == 0){
+				this.getOrderList('all');
+			}
+			
+			if(index == 1){
+				this.getOrderList('shop');
+			}
 		},
 		
 		// 获取订单列表
-		getOrderList(){
+		getOrderList(type){
 			net({
 	        	url:"/V1/getOrderUser",
 	            method:'get',
+				data:{type: type},
 	            success: (res) => {
 					console.log(res.data.success.data);
 					this.orderList = res.data.success.data;

@@ -44,7 +44,7 @@
 				<view class="income">收入¥{{ item.money / 100 | 0 }}</view>
 			</view>
 			<view class="across"></view>
-			<view class="for" v-for="(t,d) in item.list">
+			<view class="for" v-for="(t,d) in item.list" :key="d">
 				<view class="detail">
 					<image class="detail-img" v-if="t.type == 1" src="/static/sy/zhi.png"  />
 					<view class="detail-name" v-if="t.type == 1">直营分润</view>

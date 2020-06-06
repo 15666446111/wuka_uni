@@ -25,7 +25,7 @@
 				</view>
 				
 				<view class="earning blance_text">
-					<text style="">{{ UserInfo.blance/100 | 0 }}</text>
+					<text style="">{{ UserInfo.blance / 100 | 0 }}</text>
 				</view>
 				
 				<view class="across"></view>
