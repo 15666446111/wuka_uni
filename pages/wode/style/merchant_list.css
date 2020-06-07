@@ -7,7 +7,6 @@
 	width: 100%;
 	overflow: hidden;
 	padding: 20px;
-	height: 1000rpx;
 }
 #view {
 	width: 100%;
@@ -80,7 +79,7 @@
 
 .view3 {
 	width: 90%;
-	height: 1000px;
+	/* height: 100%; */
 	background-color: rgb(7, 0, 0);
 }
 

@@ -73,6 +73,8 @@ button {
 	overflow: hidden;
 }
 .content-div {
+	width: 94%;
+	padding: 0 3%;
 	height: 120rpx;
 }
 .div {
@@ -81,13 +83,13 @@ button {
 }
 .content-text {
 	font-size: 33rpx;
-	margin-left: 8%;
-	width: 40%;
+	width: 50%;
 }
 .content-text1 {
 	font-size: 28rpx;
-	margin-left: 33%;
 	color: #ff8c00;
+	width: 50%;
+	text-align: right;
 }
 .content-text2 {
 	font-size: 28rpx;
@@ -98,12 +100,14 @@ button {
 .name {
 	font-size: 25rpx;
 	color: #666;
-	margin-left: 8%;
+	width: 50%;
+	/* margin-left: 8%; */
 }
 .time {
 	font-size: 25rpx;
 	color: #666;
-	margin-left: 31%;
+	width: 50%;
+	text-align: right;
 }
 .hengxian1 {
 	width: 94%;
