@@ -196,7 +196,13 @@
 		}, {
 			"path": "pages/wode/share/wx_share",
 			"style": {
-				"navigationBarTitleText": "机具总数",
+				"navigationBarTitleText": "微信分享",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/wode/temail_share/temail_share",
+			"style": {
+				"navigationBarTitleText": "商户推荐",
 				"navigationBarTextStyle": "black"
 			}
 		}, {

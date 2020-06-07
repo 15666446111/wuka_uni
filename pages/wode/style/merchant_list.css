@@ -66,9 +66,8 @@
 	width: 90%;
 	background-color: rgb(255, 255, 255);
 	overflow: hidden;
-	padding: 6px;
-	margin-left: -10px;
-	border-radius: 3px;
+	padding: 5px 20px;
+	margin-left: -16px;
 }
 
 .divLine {
@@ -87,6 +86,7 @@
 	display: inline-block;
 	font-size: 30upx;
 	width: 70%;
+	margin-top: 5px;
 }
 
 .p2 {
@@ -97,12 +97,14 @@
 	font-weight: bold;
 	float: right;
 	overflow: hidden;
+	margin-top: 5px;
 }
 
 .p3 {
 	display: inline-block;
 	font-size: 12px;
 	color: #666;
+	margin-top: 5px;
 }
 
 .p3_1 {

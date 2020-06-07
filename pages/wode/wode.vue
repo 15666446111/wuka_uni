@@ -90,7 +90,7 @@
 				</navigator>
 				<view class="across"></view>
 				
-				<navigator class="url" :url="'share/wx_share?uid=' + UserInfo.id">
+				<navigator class="url" url="temail_share/temail_share">
 					<view class="div">
 						<image class="div-img" src="/static/yaoqing.png" />
 						<view class="div-text">推广商户</view>
