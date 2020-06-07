@@ -12,7 +12,14 @@
 				<!-- 代理栏 -->
 				<view class=" agency">
 					
-					<view v-for="(item, index) in agency" :key="item.id" @tap="changeCate(item.id)">
+					<view :key="uid" @tap="changeCate(uid)">
+						<view class="agency-view">
+							<view class="agency-text" :class="activeIndex === uid ? 'agency-text2' : ''">我的</view>
+						</view>
+						<view class="agency-xian"></view>
+					</view>					
+					
+					<view v-for="(item, index) in agency" :key="item.id" @tap="changeCate(item.id)" v-if="item.id != uid">
 						<view class="agency-view">
 							<view class="agency-text" :class="activeIndex === item.id ? 'agency-text2' : ''">{{ item.nickname }}</view>
 						</view>
@@ -125,6 +132,7 @@ export default {
 		return {
 			activeInde: 0,
 			activeIndex: 1,
+			uid: 0,
 			agency: [],
 			select: [{ name: '按日查询' }, { name: '按月查询' }],
 			datalist: [],
@@ -171,6 +179,7 @@ export default {
 	            method:'get',
 	            success: (res) => {
 					uni.hideLoading();
+					this.uid = res.data.success.data.id;
 					this.activeIndex = res.data.success.data.id;
 	            }
 	      	})
@@ -184,8 +193,13 @@ export default {
 	        	url:"/V1/my_team",
 	            method:'get',
 	            success: (res) => {
+		
 					uni.hideLoading();
-					this.agency = res.data.success.data.list;
+					let list = res.data.success.data.list;
+										
+					this.agency = list.filter(item =>{  
+						return item.id!== this.uid;  
+					})
 	            }
 	      	})
 		},

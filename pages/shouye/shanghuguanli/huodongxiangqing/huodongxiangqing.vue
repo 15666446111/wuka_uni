@@ -2,10 +2,11 @@
 	<view>
 		<view style="height:20upx;"></view>
 		<view class="head">
-			<view class="head-cash">押金</view>
+			<!--<view class="head-cash">押金</view>-->
 			<view class="head-money">总交易金额(元)</view>
-			<view class="head-text">99.435.00</view>
+			<view class="head-text">{{ data.countTradeMoney }}</view>
 		</view>
+
 
 		<view class="title">
 			<text class="title-name">首次</text>
@@ -21,46 +22,45 @@
 				<text class="title-text">49</text>
 			</view>
 		</view>
-		<view class="title">
-			<text class="title-name">第二次</text>
-			<text class="title-text">达标截止时间:2019-12-09 10:17:39</text>
-		</view>
-		<view style="height: 100%; background-color: #fff;">
-			<view class="d-flex">
-				<text class="title-text1">达标返现活动状态</text>
-				<text class="title-text">已达标</text>
-			</view>
-			<view class="d-flex">
-				<text class="title-text1">达标返现金额:</text>
-				<text class="title-text">49</text>
-			</view>
-		</view>
-		<view class="title">
-			<text class="title-name">第三次</text>
-			<text class="title-text">达标截止时间:2019-12-09 10:17:39</text>
-		</view>
-		<view style="height: 100%; background-color: #fff;">
-			<view class="d-flex">
-				<text class="title-text1">达标返现活动状态</text>
-				<text class="title-text">已达标</text>
-			</view>
-			<view class="d-flex">
-				<text class="title-text1">达标返现金额:</text>
-				<text class="title-text">49</text>
-			</view>
-		</view>
 
-		<text class="bot">达标统计的是T0、T1、云闪付贷记卡交易之和，非总交易额</text>
+
+		<text class="bot">{{ data.tips }}</text>
 	</view>
 </template>
 
 <script>
+import net from '../../../../common/net.js';
 export default {
-	components: {},
+
 	data() {
-		return {};
+		return {
+			data: [],
+		};
 	},
-	methods: {}
+	
+	onLoad(options) {
+		// 获取商户详细信息
+		this.getMerchantActiveInfo(options.terminal);
+	},
+	
+	methods: {
+		
+		getMerchantActiveInfo(tid){
+			
+			net({
+				url: '/V1/getTerminalActiveDetail',
+				method: 'GET',
+				data:{ terminal:tid },
+				success: (res) => {
+					if(res.data.success){
+						this.data = res.data.success.data;
+					}
+					console.log(res)
+				}
+			})
+		}
+		
+	}
 };
 </script>
 
