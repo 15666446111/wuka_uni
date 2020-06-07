@@ -194,6 +194,12 @@
 				"navigationBarTextStyle": "black"
 			}
 		}, {
+			"path": "pages/wode/share/wx_share",
+			"style": {
+				"navigationBarTitleText": "机具总数",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
 			"path": "pages/Article/ArtilcleDetail",
 			"style": {}
 		}, {

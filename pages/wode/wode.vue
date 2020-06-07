@@ -79,6 +79,19 @@
 
 				<view class="across"></view>
 				
+
+				<navigator class="url" :url="'share/wx_share?uid=' + UserInfo.id">
+					<view class="div">
+						<image class="div-img" src="/static/wx.png" />
+						<view class="div-text">微信分享</view>
+						<image class="arrows" src="/static/jiantou.png" />
+					</view>
+					<view class="across"></view>
+				</navigator>
+
+				<view class="across"></view>
+				
+				
 				<navigator class="url" url="../shouye/zaixiankefu/zaixiankefu">
 					<view class="div">
 						<image class="div-img" src="/static/wd/kf.png" />

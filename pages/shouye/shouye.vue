@@ -78,7 +78,7 @@ export default {
 			},
 			
 			indexnavs: [
-				{ src: '/static/1.png', text: 'EPOS', url: '/pages/shouye/EPOS/EPOS' },
+				{ src: '/static/1.png', text: 'EPOS', url: '' },
 				{ src: '/static/2.png', text: '商户注册', url: '/pages/shouye/shanghuzhuce/shanghuzhuce' },
 				{ src: '/static/3.png', text: '商户登记', url: '/pages/shouye/shanghudengji/shanghudengji' },
 				{ src: '/static/13.png', text: '商户管理', url: '/pages/shouye/shanghuguanli/shanghuguanli' },

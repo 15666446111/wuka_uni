@@ -21,11 +21,13 @@
 		
 		<button class="loginButton" @click="submit">立即登录</button>
 		
-		<view class="d-flex">
-			<view class="d-box">
-				<view class="forget">忘记密码？</view>
+		<navigator url="register">
+			<view class="d-flex">
+				<view class="d-box">
+					<view class="forget">忘记密码？</view>
+				</view>
 			</view>
-		</view>
+		</navigator>
 	</view>
 	
 	
