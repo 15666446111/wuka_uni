@@ -45,6 +45,7 @@ uni-checkbox .uni-checkbox-input.uni-checkbox-input-checked:after {
 	background-color: #ffffff;
 	margin-top: 2%;
 	overflow-y: auto;
+	height: 950rpx;
 	border-radius: 12rpx;
 }
 
@@ -80,5 +81,5 @@ uni-checkbox .uni-checkbox-input.uni-checkbox-input-checked:after {
 	border-radius: 5px;
 	position: fixed;
 	left: 10%;
-	bottom: 20%;
+	bottom: 5%;
 }
