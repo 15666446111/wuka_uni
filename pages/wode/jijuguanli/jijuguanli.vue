@@ -98,7 +98,7 @@
 
 			<view class="shuxian1"></view>
 			<view class="view-text">
-				<navigator url="jijuhuabo/jijuhuabo">
+				<navigator url="jijuhuabo/call_back">
 					<image src="../../../static/jjhuib.png" class="image"></image>
 					<view class="figure">机具回拨</view>
 				</navigator>

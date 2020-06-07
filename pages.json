@@ -245,6 +245,9 @@
 			"path": "pages/wode/jijuguanli/jijuhuabo/jijuhuabo",
 			"style": {}
 		}, {
+			"path": "pages/wode/jijuguanli/jijuhuabo/call_back",
+			"style": {}
+		}, {
 			"path": "pages/wode/jijuguanli/huabojilu/huabojilu",
 			"style": {}
 		}, {
@@ -288,6 +291,9 @@
 			"style": {}
 		}, {
 			"path": "pages/wode/jijuguanli/xuanzehuabo/xuanzehuabo",
+			"style": {}
+		}, {
+			"path": "pages/wode/jijuguanli/xuanzehuabo/opt_call_back",
 			"style": {}
 		}, {
 			"path": "pages/wode/jijuguanli/huobanxuanze/huaobanxuanze",
