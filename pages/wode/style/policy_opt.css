@@ -1,0 +1,50 @@
+
+.view {
+	width: 92%;
+	margin-left: 4%;
+	height: 100%;
+	border-radius: 15upx 15upx 15upx 15upx;
+	box-shadow: #d9d9d9 0 0 4px 0;
+	background-color: #fff;
+	margin-top: 2%;
+}
+.policy {
+	display: flex;
+	position: relative;
+}
+.model {
+	width: 50%;
+	margin-left: 5%;
+	font-size: 30upx;
+	height: 100upx;
+	line-height: 100upx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.model-text {
+	color: #333;
+}
+.model-name {
+	color: #f98021;
+}
+.amount {
+	height: 100upx;
+	line-height: 100upx;
+	color: #999;
+	margin-left: 130upx;
+}
+.model-image {
+	width: 50upx;
+	height: 50upx;
+	top: 25upx;
+	position: absolute;
+	right: 20upx;
+}
+.xian {
+	width: 92%;
+	margin-left: 4%;
+	background-color: #f1f1f1;
+	height: 1upx;
+}

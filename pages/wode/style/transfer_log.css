@@ -1,0 +1,113 @@
+.select {
+	width: 90%;
+	height: 350rpx;
+	background-color: #ffffff;
+	margin-left: 5%;
+	border-radius: 20rpx;
+	margin-top: 2%;
+}
+.select-view {
+	width: 100%;
+	display: flex;
+}
+.select-div {
+	display: flex;
+	width: 50%;
+	justify-content: center;
+	margin-top: 3%;
+}
+.select-div1 {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	margin-top: 3%;
+}
+.image {
+	width: 25rpx;
+	height: 25rpx;
+	margin-top: 5%;
+	margin-left: 3%;
+}
+.select-text {
+	font-size: 30rpx;
+	margin-top: 2%;
+}
+.shuxian {
+	width: 1rpx;
+	height: 58rpx;
+	background-color: #c5c3c3;
+	margin-top: 3%;
+}
+.hengxian {
+	width: 94%;
+	margin-left: 3%;
+	height: 1rpx;
+	background-color: #c5c3c3;
+	margin-top: 3%;
+}
+.shuxian1 {
+	width: 1rpx;
+	height: 58rpx;
+	background-color: #c5c3c3;
+}
+.div-text {
+	width: 25%;
+	text-align: center;
+	font-size: 30rpx;
+	margin-top: 1%;
+}
+button {
+	background-color: #ff8c00;
+	margin-top: 3.5%;
+	width: 60%;
+	color: #ffffff;
+	font-weight: 600;
+	letter-spacing: 25rpx;
+}
+.content {
+	width: 90%;
+	background-color: #ffffff;
+	margin-left: 5%;
+	border-radius: 20rpx;
+	margin-top: 3%;
+	overflow: hidden;
+}
+.content-div {
+	height: 120rpx;
+}
+.div {
+	display: flex;
+	margin-top: 3%;
+}
+.content-text {
+	font-size: 33rpx;
+	margin-left: 8%;
+	width: 40%;
+}
+.content-text1 {
+	font-size: 28rpx;
+	margin-left: 33%;
+	color: #ff8c00;
+}
+.content-text2 {
+	font-size: 28rpx;
+	margin-left: 33%;
+	color: #666;
+}
+
+.name {
+	font-size: 25rpx;
+	color: #666;
+	margin-left: 8%;
+}
+.time {
+	font-size: 25rpx;
+	color: #666;
+	margin-left: 31%;
+}
+.hengxian1 {
+	width: 94%;
+	margin-left: 3%;
+	height: 1px;
+	background-color: #c5c3c3;
+}
