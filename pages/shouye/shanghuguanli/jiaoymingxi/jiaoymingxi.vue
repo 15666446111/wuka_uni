@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<ms-dropdown-menu class="menu">
+		<ms-dropdown-menu class="menu" @on-click="getInfo">
 			<ms-dropdown-item v-model="value1" :list="list1"></ms-dropdown-item>
 			<ms-dropdown-item v-model="value2" :list="list"></ms-dropdown-item>
 		</ms-dropdown-menu>		
@@ -36,15 +36,15 @@
 				list: [
 					{
 						text: '全部',
-						value: 'all'
+						value: 0
 					},
 					{
 						text: '当日',
-						value: 'day'
+						value: 1
 					},
 					{
 						text: '当月',
-						value: 'month'
+						value: 2
 					}
 				],
 				list1: [
@@ -54,9 +54,12 @@
 					}
 				],
 				value1: 0,
+				
 				value2: 1,
+				
 				value3: 'init',
 				
+				term_no: "",
 				// 交易数据
 				tradeData: {}
 			}
@@ -65,22 +68,38 @@
 		// },
 		onLoad(options) {
 			uni.showLoading();
-			
+			this.term_no = options.term_no;
 			// 获取交易数据
 			this.getTradeList(options.term_no);
 		},
-		
+		watch:{
+			value2(val){
+				if(val == 0){
+					uni.showLoading();
+					this.getTradeList(this.term_no, 'count');
+				}
+				
+				if(val == 1){
+					uni.showLoading();
+					this.getTradeList(this.term_no, 'day');
+				}
+				
+				if(val == 2){
+					uni.showLoading();
+					this.getTradeList(this.term_no, 'month');
+				}
+			}
+		},
 		methods: {
+			
 			choose() {
 				let obj = {}
 				this.$refs.dropdownItem.choose(obj);
-				console.log(123);
 			},
 			
-			close(index) {
-				console.log(index)
-				this.$refs.dropdownItem.closePopup()
-			},
+            close() {
+                this.$refs.dropdownItem.closePopup();
+            },
 			
 			// 获取交易列表
 			getTradeList(termNo, data_type){

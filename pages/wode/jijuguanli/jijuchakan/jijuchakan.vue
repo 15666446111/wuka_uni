@@ -82,7 +82,7 @@ export default {
 			net({
 				url: '/V1/getTail',
 				method: 'GET',
-				data: { 'Type': type },
+				data: { Type: type },
 				success: (res) => {
 					console.log(res);
 					if (res.data.success) {

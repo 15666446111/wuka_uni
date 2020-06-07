@@ -72,7 +72,7 @@
 			choose(item) {
 				this.selectItem = item
 				this.$emit('input', item.value)
-				this.closePopup()
+				this.closePopup(item.value)
 			},
 			changePopup() {
 				if(this.showList) {
@@ -92,12 +92,12 @@
 					})
 				})
 			},
-			closePopup() {
+			
+			closePopup(index) {
 				this.showClass = ''
-				setTimeout(() => {
-					this.showList = false
-				}, 300)
+				setTimeout(() => { this.showList = false }, 300)
 			},
+			
 			close() {
 				this.showClass = ''
 				this.showList = false

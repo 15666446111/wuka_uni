@@ -17,9 +17,7 @@
 		},
 		methods: {
 			closeDropdown() {
-				this.$children.forEach(item =>{
-					item.close();
-				})
+				this.$children.forEach(item =>{ item.close(); })
 			}
 		}
 	}

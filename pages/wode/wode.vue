@@ -25,7 +25,7 @@
 				</view>
 				
 				<view class="earning blance_text">
-					<text style="">{{ UserInfo.blance / 100 | 0 }}</text>
+					<text style="">{{ UserInfo.blance / 100 | numberGSH }}</text>
 				</view>
 				
 				<view class="across"></view>
@@ -33,12 +33,12 @@
 				<view class="eings d-flex">
 					<view class="eings-view">
 						<view style="color: #666;">分润钱包(元)</view>
-						<view style="color: #EE9900;">{{UserInfo.cash_blance/100 | 0}}</view>
+						<view style="color: #EE9900;">{{UserInfo.cash_blance/100 | numberGSH }}</view>
 					</view>
 					<view class="shuxian"></view>
 					<view class="eings-view">
 						<view style="color: #666;">返现钱包(元)</view>
-						<view style="color: #EE9900;">{{UserInfo.return_blance/100 | 0}}</view>
+						<view style="color: #EE9900;">{{UserInfo.return_blance/100 | numberGSH }}</view>
 					</view>
 				</view>
 			</view>
@@ -169,7 +169,11 @@ export default {
 	            }
 	      	})
 		},
-		
+	},
+	filters: {
+		numberGSH(value){
+			return value.toFixed(2)
+		}
 	}
 };
 </script>
