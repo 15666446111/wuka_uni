@@ -114,7 +114,7 @@ export default {
 				success: (res) => {
 					console.log(res);
 					this.bindList = res.data.success.data.Bound;
-					this.unBindList = res.data.success.data.Unbound;
+					this.unBindList = res.data.success.data.UnBound;
 				}
 			})
 		}

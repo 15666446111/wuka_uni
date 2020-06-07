@@ -2,7 +2,7 @@
 	<view>
 		<ms-dropdown-menu class="menu">
 			<ms-dropdown-item v-model="value1" :list="list1"></ms-dropdown-item>
-			 <ms-dropdown-item v-model="value1" :list="list"></ms-dropdown-item>
+			<ms-dropdown-item v-model="value2" :list="list"></ms-dropdown-item>
 		</ms-dropdown-menu>		
 		<view class="detail">
 			<view class="detail-view" v-for="(item, index) in tradeData" :key="index">
@@ -36,7 +36,7 @@
 				list: [
 					{
 						text: '全部',
-						value: ''
+						value: 'all'
 					},
 					{
 						text: '当日',
@@ -72,23 +72,24 @@
 		
 		methods: {
 			choose() {
-				let obj = {
-					// value: 'test'
-				}
+				let obj = {}
 				this.$refs.dropdownItem.choose(obj);
 				console.log(123);
 			},
-			close() {
+			
+			close(index) {
+				console.log(index)
 				this.$refs.dropdownItem.closePopup()
 			},
 			
 			// 获取交易列表
-			getTradeList(termNo){
+			getTradeList(termNo, data_type){
 				net({
 					url: '/V1/getMerchantDetails',
 					method: 'GET',
 					data: {
-						'merchant': termNo
+						merchant: termNo,
+						data_type: data_type
 					},
 					success: (res) => {
 						uni.hideLoading();
