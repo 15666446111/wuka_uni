@@ -29,13 +29,13 @@
 					<view class="detail">
 						<view class="detail-name">{{ item.merchant_name }}</view>
 						<view class="detail-text1">累计交易:</view>
-						<view class="detail-text">{{ item.amount > 0 ? item.amount : 0 }}</view>
+						<view class="detail-text">{{ item.money > 0 ? item.money / 100 : 0 }}</view>
 					</view>
 					<view class="SN">SN:{{ item.merchant_sn }}</view>
 
 					<view class="money">
 						<view class="money-text">商户号:{{ item.merchant_number }}</view>
-						<view class="money-time">登记时间：{{ item.create_time }}</view>
+						<view class="money-time">登记时间：{{ item.time }}</view>
 					</view>
 				</view>
 				<view class="across"></view>

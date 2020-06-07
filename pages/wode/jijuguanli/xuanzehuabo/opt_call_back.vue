@@ -19,7 +19,7 @@
 		</view>
 		
 		<view style="height: 100upx"></view>
-		<view class="button" @click="transfer">确 认 划 拨<text>({{tranNum}})</text></view>
+		<view class="button" @click="transfer">确 认 回 拨<text>({{tranNum}})</text></view>
 	</view>
 </template>
 
@@ -82,30 +82,28 @@ export default {
 				uni.showToast({ title: '请选择回拨用户', icon: 'none' })
 				return false;
 			}
+			var friend_id = [this.partnerId];
 			net({
 	        	url:"/V1/addBackTransfer",
 	            method: 'POST',
 				data: {
 					merchant_id: this.termIds,
-					friend_id: this.partnerId
+					friend_id: friend_id
 				},
 	            success: (res) => {
-					console.log(res);
+		
+					var _this = this;
 					if (res.data.success) {
 						uni.showToast({
 							title: '回拨成功',
 							icon: 'none',
-							mask: true,
-							success : function(){
-								setTimeout(function() {
-									uni.redirectTo({
-										url: './opt_call_back?policy_id=' + this.policyId + '&uid=' + this.partnerId
-									});
-								}, 1500);
-							}
 						})
+						setTimeout(function() {
+							uni.redirectTo({
+								url: './opt_call_back?policy_id=' + _this.policyId + '&uid=' + _this.partnerId
+							});
+						}, 1500)
 					}
-					this.policy = res.data.success.data;
 	            }
 	      	})
 		}

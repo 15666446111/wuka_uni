@@ -32,12 +32,12 @@
 				<view v-for="(item, index) in merchantList" :key='index'>
 					<view class="content-div">
 						<view class="div">
-							<view class="content-text">接受人:畅伙伴C</view>
-							<view class="content-text1">已成功</view>
+							<view class="content-text">接受人:{{item.friend_name}}</view>
+							<view class="content-text1">终端: {{item.merchant_terminal}}</view>
 						</view>
 						<view class="div">
-							<view class="name">发起人:畅伙伴H</view>
-							<view class="time">2019/12/06 14:06</view>
+							<view class="name">发起人:{{item.nickname}}</view>
+							<view class="time">{{item.created_at}}</view>
 						</view>
 					</view>
 					<view class="hengxian1"></view>
@@ -76,7 +76,7 @@ export default {
 							icon: 'none'
 						})
 					}
-					console.log(res);
+					// console.log(res);
 				}
 			})
 		}

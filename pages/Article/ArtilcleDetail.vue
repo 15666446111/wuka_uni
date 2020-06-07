@@ -7,7 +7,7 @@
 			发布时间：{{article.created_at}}
 		</view>
 		<view class="content">
-			{{article.content}}
+			<rich-text :nodes="article.content"></rich-text>
 		</view>
 	</view>
 	

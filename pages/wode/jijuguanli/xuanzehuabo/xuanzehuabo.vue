@@ -78,6 +78,8 @@ export default {
 				uni.showToast({ title: '请选择划拨用户', icon: 'none' })
 				return false;
 			}
+			
+			uni.showLoading();
 			net({
 	        	url:"/V1/addTransfer",
 	            method: 'POST',
@@ -86,21 +88,20 @@ export default {
 					friend_id: this.partnerId
 				},
 	            success: (res) => {
+					uni.hideLoading();
+					
+					var _this = this;
 					if (res.data.success) {
 						uni.showToast({
 							title: '划拨成功',
-							icon: 'none',
-							mask: true,
-							success : function(){
-								setTimeout(function() {
-									uni.redirectTo({
-										url: 'xuanzehuabo?policy_id=' + this.policyId + '&uid=' + this.partnerId
-									});
-								}, 1500);
-							}
+							icon: 'none'
 						})
+						setTimeout(function() {
+							uni.redirectTo({
+								url: 'xuanzehuabo?policy_id=' + _this.policyId + '&uid=' + _this.partnerId
+							});
+						}, 1500);
 					}
-					this.policy = res.data.success.data;
 	            }
 	      	})
 		}

@@ -8,7 +8,7 @@
 			</view>
 			
 			<view class="text">
-				{{ item.content }}
+				<rich-text :nodes="item.content"></rich-text>
 			</view>
 			
 			<view class="edit">
