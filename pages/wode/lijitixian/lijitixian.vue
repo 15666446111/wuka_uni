@@ -34,7 +34,7 @@
 			</view>
 			<view class="hengxian"></view>
 			<view class="bview4">
-				<view>提示：手续费0元，税点{{ cashsetUp.point }}%，单笔提现金额不低于{{ cashsetUp.min_money / 100 }}元</view>
+				<view>提示：手续费0元，税点{{ cashsetUp.point }}%，单笔提现金额不低于{{ cashsetUp.min_money }}元</view>
 				<view>提现时间：{{ cashsetUp.point_time }},请注意查收短信或查询提现进度</view>
 			</view>
 		</view>
@@ -121,6 +121,7 @@ export default {
 	        	url:"/V1/getPoint",
 	            method:'get',
 	            success: (res) => {
+					console.log(res);
 					this.cashsetUp = res.data.success.data;
 	            }
 	      	})

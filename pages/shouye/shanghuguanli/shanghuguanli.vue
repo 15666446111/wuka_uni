@@ -53,7 +53,7 @@
 
 					<view class="money">
 						<view class="money-text">商户号:{{ item.merchant_number }}</view>
-						<view class="money-time">登记时间：{{ item.create_time }}</view>
+						<view class="money-time">登记时间：{{ item.create_at }}</view>
 					</view>
 				</view>
 				<view class="across"></view>
