@@ -23,7 +23,9 @@
 					<view class="body">
 						<view class="container2">
 							<swiper class="sw">
-								<swiper-item><image mode="aspectFit" :src=userPoster class="img"></image></swiper-item>
+								<swiper-item>
+									<image mode="aspectFit" @longpress="downloadImg(userPoster)" :src=userPoster class="img" ></image>
+								</swiper-item>
 							</swiper>
 						</view>
 						<button>长按图片保存</button>
@@ -98,6 +100,7 @@ export default {
 			this.titleShowId = 'tabTag-' + index;
 		},
 		
+		// 获取当前登录用户信息
 		getUserInfo(){
 			net({
 	        	url:"/V1/mine",
@@ -132,10 +135,25 @@ export default {
 	        	url:"/V1/user_share",
 	            method:'get',
 	            success: (res) => {
-					console.log(res);
 					this.userPoster = res.data.success.data.link;
 	            }
 	      	})
+		},
+		
+		// 长按保存图片
+		downloadImg(imageUrl){
+			uni.downloadFile({
+			    url: imageUrl,
+			    success: (res) => {
+					console.log(res);
+			        if (res.statusCode === 200) {
+						uni.showToast({
+							title: '保存成功',
+							icon: 'none'
+						})
+			        }
+			    }
+			});
 		}
 	},
 	
