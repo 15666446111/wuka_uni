@@ -13,7 +13,6 @@
 				</view>
 			</view>
 
-
 			<view class="earnings">
 				
 				<navigator url="lijitixian/lijitixian">

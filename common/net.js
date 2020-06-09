@@ -8,11 +8,13 @@ const net = function(options) {
     try {
 		// 获取token
 		const token 	= uni.getStorageSync('token');
+		
 		if (token == ''){
 			// 如果没有token  定位到登陆页面
             uni.navigateTo({
                 url: '/pages/index/index'
             });
+
             return;
         }
 
@@ -51,7 +53,7 @@ const net = function(options) {
 			icon: 'none'
 		})
     }
-
+	
 	// 返回请求
 	// return uni.request(options);
 }
