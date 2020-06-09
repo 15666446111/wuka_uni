@@ -60,6 +60,7 @@ export default {
 			bank_name: '',
 			bank: '',
 			open_bank: '',
+			is_default: 0
 		};
 	},
 	
@@ -67,6 +68,10 @@ export default {
 		
 	},
 	methods: {
+		defaultType(e){
+			this.is_default = (e.detail.value == 1 ? 1 : 0);
+		},
+		
 		submit(){
 			if (this.name == '') {
 				uni.showToast({
@@ -108,6 +113,10 @@ export default {
 				return false;
 			}
 			
+			uni.showLoading({
+				mask: true
+			});
+			
 			net({
 	        	url: "/V1/createBank",
 	            method: 'POST',
@@ -117,16 +126,17 @@ export default {
 					bank_name: this.bank_name,
 					bank: this.bank,
 					open_bank: this.open_bank,
+					is_default: this.is_default,
 				},
 	            success: (res) => {
-					console.log(res);
 					if (res.data.success) {
 						uni.showToast({
 							title: res.data.success.message,
 							icon: 'none',
 							success : function(){
 								setTimeout(function() {
-									uni.navigateBack();
+									uni.hideLoading();
+									// uni.navigateBack();
 								}, 1500);
 							}
 						});

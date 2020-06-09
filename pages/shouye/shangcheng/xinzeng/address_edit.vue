@@ -139,7 +139,7 @@ export default {
 				return false;
 			}
 			
-			uni.showLoading();
+			uni.showLoading({ mask: true });
 			
 			net({
 				url: '/V1/upAddress',
@@ -159,10 +159,10 @@ export default {
 					console.log(res);
 					try{
 						if (res.data.success) {
-							uni.showToast({
-								title: '修改成功',
-								icon: 'none'
-							})
+							uni.showToast({ title: '修改成功', icon: 'none' });
+							setTimeout(function() {
+								uni.navigateBack();
+							}, 1000);
 						} else {
 							uni.showToast({
 								title: res.data.error.message,

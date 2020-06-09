@@ -108,9 +108,9 @@ export default {
 	        	url:"/V1/plug",
 	            method:'get',
 	            success: (res) => {
-					console.log(res.data.success.data);
+					console.log(res);
 					this.swipers = res.data.success.data;
-	            } 
+	            }
 	      	})
 		},
 		
@@ -121,7 +121,7 @@ export default {
 	            method:'get',
 	            success: (res) => {
 					if(res.data.success.data){
-						console.log(res);
+						// console.log(res);
 						this.notice = res.data.success.data;
 						this.notice_show = true;
 					}

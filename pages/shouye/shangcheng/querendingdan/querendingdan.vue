@@ -2,13 +2,16 @@
 	<view v-if="pagesShow">
 		<view class="xian"></view>
 		<view class="addressBar">
+			
 			<navigator url="../dizhi/dizhi?pages=place_order" v-if="address == ''">
 				<view class="addressBar-name">选择收货地址</view>
 				<image class="addressBar-image" src="/static/jiantou.png"></image>
 				<view class="d-flex">
 					<view class="site"></view>
 				</view>
+				<view class="caution"><text class="">为减少接触，您可以在收货详细地址后增加如小区北门、保安亭、等方便提货的地址</text></view>
 			</navigator>
+			
 			<navigator url="../dizhi/dizhi?pages=place_order" v-else>
 				<view class="addressBar-name">{{address.name}} {{address.tel}}</view>
 				<image class="addressBar-image" src="/static/jiantou.png"></image>
@@ -16,9 +19,9 @@
 					<view class="label">地址</view>
 					<view class="site">{{address.province}}{{address.city}}{{address.area}}{{address.detail}}</view>
 				</view>
+				<view class="caution"><text class="">为减少接触，您可以在收货详细地址后增加如小区北门、保安亭、等方便提货的地址</text></view>
 			</navigator>
 			
-			<view class="caution"><text class="">为减少接触，您可以在收货详细地址后增加如小区北门、保安亭、等方便提货的地址</text></view>
 		</view>
 		<view class="hr"></view>
 		<view>
@@ -108,12 +111,16 @@ export default {
 		addOrderCreate(){
 			var address = '测试固定收货地址';
 			if (this.address == '') {
-				uni.showToast({
-					title: '请选择收货地址',
-					icon: 'none'
-				});
+				uni.showToast({ title: '请选择收货地址', icon: 'none' });
 				return false;
 			}
+			
+			// 显示加载动画
+			uni.showLoading({
+				duration: 10000,
+				mask: true,
+			})
+			
 			net({
 	        	url:"/V1/addOrderCreate",
 	            method: 'POST',
@@ -125,7 +132,9 @@ export default {
 					'address' : address,
 				},
 	            success: (res) => {
-					console.log(res);
+					// 关闭加载动画
+					uni.hideLoading();
+					
 					if (res.data.success) {
 						uni.showToast({
 							title: '下单成功',

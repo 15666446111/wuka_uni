@@ -1,6 +1,6 @@
 <template>
 	<view class="background">
-		<view v-for="(item, index) in cardList" :key="index" v-if="show !== index" class="bank-list">
+		<view v-for="(item, index) in cardList" :key="index" class="bank-list">
 			<view class="top" @click="optCard(item)">
 				<!-- <image src="" class="img"></image> -->
 				<view class="fview">
@@ -39,7 +39,7 @@
 				// 银行卡列表
 				cardList: [],
 				getIntoPage: '',
-				show: '',
+				// show: '',
 			};
 		},
 		
@@ -108,7 +108,12 @@
 									
 									if (res.data.success) {
 										uni.showToast({ title: '删除成功', icon: 'none' });
-										this.show = listKey;
+										let _this = this;
+										setTimeout(function() {
+											uni.redirectTo({
+												url: './tijiaoyinhangka?pages=' + _this.getIntoPage
+											})
+										}, 1000);
 									} else {
 										uni.showToast({ title: res.data.error.message, icon: 'none' });
 									}

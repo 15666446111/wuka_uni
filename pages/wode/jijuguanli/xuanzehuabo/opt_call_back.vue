@@ -10,7 +10,7 @@
 			<checkbox-group @change="optTerminal">
 				<view v-for="(item, index) in policy" :key="index">
 					<view class="checkbox-view">
-						<text class="checkbox-text">终端号：{{item.merchant_terminal}}</text>
+						<text class="checkbox-text">SN：{{item.merchant_sn}}</text>
 						<checkbox class="checkbox" :value="item.id" color="#f98021"></checkbox>
 					</view>
 					<view class="xian"></view>

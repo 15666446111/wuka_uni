@@ -169,6 +169,7 @@ export default {
 	onLoad() {
 		// 获取订单列表
 		this.getOrderList('all');
+		uni.showLoading();
 	},
 	
 	methods: {
@@ -190,7 +191,7 @@ export default {
 	            method:'get',
 				data:{type: type},
 	            success: (res) => {
-					console.log(res.data.success.data);
+					uni.hideLoading();
 					this.orderList = res.data.success.data;
 	            } 
 	      	})

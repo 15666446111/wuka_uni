@@ -32,11 +32,11 @@
 				<view v-for="(item, index) in merchantList" :key='index'>
 					<view class="content-div">
 						<view class="div">
-							<view class="content-text">接受人:{{item.friend_name}}</view>
-							<view class="content-text1">终端: {{item.merchant_terminal}}</view>
+							<view class="content-text">调拨用户:{{item.friend_name}}</view>
+							<view class="content-text1">类型:{{item.is_back == 1 ? '回拨' : '划拨'}}</view>
 						</view>
 						<view class="div">
-							<view class="name">发起人:{{item.nickname}}</view>
+							<view class="name">SN: {{item.merchant_sn }}</view>
 							<view class="time">{{item.created_at}}</view>
 						</view>
 					</view>

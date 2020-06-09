@@ -95,49 +95,36 @@ export default {
 		},
 		
 		defaultType(e){
-			this.BankInfo.is_default = (e.detail.value == 1 ? e.detail.value : 0);
+			this.BankInfo.is_default = (e.detail.value == 1 ? 1 : 0);
 		},
 		
 		submit(){
 			if (this.name == '') {
-				uni.showToast({
-					title: '姓名不能为空',
-					icon: 'none'
-				});
+				uni.showToast({ title: '姓名不能为空', icon: 'none' });
 				return false;
 			}
 			
 			if (this.number == '') {
-				uni.showToast({
-					title: '身份证号不能为空',
-					icon: 'none'
-				});
+				uni.showToast({ title: '身份证号不能为空', icon: 'none' });
 				return false;
 			}
 			
 			if (this.bank_name == '') {
-				uni.showToast({
-					title: '银行名称不能为空',
-					icon: 'none'
-				});
+				uni.showToast({ title: '银行名称不能为空', icon: 'none' });
 				return false;
 			}
 			
 			if (this.bank == '') {
-				uni.showToast({
-					title: '银行卡号不能为空',
-					icon: 'none'
-				});
+				uni.showToast({ title: '银行卡号不能为空', icon: 'none' });
 				return false;
 			}
 			
 			if (this.open_bank == '') {
-				uni.showToast({
-					title: '开户行不能为空',
-					icon: 'none'
-				});
+				uni.showToast({ title: '开户行不能为空', icon: 'none' });
 				return false;
 			}
+			
+			uni.showLoading();
 			
 			net({
 	        	url: "/V1/upBank",
@@ -152,7 +139,7 @@ export default {
 					is_default: this.BankInfo.is_default,
 				},
 	            success: (res) => {
-					console.log(res);
+					uni.hideLoading();
 					if (res.data.success) {
 						uni.showToast({
 							title: res.data.success.message,

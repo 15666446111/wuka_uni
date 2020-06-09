@@ -16,7 +16,7 @@
 		<view class="xian-text">商品详情</view>
 		<view class="xian"></view>
 		<view class="introduces">
-			{{ productInfo.content }}
+			<rich-text>{{ productInfo.content }}</rich-text>
 		</view>
 		<!-- 底部 -->
 		<!-- <view style="height: 100upx;"></view> -->
@@ -85,8 +85,6 @@ export default {
 	},
 	
 	onLoad: function (options){
-		options.product =1;
-		console.log(options.product)
 		// 获取产品信息
 		this.getProductInfo(options.product);
 	},

@@ -57,6 +57,7 @@ export default {
 		};
 	},
 	onLoad() {
+		uni.showLoading();
 		// 页面加载的时候获取产品分类
 		this.getProductType();
 		//获取可视区域高度
@@ -72,7 +73,10 @@ export default {
 	        	url:"/V1/getproducttype",
 	            method:'get',
 	            success: (res) => {
+					uni.hideLoading();
 					this.tabBars = res.data.success.data;
+					// 获取商品信息
+					this.changTab(0);
 	            }
 	      	})
 		},
@@ -80,7 +84,7 @@ export default {
 		
 		// 切换选项卡
 		changTab(index) {
-			if (this.tabIndex == index) return;
+			// if (this.tabIndex == index) return;
 			this.tabIndex = index;
 			this.srcollinto = 'tab' + index;
 			// 请求数据
@@ -91,7 +95,7 @@ export default {
 	            method:'get',
 				data: { type: type},
 	            success: (res) => {
-					console.log(res) 
+					// console.log(res);
 					this.product = res.data.success.data;
 	            }
 	      	})

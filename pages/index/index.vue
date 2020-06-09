@@ -16,7 +16,9 @@
 		</view>
 		
 		<view class="checkbox">
-			<checkbox checked="true">记住密码</checkbox>
+			<checkbox-group>
+				<checkbox checked="true">记住密码</checkbox>
+			</checkbox-group>
 		</view>
 		
 		<button class="loginButton" @click="submit">立即登录</button>
@@ -93,6 +95,7 @@ export default {
 			if (!this.validate('password')){
 				return false;
 			};
+			uni.showToast({ title: '登录中', icon: 'loading', mask: true, duration: 10000 });
 			
 			uni.request({
 				url: 'http://zy.jiufukameng.com/api/V1/login',
@@ -102,7 +105,7 @@ export default {
 					password: this.password
 				},
 				success: res => {
-					console.log(res)
+					uni.hideToast();
 					try {
 						if (res.data.success && res.data.success.token) {
 							uni.setStorageSync('token', res.data.success.token);

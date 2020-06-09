@@ -2,7 +2,7 @@
 	<view class="body">
 		<view class="container2">
 			<swiper class="sw">
-				<swiper-item><image mode="aspectFit" :src=images class="img"></image></swiper-item>
+				<swiper-item><image mode="aspectFit" @longpress="downloadImg(images)" :src=images class="img"></image></swiper-item>
 			</swiper>
 		</view>
 		<button>长按图片保存</button>
@@ -34,6 +34,26 @@ export default {
 					this.images = res.data.success.data.link;
 	            }
 	      	})
+		},
+		
+		// 长按保存图片
+		downloadImg(imageUrl){
+			uni.downloadFile({
+			    url: imageUrl,
+			    success: (res) => {
+			        if (res.statusCode === 200) {
+						uni.saveImageToPhotosAlbum({
+							filePath: res.tempFilePath,
+							success: function() {
+								uni.showToast({ title: "保存成功", icon: "none" });
+							},
+							fail: function() {
+								uni.showToast({ title: "保存失败，请稍后重试", icon: "none" });
+							}
+						});
+					}
+			    }
+			});
 		}
 	},
 };

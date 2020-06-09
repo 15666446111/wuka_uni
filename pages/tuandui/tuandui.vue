@@ -93,8 +93,8 @@
 				<view class="year">
 					<view class="bay-view">
 						<text class="the-text">累计汇总</text>
-						<text class="the-text-1">{{ TeamInfo.all.date }}</text>
-						<text class="the-text-2"></text>
+						<text class="the-text-1"></text>
+						<text class="the-text-2">{{ TeamInfo.all.date }}</text>
 					</view>
 					<view class="d-flex" style="height:100upx;">
 						<view class="data-div1">

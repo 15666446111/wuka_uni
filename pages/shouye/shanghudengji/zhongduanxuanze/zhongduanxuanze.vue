@@ -3,15 +3,15 @@
 		<view class="sousuo">
 			<view class="sousuo-view">
 				<image class="input-image" src="/static/left_fdj.png" mode="aspectFit"></image>
-				<input class="input" placeholder="请输入机器终端号" />
+				<input class="input" placeholder="请输入机器SN号" />
 			</view>
 		</view>
 		<radio-group @change="getTermNum">
 			<view class="view">
 				<label class="term-info" v-for="(item, index) in termList" :key="index">
 					<view class="checkbox-view">
-						<text class="checkbox-text">终端号：{{ item.merchant_terminal }}</text>
-						<radio class="checkbox" color="#f98021" v-model="item.merchant_terminal" />
+						<text class="checkbox-text">SN：{{ item.merchant_sn }}</text>
+						<radio class="checkbox" color="#f98021" v-model="item.merchant_sn" />
 					</view>
 					<view class="xian"></view>
 				</label>
@@ -33,7 +33,7 @@ export default {
 			// 机器列表
 			termList: [],
 			// 终端号
-			terminal: '',
+			merchant_sn: '',
 		};
 	},
 	
@@ -59,14 +59,14 @@ export default {
 		
 		// 获取radio选中的值
 		getTermNum(e){
-			this.terminal = e.detail.value;
+			this.merchant_sn = e.detail.value;
 		},
 		
 		define(){
 			var pages = getCurrentPages();
 			var prevPage = pages[pages.length - 2]; //上一个页面
 			
-			prevPage.$vm.terminal = this.terminal;
+			prevPage.$vm.merchant_sn = this.merchant_sn;
 			uni.navigateBack();
 			// uni.redirectTo({
 			// 	url: "../shanghudengji?terminal=" + this.terminal

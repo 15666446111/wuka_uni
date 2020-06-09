@@ -8,7 +8,7 @@
 			</view>
 		</navigator>
 
-		<view class="site" v-for="(item, index) in addressList" :key="index" v-if="index !== show">
+		<view class="site" v-for="(item, index) in addressList" :key="index">
 			<view @click="optAddress(item)">
 				<view class="site-view">
 					<view class="site-name">{{ item.name }}</view>
@@ -46,7 +46,6 @@ export default {
 	data() {
 		return {
 			addressList: {},
-			show: '',
 			getIntoPage: '',
 		};
 	},
@@ -93,14 +92,17 @@ export default {
 							method: 'GET',
 							data: { 'id': aid },
 							success: (res) => {
-								// 隐藏加载动画
+								// 关闭加载动画
 								uni.hideLoading();
+								
 								if (res.data.success) {
-									uni.showToast({
-										title: '删除成功',
-										icon: 'none'
-									})
-									this.show = key;
+									uni.showToast({ title: '删除成功', icon: 'none' })
+									let _this = this;
+									setTimeout(function() {
+										uni.redirectTo({
+											url: './dizhi?pages=' + _this.getIntoPage
+										})
+									}, 1000);
 								} else {
 									uni.showToast({
 										title: res.data.error.message,

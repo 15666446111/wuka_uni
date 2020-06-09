@@ -92,6 +92,7 @@ export default {
 	onLoad() {
 		// 获取商户列表
 		this.getMerchantsList();
+		uni.showLoading();
 	},
 	
 	methods: {
@@ -112,7 +113,8 @@ export default {
 				url: '/V1/getMerchantsList',
 				method: 'GET',
 				success: (res) => {
-					console.log(res);
+					uni.hideLoading();
+					// console.log(res);
 					this.bindList = res.data.success.data.Bound;
 					this.unBindList = res.data.success.data.UnBound;
 				}

@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view v-if="merchantData != ''">
 		<view class="class">
 			<navigator url="jijuchakan/jijuchakan?type=count" class="class-view">
 				<view class="class-text">机具总数(台):</view>
@@ -131,9 +131,10 @@ export default {
 		};
 	},
 	
-	onLoad() {
+	onShow() {
 		// 获取机器数据
 		this.getMerchantData();
+		uni.showLoading();
 	},
 	
 	methods: {
@@ -143,6 +144,7 @@ export default {
 				url: '/V1/getBindAll',
 				method: 'GET',
 				success: (res) => {
+					uni.hideLoading();
 					if (res.data.success) {
 						this.merchantData = res.data.success.data;
 					} else {

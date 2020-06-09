@@ -145,13 +145,17 @@ export default {
 			uni.downloadFile({
 			    url: imageUrl,
 			    success: (res) => {
-					console.log(res);
 			        if (res.statusCode === 200) {
-						uni.showToast({
-							title: '保存成功',
-							icon: 'none'
-						})
-			        }
+						uni.saveImageToPhotosAlbum({
+							filePath: res.tempFilePath,
+							success: function() {
+								uni.showToast({ title: "保存成功", icon: "none" });
+							},
+							fail: function() {
+								uni.showToast({ title: "保存失败，请稍后重试", icon: "none" });
+							}
+						});
+					}
 			    }
 			});
 		}

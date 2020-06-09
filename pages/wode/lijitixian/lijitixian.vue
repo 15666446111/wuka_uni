@@ -75,7 +75,9 @@ export default {
 			// 提现设置信息
 			cashsetUp: [],
 			// 结算卡信息
-			bankCard: [],
+			bankCard: {
+				bank_name: '请选择提现银行卡'
+			},
 			bank_name: '',
 			// 可提现金额
 			balance: '',

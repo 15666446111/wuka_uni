@@ -12,8 +12,8 @@
 			<navigator url="zhongduanxuanze/zhongduanxuanze">
 				<view class="select-view">
 					<view class="select-name">终端选择</view>
-					<view class="select-text1" v-if="terminal == ''">请选择</view>
-					<view class="select-text1">{{terminal}}</view>
+					<view class="select-text1" v-if="merchant_sn == ''">请选择</view>
+					<view class="select-text1">{{merchant_sn}}</view>
 					<image class="select-image" src="/static/EPOS/jiantou.png" />
 				</view>
 			</navigator>
@@ -48,7 +48,7 @@ import net from '../../../common/net.js';
 export default {
 	data() {
 		return {
-			terminal: '',
+			merchant_sn: '',
 			merchant_name: '',
 			merchant_phone: '',
 			//验证规则
@@ -64,7 +64,7 @@ export default {
 	},
 	
 	onLoad(option) {
-		this.terminal = (option.terminal == undefined ? '' : option.terminal);
+		this.merchant_sn = (option.merchant_sn == undefined ? '' : option.merchant_sn);
 	},
 	
 	methods: {
@@ -86,7 +86,7 @@ export default {
 		},
 		// 提交表单
 		submit(){
-			if (this.terminal == '') {
+			if (this.merchant_sn == '') {
 				uni.showToast({ title: '请选择登记的终端', icon: 'none' });
 				return false;
 			}
@@ -99,6 +99,8 @@ export default {
 			if (!this.validate('merchant_phone')) {
 				return false;
 			}
+			
+			uni.showLoading();
 	
 			net({
 	        	url: "/V1/register",
@@ -106,10 +108,11 @@ export default {
 				data: {
 					merchant_name: this.merchant_name,
 					merchant_phone: this.merchant_phone,
-					merchant_terminal: this.terminal,
+					merchant_sn: this.merchant_sn,
 				},
 	            success: (res) => {
-					console.log(res);
+					uni.hideLoading();
+					
 					if (res.data.success) {
 						uni.showToast({
 							title: '登记成功',

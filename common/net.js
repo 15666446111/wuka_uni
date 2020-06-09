@@ -8,24 +8,51 @@ const net = function(options) {
     try {
 		// 获取token
 		const token 	= uni.getStorageSync('token');
-		// 如果token存在 请求头链接上token Bearer令牌 设置在请求头
-       	if (token) {
-         	options.header = {
-           		'Authorization' : 'Bearer ' + token
-         	};
-        }else{
+		if (token == ''){
 			// 如果没有token  定位到登陆页面
             uni.navigateTo({
-                url: '/pages/index/index' 
+                url: '/pages/index/index'
             });
             return;
         }
+
+		// 发起请求
+		uni.request({
+			url: options.url,
+			header: {'Authorization' : 'Bearer ' + token},
+			method: options.method,
+			data: options.data,
+			success: (res) => {
+				if (res.statusCode == 200) {
+					options.success(res);
+				}
+				// token失效时，跳转登录页面
+				if (res.statusCode == 505) {
+					uni.showToast({
+						title: res.data.error.message,
+						icon: 'none',
+						mask: true
+					})
+					
+					setTimeout(function() {
+						uni.navigateTo({
+							url: '/pages/index/index'
+						})
+					}, 1200);
+					return;
+				}
+				
+			}
+		})
      } catch (err) {
 		// 如果请求出错  打印错误信息
-      	console.log(err)
+      	uni.showToast({
+			title: '系统错误，请联系客服',
+			icon: 'none'
+		})
     }
 
 	// 返回请求
-	return uni.request(options);
+	// return uni.request(options);
 }
 export default net;
