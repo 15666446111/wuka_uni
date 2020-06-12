@@ -1,6 +1,6 @@
 {
-    "name" : "智友",
-    "appid" : "__UNI__4CD0876",
+    "name" : "翔鹭通",
+    "appid" : "__UNI__924CBB3",
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -111,7 +111,7 @@
         "usingComponents" : true
     },
     "h5" : {
-        "title" : "畅伙伴",
+        "title" : "翔鹭通",
         "domain" : ""
     }
 }

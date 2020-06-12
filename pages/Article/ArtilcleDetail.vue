@@ -83,9 +83,9 @@
 		padding: 0 4%;
 	}
 	.title {
-		height: 100rpx;
-		line-height: 100rpx;
-		font-size: 34rpx;
+		height: 160rpx;
+		line-height: 160rpx;
+		font-size: 40rpx;
 		text-align: center;
 	}
 	.add_time {
@@ -98,6 +98,6 @@
 		text-indent: 44rpx;
 	}
 	.content img {
-		max-width: 100%;
+		max-width: 90%;
 	}
 </style>

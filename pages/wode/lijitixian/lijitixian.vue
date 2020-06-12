@@ -38,6 +38,16 @@
 				<view>提现时间：{{ cashsetUp.point_time }},请注意查收短信或查询提现进度</view>
 			</view>
 		</view>
+		
+		<view class="cash-list">
+			<navigator url="../tixianjilu/tixianjilu">
+				<view class="list-li">
+					<image src="../../../static/new/hbjl.png" class="left-img" mode="widthFix"></image>
+					<view class="list-title">提现记录</view>
+					<image src="../../../static/EPOS/jiantou.png" class="right-arrow" mode="widthFix"></image>
+				</view>
+			</navigator>
+		</view>
 
 		<button class="button" @click="setWithdrawal">立即提现</button>
 	</view>
@@ -157,8 +167,14 @@ export default {
 					'blance': this.resultInfo.checkArr.value,
 					'rate': this.cashsetUp.point * 0.01,
 					'remark': '',
+					'bank': this.bankCard.bank,
+					'name': this.bankCard.name,
+					'number': this.bankCard.number,
+					'open_bank': this.bankCard.open_bank,
+					'bank_name': this.bankCard.bank_name,
 				},
 	            success: (res) => {
+					console.log(res);
 					uni.hideLoading();
 					if (res.data.success) {
 						uni.showToast({
