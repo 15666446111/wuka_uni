@@ -80,7 +80,7 @@
 <style>
 	page {
 		background-color: #f7f7f7;
-		padding: 0 4%;
+		/* padding: 0 4%; */
 	}
 	.title {
 		height: 160rpx;
@@ -89,6 +89,7 @@
 		text-align: center;
 	}
 	.add_time {
+		margin-right: 4%;
 		padding-bottom: 20rpx;
 		text-align: right;
 		fong-size: 24rpx;
@@ -97,7 +98,7 @@
 	.content {
 		text-indent: 44rpx;
 	}
-	.content img {
+	/* .content img {
 		max-width: 90%;
-	}
+	} */
 </style>
