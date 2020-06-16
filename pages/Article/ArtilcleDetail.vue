@@ -60,11 +60,11 @@
 			        return match;
 			    });
 			    newContent = newContent.replace(/style="[^"]+"/gi,function(match,capture){
-			        match = match.replace(/width:[^;]+;/gi, 'max-width:100%;').replace(/width:[^;]+;/gi, 'max-width:100%;');
+			        match = match.replace(/width:[^;]+;/gi, 'max-width:92%;').replace(/width:[^;]+;/gi, 'max-width:92%;');
 			        return match;
 			    });
 			    newContent = newContent.replace(/<br[^>]*\/>/gi, '');
-			    newContent = newContent.replace(/\<img/gi, '<img style="max-width:100%;height:auto;display:inline-block;margin:10rpx auto;"');
+			    newContent = newContent.replace(/\<img/gi, '<img style="max-width:92%;height:auto;display:inline-block;margin:10rpx auto;"');
 			    return newContent;
 			}	
 		}
