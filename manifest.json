@@ -59,9 +59,6 @@
                 "maps" : {},
                 "oauth" : {},
                 "ad" : {},
-                "payment" : {
-                    "alipay" : {}
-                },
                 "share" : {
                     "weixin" : {
                         "appid" : "wx1a2b2fae7251449e",
