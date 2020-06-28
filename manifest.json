@@ -1,6 +1,6 @@
 {
-    "name" : "智友",
-    "appid" : "__UNI__4CD0876",
+    "name" : "翔鹭通",
+    "appid" : "__UNI__924CBB3",
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -38,7 +38,6 @@
                     "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
                     "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
                     "<uses-permission android:name=\"android.permission.INTERNET\"/>",
-                    "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
                     "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
                     "<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
                     "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
@@ -59,11 +58,15 @@
                 "oauth" : {},
                 "ad" : {},
                 "payment" : {
+<<<<<<< HEAD
                     "alipay" : {},
                     "weixin" : {
                         "appid" : "",
                         "UniversalLinks" : ""
                     }
+=======
+                    "alipay" : {}
+>>>>>>> c1334d19479d2eb860449f9a34ed64d90e4b2fa2
                 }
             },
             "icons" : {
@@ -120,7 +123,7 @@
         "usingComponents" : true
     },
     "h5" : {
-        "title" : "畅伙伴",
+        "title" : "翔鹭通",
         "domain" : ""
     }
 }

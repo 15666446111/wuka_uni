@@ -1,56 +1,55 @@
 <template>
 	<view class="background">
 		<view class="top">
-			<view class="view1">
-				
+			<view class="view1" v-for="(item, index) in cashOutList" :key="index">
 				<view class="fview">
-					<image src="/static/minsheng.png" class="img"></image>
-					<view class="ms">民生银行/8888</view>
+					<!-- <image src="/static/minsheng.png" class="img"></image> -->
+					<view class="ms">{{item.bank_name}}/{{item.bank}}</view>
 					<view class="je">6500.00</view>
 				</view>
 				<view class="fview">
-					<view class="sj">2019/12/06 15:06</view>
-					<view class="zt">申请中</view>
+					<view class="ms sj">{{item.created_at}}</view>
+					<view class="je zt">
+						<text v-if="item.status == 0">待处理</text>
+						<text v-else-if="item.status == 1">提现成功</text>
+						<text v-else>提现失败</text>
+					</view>
 				</view>
 			</view>
-			
-			<view class="line"></view>
-			
-			<view class="view1">
-				<view class="fview">
-					<image src="/static/minsheng.png" class="img"></image>
-					<view class="ms">民生银行/8888</view>
-					<view class="je">6500.00</view>
-				</view>
-				<view class="fview">
-					<view class="sj">2019/12/06 15:06</view>
-					<view class="zt">打款成功</view>
-				</view>
-			</view>
-			<view class="line"></view>
-
-			<view class="view1">
-				<view class="fview">
-					<image src="/static/minsheng.png" class="img"></image>
-					<view class="ms">民生银行/8888</view>
-					<view class="je">6500.00</view>
-				</view>
-				<view class="fview">
-					<view class="sj">2019/12/06 15:06</view>
-					<view class="zt">驳回：核对卡号</view>
-				</view>
-			</view>
-			
 		</view>
 	</view>
 </template>
 
 <script>
+import net from '../../../common/net.js';
 export default {
 	data() {
-		return {};
+		return {
+			cashOutList: {},
+		};
 	},
-	methods: {}
+	
+	onLoad() {
+		uni.showLoading();
+		
+		// 获取提现记录列表
+		this.getCashOutList();
+	},
+	
+	methods: {
+		// 获取提现记录列表
+		getCashOutList(){
+			net({
+	        	url: "/V1/draw",
+	            method: 'get',
+	            success: (res) => {
+					console.log(res);
+					uni.hideLoading();
+					this.cashOutList = res.data.success.data;
+	            }
+	      	})
+		}
+	}
 };
 </script>
 
@@ -67,9 +66,10 @@ export default {
 	margin-top: 2%;
 }
 .view1 {
-	width: 100%;
-	height: 160rpx;
-	position: relative;
+	width: 92%;
+	padding: 8rpx 0;
+	margin: 0 4%;
+	border-bottom: 1px solid #eee;
 }
 .img {
 	width: 100rpx;
@@ -79,32 +79,25 @@ export default {
 }
 .fview {
 	display: flex;
+	width: 100%;
+	height: 72rpx;
 }
-.ms {
-	font-size: 30upx;
-	margin-top: 6%;
-	margin-left: 30rpx;
-	height: 50rpx;
+.ms, .je {
+	width: 50%;
+	font-size: 30rpx;
+	line-height: 72rpx;
 }
 .je {
-	position: absolute;
-	right: 5%;
-	font-size: 30rpx;
 	color: #ffb31f;
-	top: 27%;
+	text-align: right;
 }
 .sj {
 	color: #666;
 	font-size: 28rpx;
-	margin-left: 26.5%;
-	margin-top: -6%;
 }
 .zt {
 	color: #666;
 	font-size: 28rpx;
-	position: absolute;
-	right: 4%;
-	top: 55%;
 }
 .line {
 	width: 94%;

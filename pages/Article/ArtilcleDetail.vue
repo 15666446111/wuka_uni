@@ -60,11 +60,11 @@
 			        return match;
 			    });
 			    newContent = newContent.replace(/style="[^"]+"/gi,function(match,capture){
-			        match = match.replace(/width:[^;]+;/gi, 'max-width:100%;').replace(/width:[^;]+;/gi, 'max-width:100%;');
+			        match = match.replace(/width:[^;]+;/gi, 'max-width:92%;').replace(/width:[^;]+;/gi, 'max-width:92%;');
 			        return match;
 			    });
 			    newContent = newContent.replace(/<br[^>]*\/>/gi, '');
-			    newContent = newContent.replace(/\<img/gi, '<img style="max-width:100%;height:auto;display:inline-block;margin:10rpx auto;"');
+			    newContent = newContent.replace(/\<img/gi, '<img style="max-width:92%;height:auto;display:inline-block;margin:10rpx auto;"');
 			    return newContent;
 			}	
 		}
@@ -80,15 +80,16 @@
 <style>
 	page {
 		background-color: #f7f7f7;
-		padding: 0 4%;
+		/* padding: 0 4%; */
 	}
 	.title {
-		height: 100rpx;
-		line-height: 100rpx;
-		font-size: 34rpx;
+		height: 160rpx;
+		line-height: 160rpx;
+		font-size: 40rpx;
 		text-align: center;
 	}
 	.add_time {
+		margin-right: 4%;
 		padding-bottom: 20rpx;
 		text-align: right;
 		fong-size: 24rpx;
@@ -97,7 +98,7 @@
 	.content {
 		text-indent: 44rpx;
 	}
-	.content img {
-		max-width: 100%;
-	}
+	/* .content img {
+		max-width: 90%;
+	} */
 </style>

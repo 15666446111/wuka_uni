@@ -91,3 +91,30 @@
 	margin-left: 30upx;
 	font-size: 28upx;
 }
+
+.cash-list {
+	background-color: #fff;
+	width: 92%;
+	margin-top: 20rpx;
+	margin-left: 4%;
+	border-radius: 20rpx;
+}
+.list-li {
+	position: relative;
+}
+.left-img {
+	width: 46rpx;
+	vertical-align: top;
+	margin: 21rpx 24rpx;
+}
+.list-title {
+	height: 88rpx;
+	line-height: 88rpx;
+	display: inline-block;
+}
+.right-arrow {
+	width: 36rpx;
+	position: absolute;
+	top: 26rpx;
+	right: 24rpx;
+}

@@ -26,7 +26,7 @@
 									<view class="course-card" v-for="(item, index) in product" :key="index">
 										<navigator :url="'shangpingxinxi/shangpingxinxi?product='+item.id">
 											<view>
-												<image :src=item.image mode="widthFix"></image>
+												<image :src=item.image mode="scaleToFill" class="goods-img"></image>
 											</view>
 											<view class="body-text">{{item.title}}</view>
 											<view class="price">¥{{item.price / 100}}</view>

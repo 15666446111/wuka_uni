@@ -41,6 +41,7 @@
 			<view class="pos-text">¥{{moneyTotal / 100}}</view>
 			<view class="pos-view1">
 				<view @click="addOrderCreate"><view class="pos-Text">提交订单</view></view>
+				<!-- <view @click="test"><view class="pos-Text">提交订单</view></view> -->
 			</view>
 		</view>
 	</view>
@@ -106,6 +107,15 @@ export default {
 	            }
 	      	})
 		},
+		
+		// test(){
+		// 	uni.getProvider({
+		// 		service: 'payment',
+		// 		success: (res) => {
+		// 			console.log(res);
+		// 		}
+		// 	})
+		// },
 		
 		// 生成订单
 		addOrderCreate(){
