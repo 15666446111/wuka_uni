@@ -58,15 +58,6 @@
                 "oauth" : {},
                 "ad" : {},
                 "payment" : {
-<<<<<<< HEAD
-                    "alipay" : {},
-                    "weixin" : {
-                        "appid" : "",
-                        "UniversalLinks" : ""
-                    }
-=======
-                    "alipay" : {}
->>>>>>> c1334d19479d2eb860449f9a34ed64d90e4b2fa2
                 }
             },
             "icons" : {
