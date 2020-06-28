@@ -34,8 +34,8 @@
 			</view>
 			<view class="hengxian"></view>
 			<view class="bview4">
-				<view>提示：手续费0元，税点{{ cashsetUp.point }}%，单笔提现金额不低于{{ cashsetUp.min_money }}元</view>
-				<view>提现时间：{{ cashsetUp.point_time }},请注意查收短信或查询提现进度</view>
+				<view>提示：手续费 {{cashsetUp.rate_m}} 元，税点 {{ cashsetUp.point }} %，单笔提现金额不低于 {{ cashsetUp.min_money }} 元</view>
+				<view>提现时间： {{ cashsetUp.point_time }} ,请注意查收短信或查询提现进度</view>
 			</view>
 		</view>
 		
@@ -101,8 +101,6 @@ export default {
 	onLoad() {
 		// 获取用户个人信息
 		this.getUserInfo();
-		// 获取提现设置信息
-		this.getPoint();
 		// 获取默认结算卡信息
 		this.getDefaultCard();
 	},
@@ -114,6 +112,9 @@ export default {
 		onConfirm(val) {
 			this.resultInfo = { ...val };
 			this.balance = val.checkArr.value == 1 ? this.UserInfo.cash_blance : this.UserInfo.return_blance;
+			
+			// 获取提现税点设置信息
+			this.getPoint(this.resultInfo.checkArr.value);
 		},
 		
 		// 获取用户个人信息
@@ -127,13 +128,16 @@ export default {
 	      	})
 		},
 		
-		// 获取提现设置信息
-		getPoint(){
+		// 获取提现税点设置信息
+		getPoint(type){
 			net({
 	        	url:"/V1/getPoint",
 	            method:'get',
+				data: {
+					'type' : type,
+				},
 	            success: (res) => {
-					console.log(res);
+					// console.log(res);
 					this.cashsetUp = res.data.success.data;
 	            }
 	      	})
@@ -145,7 +149,9 @@ export default {
 	        	url:"/V1/getBankDefault",
 	            method:'get',
 	            success: (res) => {
-					this.bankCard = res.data.success.data;
+					if (res.data.success.data != null) {
+						this.bankCard = res.data.success.data;
+					}
 	            }
 	      	})
 		},
@@ -166,6 +172,7 @@ export default {
 					'money': this.money * 100,
 					'blance': this.resultInfo.checkArr.value,
 					'rate': this.cashsetUp.point * 0.01,
+					'rate_m': this.cashsetUp.point.rate_m,
 					'remark': '',
 					'bank': this.bankCard.bank,
 					'name': this.bankCard.name,

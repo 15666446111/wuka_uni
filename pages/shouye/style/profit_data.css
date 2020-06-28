@@ -146,3 +146,13 @@ button {
 	margin-top: 2rem;
 	font-size: 0.9rem;
 }
+.view_p4 {
+	width: 52%;
+}
+.view_standard {
+	font-size: 26rpx;
+}
+.trade-text {
+	font-size: 26rpx;
+	color: #f98021;
+}

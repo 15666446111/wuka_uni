@@ -7,13 +7,16 @@
 				{{ item.title }}
 			</view>
 			
+			<view class="img">
+				<image :src=item.images mode="widthFix"></image>
+			</view>
+			
 			<view class="text">
 				<rich-text :nodes="item.content"></rich-text>
 			</view>
 			
 			<view class="edit">
 				<text class="edittext" @click="share">立即分享</text>
-				<text class="edittext right">查看全文</text>
 			</view>
 			
 		</view>
@@ -39,7 +42,7 @@
 		},
 		
 		methods: {
-			// 获取个人信息
+			// 获取分享信息
 		  	getShareList(){
 		    	net({
 		        	url:"/V1/wx_share_list",
@@ -51,7 +54,6 @@
 		            }
 		      	})
 			},
-			
 			
 			share(){
 				uni.share({
@@ -84,4 +86,5 @@
 	.edit{padding: 10rpx 30rpx;}
 	.edittext{color: #007BFF; cursor: pointer;}
 	.right{float: right;}
+	/* .img { height: 120rpx;} */
 </style>

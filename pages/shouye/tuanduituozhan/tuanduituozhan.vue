@@ -37,7 +37,7 @@
 					<view class="body">
 						<view class="container2">
 							<swiper class="sw">
-								<swiper-item><image mode="aspectFit" :src=agentPoster class="img"></image></swiper-item>
+								<swiper-item><image mode="aspectFit" @longpress="downloadImg(agentPoster)" :src=agentPoster class="img"></image></swiper-item>
 							</swiper>
 						</view>
 						<button>长按图片保存</button>

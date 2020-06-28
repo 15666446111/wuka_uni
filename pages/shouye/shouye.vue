@@ -91,7 +91,7 @@ export default {
 	},
 	
 	// 页面初始化执行
-	onLoad(){
+	onShow(){
 		// 获取轮播图
 		this.getSwipers();
 		// 获取公告信息
@@ -108,7 +108,6 @@ export default {
 	        	url:"/V1/plug",
 	            method:'get',
 	            success: (res) => {
-					console.log(res);
 					this.swipers = res.data.success.data;
 	            }
 	      	})

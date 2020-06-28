@@ -105,6 +105,7 @@ export default {
 					password: this.password
 				},
 				success: res => {
+					console.log(res);
 					uni.hideToast();
 					try {
 						if (res.data.success && res.data.success.token) {
