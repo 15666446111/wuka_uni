@@ -89,6 +89,16 @@
 				</navigator>
 				<view class="across"></view>
 				
+				<navigator class="url" url="machine_receive/machine_receive">
+					<view class="div">
+						<image class="div-img" src="/static/13.png" />
+						<view class="div-text">商户推荐</view>
+						<image class="arrows" src="/static/jiantou.png" />
+					</view>
+					<view class="across"></view>
+				</navigator>
+				<view class="across"></view>
+				
 				<navigator class="url" url="temail_share/temail_share">
 					<view class="div">
 						<image class="div-img" src="/static/yaoqing.png" />
@@ -97,7 +107,7 @@
 					</view>
 					<view class="across"></view>
 				</navigator>
-				<view class="across"></view>				
+				<view class="across"></view>
 				
 				<navigator class="url" url="../shouye/zaixiankefu/zaixiankefu">
 					<view class="div">
@@ -166,7 +176,7 @@ export default {
 	            method:'get',
 	            success: (res) => {
 					uni.hideLoading();
-					console.log(res);
+					// console.log(res);
 					this.UserInfo = res.data.success.data;
 	            }
 	      	})

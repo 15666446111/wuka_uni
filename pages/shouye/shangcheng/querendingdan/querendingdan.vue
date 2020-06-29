@@ -138,7 +138,7 @@ export default {
 					'product_price' : this.productInfo.price,
 					'numbers' : this.num,
 					'price' : this.moneyTotal,
-					'address' : this.address.id,
+					'address' : this.address.province + this.address.city + this.address.area + this.address.detail
 				},
 	            success: (res) => {
 					// 关闭加载动画

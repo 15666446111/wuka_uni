@@ -206,6 +206,12 @@
 				"navigationBarTextStyle": "black"
 			}
 		}, {
+			"path": "pages/wode/machine_receive/machine_receive",
+			"style": {
+				"navigationBarTitleText": "商户推荐申请信息",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
 			"path": "pages/Article/ArtilcleDetail",
 			"style": {}
 		}, {

@@ -97,6 +97,8 @@ export default {
 					pid: this.pid
 				},
 	            success: (res) => {
+		
+					console.log(res);
 					uni.hideLoading();
 					
 					if (res.data.success) {
@@ -174,21 +176,41 @@ export default {
 		
 		// 提交表单
 		submitForm(){
-			console.log(this.standardPrice);
-	// 		net({
-	// 			url:"/V1/setPolicyInfo",
-	// 			method:'POST',
-	// 			data:{
-	// 				'tradePrice': this.tradePrice,
-	// 				'activePrice': this.activePrice,
-	// 				'standardPrice': this.standardPrice,
-	// 			},
-	//             success: (res) => {
-	// 				uni.hideLoading();
-	// 				console.log(res);
-	// 				this.UserInfo = res.data.success.data;
-	//             },
-	// 		})
+			uni.showLoading({
+				mask: true
+			});
+			net({
+				url:"/V1/setPolicyInfo",
+				method: 'POST',
+				data:{
+					uid: this.uid,
+					pid: this.pid,
+					tradePrice: this.tradePrice,
+					activePrice: this.activePrice.return_money,
+					standardPrice: this.standardPrice,
+				},
+	            success: (res) => {
+					uni.hideLoading();
+					if (res.data.success) {
+						uni.showToast({
+							title: '设置成功',
+							icon: 'none'
+						});
+						
+						var that = this;
+						setTimeout(function() {
+							uni.redirectTo({
+								url: './fenruencanshu?pid=' + that.pid + '&uid=' + that.uid
+							})
+						}, 1000);
+					} else {
+						uni.showToast({
+							title: res.data.error.message,
+							icon: 'none'
+						})
+					}
+	            },
+			})
 		}
 	}
 };
