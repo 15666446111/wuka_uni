@@ -59,6 +59,7 @@
                 "maps" : {},
                 "oauth" : {},
                 "ad" : {},
+                "payment" : {},
                 "share" : {
                     "weixin" : {
                         "appid" : "wx1a2b2fae7251449e",
@@ -121,6 +122,6 @@
     },
     "h5" : {
         "title" : "翔鹭通",
-        "domain" : ""
+        "domain" : "http://wkweb.jiufukameng.com"
     }
 }
