@@ -16,7 +16,7 @@
 			</view>
 			
 			<view class="edit">
-				<text class="edittext" @click="share">立即分享</text>
+				<text class="edittext" @click="share(item.content, item.images)">立即分享</text>
 			</view>
 			
 		</view>
@@ -55,12 +55,15 @@
 		      	})
 			},
 			
-			share(){
+			share(text, images){
+				var dd=text.replace(/<\/?.+?>/g,"");
+				var dds=dd.replace(/ /g,"");
+				uni.setClipboardData({ data: dds });
 				uni.share({
 					provider: "weixin",
 					scene: "WXSenceTimeline",
-					type: 1,
-					summary: "我正在使用HBuilderX开发uni-app，赶紧跟我一起来体验！",
+					type: 2,
+					imageUrl: images,
 					success: function (res) {
 						console.log("success:" + JSON.stringify(res));
 					},
